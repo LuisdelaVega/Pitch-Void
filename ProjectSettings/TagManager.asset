@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Border
+  - Food
+  - Tail
+  - Spawner
+  - Enemy
+  - Attack
+  - Follower
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Border
+  - Blocking
+  - Player
+  - Enemy
+  - Projectiles
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Ground
+    uniqueID: 641024597
+    locked: 0
+  - name: Border
+    uniqueID: 2929589363
+    locked: 0
+  - name: Projectile
+    uniqueID: 3452103993
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
