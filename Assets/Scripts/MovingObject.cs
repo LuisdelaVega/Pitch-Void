@@ -4,35 +4,35 @@ using UnityEngine;
 
 public abstract class MovingObject : MonoBehaviour
 {
-    /* Public variables */
-    public Queue<Vector2> previousPositions;
-    
-    /* Protected variables */
-    [SerializeField] protected float moveSpeed = 8f;
-    protected Rigidbody2D rb;
-    protected BoxCollider2D bc;
-    protected MovingObject leader;
-    protected Follower follower;
-    public Vector2 Direction {get; protected set;}
+  /* Public variables */
+  public Queue<Vector2> previousPositions;
 
-    /* Private variables */
-    private int maxPreviousPositions = 8;
+  /* Protected variables */
+  [SerializeField] protected float moveSpeed = 8f;
+  protected Rigidbody2D rb;
+  protected BoxCollider2D bc;
+  protected MovingObject leader;
+  protected Follower follower;
+  public Vector2 Direction { get; protected set; }
 
-    // This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
-    void FixedUpdate()
+  /* Private variables */
+  private int maxPreviousPositions = 8;
+
+  // This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
+  void FixedUpdate()
+  {
+    // Remember your previous positions
+    Vector2 previousPosition = new Vector2(transform.position.x, transform.position.y);
+    previousPositions.Enqueue(previousPosition);
+
+    if (previousPositions.Count > maxPreviousPositions)
     {
-        // Remember your previous positions
-        Vector2 previousPosition = new Vector2(transform.position.x, transform.position.y);
-        previousPositions.Enqueue(previousPosition);
-
-        if (previousPositions.Count > maxPreviousPositions)
-        {
-            previousPositions.Dequeue();
-        }
-
-        Move();
+      previousPositions.Dequeue();
     }
 
-    protected abstract void Move();
-    public abstract void RecruitFollower(Follower follower);
+    Move();
+  }
+
+  protected abstract void Move();
+  public abstract void RecruitFollower(Follower follower);
 }
