@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Follower : MovingObject
+public class Follower : MovingCharacter
 {
   // Start is called before the first frame update
   void Start()
   {
     bc = GetComponent<BoxCollider2D>();
     bc.size = new Vector2(1.8f, 1.8f);
-    previousPositions = new Queue<Vector2>();
+    PreviousPositions = new Queue<Vector2>();
   }
 
   void OnTriggerEnter2D(Collider2D other)
@@ -34,13 +34,13 @@ public class Follower : MovingObject
     }
   }
 
-  public void SwitchLeader(MovingObject newLeader) => leader = newLeader;
+  public void SwitchLeader(MovingCharacter newLeader) => leader = newLeader;
 
   protected override void Move()
   {
     if (leader == null) return;
 
-    var nextPosition = leader.previousPositions.Dequeue();
+    var nextPosition = leader.PreviousPositions.Dequeue();
     var heading = nextPosition - (Vector2)transform.position;
     var distance = heading.sqrMagnitude;
     var direction = heading / distance;

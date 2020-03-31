@@ -92,8 +92,8 @@ public class GameManager : MonoBehaviour
   private void InitializeEnemiesCount()
   {
     instance.enemiesCount = new Count(
-        Mathf.FloorToInt(Mathf.Log(instance.level + 1, 2)),
-        Mathf.CeilToInt(Mathf.Log(instance.level + 1, 2) * 2)
+        Mathf.FloorToInt(Mathf.Log(instance.level + 2, 2)),
+        Mathf.CeilToInt(Mathf.Log(instance.level + 2, 2) * 2)
     );
   }
 

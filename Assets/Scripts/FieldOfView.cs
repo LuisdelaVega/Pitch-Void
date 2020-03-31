@@ -13,11 +13,11 @@ public class FieldOfView : MonoBehaviour
   [HideInInspector] public List<Transform> visibleTargets = new List<Transform>();
 
   /* Private variables */
-  private MovingObject thisMovingObject;
+  private MovingCharacter thisMovingObject;
 
   private void Start()
   {
-    thisMovingObject = transform.gameObject.GetComponent<MovingObject>();
+    thisMovingObject = transform.gameObject.GetComponent<MovingCharacter>();
     StartCoroutine("FindTargetsWithDelay", attackSpeed);
   }
 
@@ -41,7 +41,7 @@ public class FieldOfView : MonoBehaviour
     for (int i = 0; i < targetsInViewRadius.Length; i++)
     {
       Transform target = targetsInViewRadius[i].transform;
-      Vector2 targetMovement = target.GetComponent<MovingObject>().Direction;
+      Vector2 targetMovement = target.GetComponent<MovingCharacter>().Direction;
 
       if (targetMovement == null || targetMovement.sqrMagnitude == 0) continue;
 

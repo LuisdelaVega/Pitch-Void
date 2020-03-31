@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MovingObject
+public class Player : MovingCharacter
 {
   /* Private variables */
   private List<Follower> followers = new List<Follower>();
@@ -43,7 +43,7 @@ public class Player : MovingObject
     rb = GetComponent<Rigidbody2D>();
     bc = GetComponent<BoxCollider2D>();
     bc.size = new Vector2(0.8f, 0.45f);
-    previousPositions = new Queue<Vector2>();
+    PreviousPositions = new Queue<Vector2>();
     Direction = Vector2.up; // Start moving up
   }
 

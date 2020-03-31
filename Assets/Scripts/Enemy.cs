@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MovingObject
+public class Enemy : MovingCharacter
 {
   [SerializeField] private float randomTurnInterval = 3f; // Secconds
   [SerializeField] private int randomTurnChance = 100;
@@ -21,14 +21,14 @@ public class Enemy : MovingObject
   void Start()
   {
     rb = GetComponent<Rigidbody2D>();
-    previousPositions = new Queue<Vector2>();
+    PreviousPositions = new Queue<Vector2>();
 
     FindNewDirection();
     InvokeRepeating("RandomDirection", randomTurnInterval, randomTurnInterval);
   }
 
   // Update is called once per frame
-  void Update() => AvoidBorders();
+  // void Update() => AvoidBorders();
 
   private void AvoidBorders()
   {
@@ -48,7 +48,11 @@ public class Enemy : MovingObject
     }
   }
 
-  protected override void Move() => rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
+  protected override void Move()
+  {
+    AvoidBorders();
+    rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
+  }
 
   public override void RecruitFollower(Follower follower)
   {

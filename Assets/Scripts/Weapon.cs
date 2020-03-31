@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-  [SerializeField] private float cooldown = 1f;
-  [SerializeField] private float attackPower = 5f;
+  /* Attack */
+  [SerializeField] private float attackPower = 10f;
   [SerializeField] private string attackType = "Ranged";
   [SerializeField] private Projectile projectilePrefab;
+
+  /* Cooldown */
+  [SerializeField] private float cooldown = 1f;
   private float cooldownTimer = 0f;
+
 
   void Update()
   {
@@ -22,7 +26,7 @@ public class Weapon : MonoBehaviour
       switch (attackType)
       {
         case "Ranged":
-          var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+          var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity, transform);
           projectile.Target = visibleTargets[Random.Range(0, visibleTargets.Count)];
           cooldownTimer = cooldown;
           break;
@@ -30,4 +34,6 @@ public class Weapon : MonoBehaviour
           break;
       }
   }
+
+  public float GetAttackPower() => attackPower;
 }

@@ -101,7 +101,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.25}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -166,8 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc0baa66ee618e4aafbd70d0e44f66f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1
-  attackPower: 5
+  attackPower: 8
   attackType: Ranged
   projectilePrefab: {fileID: 8396231365545127304, guid: 3371b915d10fc42408f1309c94bb0af1,
     type: 3}
+  cooldown: 1
