@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3566534456303282891}
   - component: {fileID: 7013891686314518381}
   - component: {fileID: -7087010151942101118}
-  - component: {fileID: 3042568787018108319}
+  - component: {fileID: -9171543085010813834}
   m_Layer: 11
   m_Name: Explorer
   m_TagString: Spawner
@@ -152,9 +152,9 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
-  attackSpeed: 0.2
+  attackSpeed: 0.1
   visibleTargets: []
---- !u!114 &3042568787018108319
+--- !u!114 &-9171543085010813834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,11 +163,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7108201909564531415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc0baa66ee618e4aafbd70d0e44f66f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e560d0a5d95d9f42a19a03f0bf1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 4
-  attackType: Ranged
+  attackPower: 10
+  splash: 1
+  cooldown: 1
   projectilePrefab: {fileID: 2739718080901117103, guid: 4d0d916e79b333a4cbc1dbea79f442ae,
     type: 3}
-  cooldown: 0.1

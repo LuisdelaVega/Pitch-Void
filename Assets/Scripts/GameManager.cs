@@ -32,12 +32,11 @@ public class GameManager : MonoBehaviour
   public CompositeCollider2D borders;
   [HideInInspector] public List<String> followers;
   public List<GameObject> characters;
+  public CinemachineVirtualCamera vcam1;
+  public List<Enemy> innsmouthEnemies;
 
   /* Private variables */
   [SerializeField] private float levelStartDelay = 0f;
-  [SerializeField] private CinemachineVirtualCamera vcam1;
-  [SerializeField] private List<Enemy> innsmouthEnemies;
-  // [SerializeField] private List<Player> playerPrefabs;
   private GameObject levelImage;
   // private Text levelText;
   private BoardManager boardManager;

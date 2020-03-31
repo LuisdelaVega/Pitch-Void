@@ -11,10 +11,10 @@ public abstract class MovingCharacter : MonoBehaviour
   public Vector2 Direction { get; protected set; }
 
   /* Health */
-  [SerializeField] protected float health = 100f;
+  [SerializeField] protected float health = 500f;
 
   /* Related Characters */
-  protected MovingCharacter leader;
+  public MovingCharacter Leader { get; protected set; }
   protected Follower follower;
 
   /* Protected variables */
@@ -23,7 +23,7 @@ public abstract class MovingCharacter : MonoBehaviour
 
   private void Update()
   {
-    if (health <= 0.01f) Destroy(gameObject);
+    if (health <= 0.01f) Die();
   }
 
   void FixedUpdate()
@@ -48,4 +48,5 @@ public abstract class MovingCharacter : MonoBehaviour
 
   protected abstract void Move();
   public abstract void RecruitFollower(Follower follower);
+  protected abstract void Die();
 }

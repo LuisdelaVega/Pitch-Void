@@ -14,7 +14,7 @@ public class Follower : MovingCharacter
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.tag == "Player" && leader == null)
+    if (other.tag == "Player" && Leader == null)
     {
       Player player = other.gameObject.GetComponent<Player>();
       int followerCount = player.GetFollowerCount();
@@ -34,13 +34,13 @@ public class Follower : MovingCharacter
     }
   }
 
-  public void SwitchLeader(MovingCharacter newLeader) => leader = newLeader;
+  public void SwitchLeader(MovingCharacter newLeader) => Leader = newLeader;
 
   protected override void Move()
   {
-    if (leader == null) return;
+    if (Leader == null) return;
 
-    var nextPosition = leader.PreviousPositions.Dequeue();
+    var nextPosition = Leader.PreviousPositions.Dequeue();
     var heading = nextPosition - (Vector2)transform.position;
     var distance = heading.sqrMagnitude;
     var direction = heading / distance;
@@ -51,13 +51,27 @@ public class Follower : MovingCharacter
 
   public override void RecruitFollower(Follower newFollower)
   {
-    // Set my new follower then set me as his leader
+    // Set my new follower then set me as his Leader
     follower = newFollower;
     newFollower.SwitchLeader(this);
   }
 
-  public void Die()
+  protected override void Die()
   {
     GameManager.instance.followers.Insert(GameManager.instance.followers.Count, this.name);
+    MovingCharacter player;
+    do
+    {
+      player = Leader;
+    } while (player.Leader != null);
+
+    player.GetComponent<Player>().RemoveFollower(this);
+
+    if (follower != null)
+    {
+      follower.SwitchLeader(Leader);
+    }
+
+    Destroy(gameObject);
   }
 }

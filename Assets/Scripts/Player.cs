@@ -67,6 +67,21 @@ public class Player : MovingCharacter
     followers.Insert(followers.Count, newFollower);
   }
 
+  protected override void Die()
+  {
+    foreach (var currentFollower in followers)
+    {
+      Destroy(currentFollower);
+    }
+
+    Destroy(gameObject);
+  }
+
+  public void RemoveFollower(Follower deadFollower)
+  {
+    followers.Remove(deadFollower);
+  }
+
   /* Getters and Setters */
   public int GetFollowerCount() => followers.Count;
   public Follower GetLastFollower() => followers.Count != 0 ? followers[followers.Count - 1] : null;

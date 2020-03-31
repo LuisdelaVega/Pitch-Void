@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -6759030782072728673}
   - component: {fileID: -3741415777897454203}
   - component: {fileID: 2787070916564858941}
+  - component: {fileID: -3007852271077565180}
   m_Layer: 12
   m_Name: Villager
   m_TagString: Enemy
@@ -145,6 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  maxPreviousPositions: 14
+  health: 100
   randomTurnInterval: 3
   randomTurnChance: 75
 --- !u!114 &2787070916564858941
@@ -167,5 +170,21 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
-  attackSpeed: 0.2
   visibleTargets: []
+--- !u!114 &-3007852271077565180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489591652979530088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e560d0a5d95d9f42a19a03f0bf1ac54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPower: 10
+  splash: 1
+  cooldown: 1
+  projectilePrefab: {fileID: 2739718080901117103, guid: 4d0d916e79b333a4cbc1dbea79f442ae,
+    type: 3}

@@ -9,8 +9,8 @@ public class FieldOfView : MonoBehaviour
   public float viewRadius = 7f;
   public LayerMask targetMask;
   public LayerMask obstacleMask;
-  public float attackSpeed = 0.1f;
   [HideInInspector] public List<Transform> visibleTargets = new List<Transform>();
+  private float scanSpeed = 0.01f;
 
   /* Private variables */
   private MovingCharacter thisMovingObject;
@@ -18,7 +18,7 @@ public class FieldOfView : MonoBehaviour
   private void Start()
   {
     thisMovingObject = transform.gameObject.GetComponent<MovingCharacter>();
-    StartCoroutine("FindTargetsWithDelay", attackSpeed);
+    StartCoroutine("FindTargetsWithDelay", scanSpeed);
   }
 
   IEnumerator FindTargetsWithDelay(float delay)

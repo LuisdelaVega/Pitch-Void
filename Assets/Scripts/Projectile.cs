@@ -5,8 +5,6 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
   [SerializeField] private float moveSpeed = 12f;
-  // [SerializeField] private float damage = 10f;
-  [SerializeField] private float splash = 1f;
   private bool targetAccuired = false;
   private Transform target;
   [HideInInspector]

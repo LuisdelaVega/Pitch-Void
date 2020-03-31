@@ -59,6 +59,12 @@ public class Enemy : MovingCharacter
     // TODO: Implement this to be used when generating enemies so we have enemy trains
   }
 
+  protected override void Die()
+  {
+    // TODO: Implement something like what Followers curently have
+    Destroy(gameObject);
+  }
+
   private void FindNewDirection()
   {
     Vector2 newDirection;

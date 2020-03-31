@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1704906347824053700}
   - component: {fileID: 5152595336001106018}
   - component: {fileID: 7685492218180208135}
-  - component: {fileID: 7779254527160517209}
+  - component: {fileID: 597786977414534693}
   m_Layer: 11
   m_Name: Bounty Hunter
   m_TagString: Spawner
@@ -152,9 +152,9 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
-  attackSpeed: 0.2
+  attackSpeed: 0.1
   visibleTargets: []
---- !u!114 &7779254527160517209
+--- !u!114 &597786977414534693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,11 +163,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4932159034399749592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc0baa66ee618e4aafbd70d0e44f66f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e560d0a5d95d9f42a19a03f0bf1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 6
-  attackType: Ranged
+  attackPower: 10
+  splash: 1
+  cooldown: 1
   projectilePrefab: {fileID: 2739718080901117103, guid: 4d0d916e79b333a4cbc1dbea79f442ae,
     type: 3}
-  cooldown: 1
