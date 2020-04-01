@@ -85,6 +85,8 @@ public class Enemy : MovingCharacter
 
   private void RandomDirection()
   {
+    if (player == null) return;
+
     var distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
     var distanceToPlayerPercentage = Mathf.Abs(distanceToPlayer) / diagonalOfRoom;
     var probabilityOfTurn = randomTurnChance * distanceToPlayerPercentage;

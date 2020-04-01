@@ -71,7 +71,7 @@ public class Player : MovingCharacter
   {
     foreach (var currentFollower in followers)
     {
-      Destroy(currentFollower);
+      Destroy(currentFollower.gameObject);
     }
 
     Destroy(gameObject);

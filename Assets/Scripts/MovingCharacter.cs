@@ -4,14 +4,14 @@ using UnityEngine;
 
 public abstract class MovingCharacter : MonoBehaviour
 {
+  /* Health */
+  [SerializeField] protected float health = 500f;
+
   /* Movement */
   [SerializeField] protected float moveSpeed = 4.5f;
   [SerializeField] private int maxPreviousPositions = 14;
   public Queue<Vector2> PreviousPositions { get; protected set; }
   public Vector2 Direction { get; protected set; }
-
-  /* Health */
-  [SerializeField] protected float health = 500f;
 
   /* Related Characters */
   public MovingCharacter Leader { get; protected set; }
@@ -41,6 +41,11 @@ public abstract class MovingCharacter : MonoBehaviour
     }
 
     Move();
+  }
+
+  private void OnDestroy()
+  {
+    PreviousPositions.Clear();
   }
 
   public void RestoreHealth(float amount) => health += health <= 0 ? 0 : health;
