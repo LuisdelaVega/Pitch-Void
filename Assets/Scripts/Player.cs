@@ -6,27 +6,33 @@ public class Player : MovingCharacter
 {
   /* Private variables */
   private List<Follower> followers = new List<Follower>();
+
+  /* Weapons */
+  public List<Weapon> weapons;
+  private Weapon activeWeapon;
+
+  /* Player controls */
   private Controls controls;
 
   void Awake() => controls = new Controls();
+
+  void Start()
+  {
+    rb = GetComponent<Rigidbody2D>();
+    PreviousPositions = new Queue<Vector2>();
+    activeWeapon = gameObject.GetComponentInChildren<Weapon>();
+  }
 
   void OnEnable()
   {
     controls.Enable();
 
-    controls.Player.Shoot.performed += _ => Shoot();
-
-    controls.Player.Movement.performed += ctx => ChangeDirection(ctx.ReadValue<Vector2>());
-  }
-
-  // TODO: This is for testing
-  void Shoot()
-  {
-    Weapon weapon = gameObject.GetComponentInChildren<Weapon>();
-    if (weapon != null)
+    controls.Weapon.Attack.performed += ctx =>
     {
-      weapon.Attack();
-    }
+      Attack();
+      holdAttack = ctx.ReadValue<float>() >= 0.9f;
+    };
+    controls.Player.Movement.performed += ctx => ChangeDirection(ctx.ReadValue<Vector2>());
   }
 
   private void ChangeDirection(Vector2 newDirection) => Direction = newDirection;
@@ -34,12 +40,6 @@ public class Player : MovingCharacter
   void OnDisable() => controls.Disable();
 
   // Start is called before the first frame update
-  void Start()
-  {
-    rb = GetComponent<Rigidbody2D>();
-    PreviousPositions = new Queue<Vector2>();
-    // Direction = Vector2.up; // Start moving up
-  }
 
   void OnTriggerEnter2D(Collider2D other)
   {
@@ -52,6 +52,8 @@ public class Player : MovingCharacter
   }
 
   protected override void Move() => rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
+
+  protected override void Attack() => activeWeapon.Attack();
 
   public override void RecruitFollower(Follower newFollower)
   {

@@ -44,6 +44,9 @@ public class Follower : MovingCharacter
     Direction = direction;
   }
 
+  // TODO: Implement this
+  protected override void Attack() => Debug.Log("Attack");
+
   public override void RecruitFollower(Follower newFollower)
   {
     // Set my new follower then set me as his Leader

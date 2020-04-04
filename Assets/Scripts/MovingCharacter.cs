@@ -7,6 +7,9 @@ public abstract class MovingCharacter : MonoBehaviour
   /* Health */
   [SerializeField] protected float health = 500f;
 
+  /* Attack */
+  protected bool holdAttack = false;
+
   /* Movement */
   [SerializeField] protected float moveSpeed = 5.5f;
   [SerializeField] private int maxPreviousPositions = 14;
@@ -27,6 +30,8 @@ public abstract class MovingCharacter : MonoBehaviour
       Die();
       Destroy(gameObject);
     }
+    else if (holdAttack)
+      Attack();
   }
 
   void FixedUpdate()
@@ -54,7 +59,9 @@ public abstract class MovingCharacter : MonoBehaviour
   public void RestoreHealth(float amount) => health += health <= 0 ? 0 : health;
   public void ApplyDamage(float damage) => health -= damage <= 0 ? 0 : damage;
 
+  /* Abstract methods */
   protected abstract void Move();
+  protected abstract void Attack();
   public abstract void RecruitFollower(Follower follower);
   protected abstract void Die();
 }

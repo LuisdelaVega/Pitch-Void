@@ -54,6 +54,8 @@ public class Enemy : MovingCharacter
     rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
   }
 
+  protected override void Attack() => Debug.Log("Enemy Attack");
+
   public override void RecruitFollower(Follower follower)
   {
     // TODO: Implement this to be used when generating enemies so we have enemy trains

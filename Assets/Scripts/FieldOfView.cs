@@ -58,10 +58,5 @@ public class FieldOfView : MonoBehaviour
       else if (Vector2.Distance(transform.position, visibleTarget.position) < Vector2.Distance(transform.position, closestTarget.position))
         closestTarget = visibleTarget;
     });
-
-    // TODO: This will happen with the shoot trigger for the player and some other trigger for the followers and enemies
-    // Weapon weapon = thisMovingObject.GetComponent<Weapon>();
-    // if (weapon != null)
-    //   weapon.Attack(closestTarget);
   }
 }
