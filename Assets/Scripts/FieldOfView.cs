@@ -5,14 +5,15 @@ using UnityEngine;
 public class FieldOfView : MonoBehaviour
 {
   /* Public variables */
-  [Range(0, 360)] public float viewAngle = 45f;
   public float viewRadius = 7f;
   public LayerMask targetMask;
   public LayerMask obstacleMask;
   [HideInInspector] public List<Transform> visibleTargets = new List<Transform>();
-  private float scanSpeed = 0.01f;
+
+  public Transform closestTarget;
 
   /* Private variables */
+  private float scanSpeed = 0.01f;
   private MovingCharacter thisMovingObject;
 
   private void Start()
@@ -32,50 +33,35 @@ public class FieldOfView : MonoBehaviour
 
   void FindVisibleTargets()
   {
-    if (thisMovingObject == null) return;
-    if (thisMovingObject.Direction == null || thisMovingObject.Direction.sqrMagnitude == 0) return;
-
+    // Clear targets
     visibleTargets.Clear();
+    closestTarget = null;
+
     Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(transform.position, viewRadius, targetMask);
 
     for (int i = 0; i < targetsInViewRadius.Length; i++)
     {
       Transform target = targetsInViewRadius[i].transform;
-      Vector2 targetMovement = target.GetComponent<MovingCharacter>().Direction;
-
-      if (targetMovement == null || targetMovement.sqrMagnitude == 0) continue;
-
       Vector2 directionToTarget = (target.position - transform.position).normalized;
-      if (Vector2.Angle(thisMovingObject.Direction, directionToTarget) < viewAngle / 2)
-      {
-        float distanceToTarget = Vector2.Distance(transform.position, target.position);
+      float distanceToTarget = Vector2.Distance(transform.position, target.position);
 
-        if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
-        {
-          visibleTargets.Add(target);
-        }
+      if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
+      {
+        visibleTargets.Add(target);
       }
     }
 
-    var weapon = thisMovingObject.GetComponent<Weapon>();
-    if (weapon != null)
-      weapon.Attack(visibleTargets);
-  }
-
-  // Used only by the FieldOfViewEditor to draw the FOV
-  public Vector2 DirectionFromAngle(float angleInDegrees, bool angleIsGlobal)
-  {
-    if (!angleIsGlobal && thisMovingObject != null)
+    visibleTargets.ForEach(visibleTarget =>
     {
-      if (thisMovingObject.Direction != null)
-      {
-        if (thisMovingObject.Direction.y == 0)
-          angleInDegrees += thisMovingObject.Direction.x > 0 ? 90 : -90;
-        else if (thisMovingObject.Direction.x == 0)
-          angleInDegrees += thisMovingObject.Direction.y > 0 ? 0 : 180;
-      }
-    }
+      if (closestTarget == null)
+        closestTarget = visibleTarget;
+      else if (Vector2.Distance(transform.position, visibleTarget.position) < Vector2.Distance(transform.position, closestTarget.position))
+        closestTarget = visibleTarget;
+    });
 
-    return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    // TODO: This will happen with the shoot trigger for the player and some other trigger for the followers and enemies
+    // Weapon weapon = thisMovingObject.GetComponent<Weapon>();
+    // if (weapon != null)
+    //   weapon.Attack(closestTarget);
   }
 }

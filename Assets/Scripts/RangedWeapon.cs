@@ -6,14 +6,20 @@ public class RangedWeapon : Weapon
 {
 
   public Projectile projectilePrefab;
+  [SerializeField] private float projectileForce = 20f;
 
-  public override void Attack(List<Transform> visibleTargets)
+  public override void Attack()
   {
-    if (visibleTargets.Count == 0 || cooldownTimer > 0.01f)
-      return; // Don't attack
+    if (cooldownTimer > 0.01f)
+      return;
 
-    var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity, transform);
-    projectile.Target = visibleTargets[Random.Range(0, visibleTargets.Count)];
+    Vector2 direction = GetDirection();
+    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+    var projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation, transform.parent);
+    Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+    rb.AddForce(firePoint.right * projectileForce, ForceMode2D.Impulse);
+
     cooldownTimer = cooldown;
   }
 }

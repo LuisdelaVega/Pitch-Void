@@ -39,7 +39,7 @@ public class Enemy : MovingCharacter
       switch (raycastHit.collider.tag)
       {
         case "Enemy":
-        case "Border":
+        case "Wall":
           FindNewDirection();
           break;
         default:

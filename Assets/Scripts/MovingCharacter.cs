@@ -8,7 +8,7 @@ public abstract class MovingCharacter : MonoBehaviour
   [SerializeField] protected float health = 500f;
 
   /* Movement */
-  [SerializeField] protected float moveSpeed = 4.5f;
+  [SerializeField] protected float moveSpeed = 5.5f;
   [SerializeField] private int maxPreviousPositions = 14;
   public Queue<Vector2> PreviousPositions { get; protected set; }
   public Vector2 Direction { get; protected set; }
@@ -19,16 +19,19 @@ public abstract class MovingCharacter : MonoBehaviour
 
   /* Protected variables */
   protected Rigidbody2D rb;
-  protected BoxCollider2D bc;
 
   private void Update()
   {
-    if (health <= 0.01f) Die();
+    if (health <= 0)
+    {
+      Die();
+      Destroy(gameObject);
+    }
   }
 
   void FixedUpdate()
   {
-    if (moveSpeed <= 0.01f)
+    if (moveSpeed <= 0)
       return;
 
     // Remember your previous positions

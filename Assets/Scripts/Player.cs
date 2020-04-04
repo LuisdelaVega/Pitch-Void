@@ -14,23 +14,19 @@ public class Player : MovingCharacter
   {
     controls.Enable();
 
-    // Set up the actions for the controls
-    controls.Player.MoveUp.performed += ctx =>
+    controls.Player.Shoot.performed += _ => Shoot();
+
+    controls.Player.Movement.performed += ctx => ChangeDirection(ctx.ReadValue<Vector2>());
+  }
+
+  // TODO: This is for testing
+  void Shoot()
+  {
+    Weapon weapon = gameObject.GetComponentInChildren<Weapon>();
+    if (weapon != null)
     {
-      if (Direction != Vector2.down) ChangeDirection(Vector2.up);
-    };
-    controls.Player.MoveRight.performed += ctx =>
-    {
-      if (Direction != Vector2.left) ChangeDirection(Vector2.right);
-    };
-    controls.Player.MoveDown.performed += ctx =>
-    {
-      if (Direction != Vector2.up) ChangeDirection(Vector2.down);
-    };
-    controls.Player.MoveLeft.performed += ctx =>
-    {
-      if (Direction != Vector2.right) ChangeDirection(Vector2.left);
-    };
+      weapon.Attack();
+    }
   }
 
   private void ChangeDirection(Vector2 newDirection) => Direction = newDirection;
@@ -41,10 +37,8 @@ public class Player : MovingCharacter
   void Start()
   {
     rb = GetComponent<Rigidbody2D>();
-    bc = GetComponent<BoxCollider2D>();
-    bc.size = new Vector2(0.8f, 0.45f);
     PreviousPositions = new Queue<Vector2>();
-    Direction = Vector2.up; // Start moving up
+    // Direction = Vector2.up; // Start moving up
   }
 
   void OnTriggerEnter2D(Collider2D other)

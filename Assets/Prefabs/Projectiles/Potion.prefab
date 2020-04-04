@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8396231365545127307}
   - component: {fileID: 8396231365545127319}
   - component: {fileID: 8396231365545127304}
+  - component: {fileID: -7630698049384569676}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Untagged
@@ -143,5 +144,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 12
-  damage: 10
-  splash: 1
+--- !u!50 &-7630698049384569676
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396231365545127308}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

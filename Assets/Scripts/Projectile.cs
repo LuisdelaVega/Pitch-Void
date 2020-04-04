@@ -4,46 +4,25 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-  [SerializeField] private float moveSpeed = 12f;
-  private bool targetAccuired = false;
-  private Transform target;
-  [HideInInspector]
-  public Transform Target
-  {
-    private get => target;
-    set
-    {
-      target = value;
-      targetAccuired = true;
-    }
-  }
+  public LayerMask targetMask;
+  private float damage = 0;
 
-  void Update()
+  private void Start()
   {
-    if (targetAccuired && target == null)
-      Destroy(gameObject);
+    // Get these values here in case any of these Components get Destroyed
+    targetMask = transform.parent.GetComponent<FieldOfView>().targetMask;
+    damage = transform.parent.GetComponentInChildren<Weapon>().GetAttackPower();
   }
-
-  private void FixedUpdate() => MoveToTarget();
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.tag == target.tag)
+    int layerMask = 1 << other.gameObject.layer;
+    if (layerMask == targetMask)
     {
-      other.GetComponent<MovingCharacter>().ApplyDamage(transform.parent.GetComponent<Weapon>().GetAttackPower());
+      other.GetComponent<MovingCharacter>().ApplyDamage(damage);
       Destroy(gameObject);
     }
-  }
-
-  private void MoveToTarget()
-  {
-    if (!targetAccuired || target == null)
-      return;
-
-    transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-    Vector2 direction = target.transform.position - transform.position;
-    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-    transform.rotation = Quaternion.Slerp(transform.rotation, rotation, moveSpeed * Time.deltaTime);
+    else if (other.tag == "Wall")
+      Destroy(gameObject);
   }
 }

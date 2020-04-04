@@ -7,8 +7,6 @@ public class Follower : MovingCharacter
   // Start is called before the first frame update
   void Start()
   {
-    bc = GetComponent<BoxCollider2D>();
-    bc.size = new Vector2(1.8f, 1.8f);
     PreviousPositions = new Queue<Vector2>();
   }
 
@@ -28,9 +26,6 @@ public class Follower : MovingCharacter
         SwitchLeader(player);
 
       player.RecruitFollower(this);
-
-      // Make the Box Collider smaller
-      bc.size = new Vector2(0.8f, 0.45f);
     }
   }
 
@@ -45,7 +40,7 @@ public class Follower : MovingCharacter
     var distance = heading.sqrMagnitude;
     var direction = heading / distance;
 
-    transform.position = Vector2.MoveTowards(transform.position, nextPosition, moveSpeed * Time.deltaTime);
+    transform.position = Vector2.MoveTowards(transform.position, nextPosition, moveSpeed * Time.fixedDeltaTime);
     Direction = direction;
   }
 
@@ -58,14 +53,9 @@ public class Follower : MovingCharacter
 
   protected override void Die()
   {
-    Debug.Log("Switching the Leader of my follower");
-    Debug.Log("follower: " + follower);
-    Debug.Log("Leader: " + Leader);
-    Debug.Log("follower.Leader: " + follower.Leader);
     // If I have a follower, make him follow my Leader
-    if (follower != null) follower.SwitchLeader(Leader);
-    Debug.Log("My follower's Leader has been switched");
-    Debug.Log("follower.Leader: " + follower.Leader);
+    if (follower != null)
+      follower.SwitchLeader(Leader);
 
     // Find the Player and remove myself from the list of Characters following him
     MovingCharacter player = Leader;
@@ -77,8 +67,5 @@ public class Follower : MovingCharacter
     // Subscribe myself to the available Followers
     string name = this.name.Substring(0, this.name.Length - "(Clone)".Length);
     GameManager.instance.followers.Insert(GameManager.instance.followers.Count, name);
-
-    // Finally, rest in peace
-    Destroy(gameObject);
   }
 }

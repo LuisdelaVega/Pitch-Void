@@ -30,28 +30,35 @@ public class GameManager : MonoBehaviour
   /* Public variables */
   public static GameManager instance = null;
   public CompositeCollider2D borders;
-  [HideInInspector] public List<String> followers;
+
+  /* Characters */
   public List<GameObject> characters;
-  public CinemachineVirtualCamera vcam1;
+  private Player player;
+  private GameObject playerPrefab;
+  [HideInInspector] public List<String> followers;
   public List<Enemy> innsmouthEnemies;
+  private Count enemiesCount;
+  private int enemiesToSpawn;
+  private int enemiesSpawnedInRoom = 0;
+
+  /* Items */
+  public List<GameObject> weapons;
+
+  /* Cinemachine */
+  public CinemachineVirtualCamera vcam1;
 
   /* Private variables */
+  private BoardManager boardManager;
   [SerializeField] private float levelStartDelay = 0f;
   private GameObject levelImage;
-  // private Text levelText;
-  private BoardManager boardManager;
-  // private bool doingSetup = true;
   private int level = 1;
   private string[] levels = new string[]
       {
             "Innsmouth",
             "Dunwich"
       };
-  private Count enemiesCount;
-  private int enemiesToSpawn;
-  private int enemiesSpawnedInRoom = 0;
-  private GameObject playerPrefab;
-  private Player player;
+  // private Text levelText;
+  // private bool doingSetup = true;
 
   // Start is called before the first frame update
   void Awake()
@@ -120,7 +127,7 @@ public class GameManager : MonoBehaviour
     enemiesToSpawn = Random.Range(enemiesCount.minimum, enemiesCount.maximum);
 
     InvokeRepeating("SpawnEnemies", 3, 4);
-    InvokeRepeating("SpawnFollowwers", 3, 4);
+    // InvokeRepeating("SpawnFollowwers", 3, 4);
   }
 
   //Hides black image used between levels
