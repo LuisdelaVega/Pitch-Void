@@ -30,16 +30,17 @@ public abstract class MovingCharacter : MonoBehaviour
       Die();
       Destroy(gameObject);
     }
-    else if (holdAttack)
-      Attack();
   }
 
   void FixedUpdate()
   {
-    if (moveSpeed <= 0)
-      return;
+    if (holdAttack)
+      Attack();
 
-    // Remember your previous positions
+    if (moveSpeed > 0)
+      Move();
+
+    // TODO: Remove this
     Vector2 previousPosition = new Vector2(transform.position.x, transform.position.y);
     PreviousPositions.Enqueue(previousPosition);
 
@@ -47,8 +48,6 @@ public abstract class MovingCharacter : MonoBehaviour
     {
       PreviousPositions.Dequeue();
     }
-
-    Move();
   }
 
   private void OnDestroy()
@@ -62,6 +61,7 @@ public abstract class MovingCharacter : MonoBehaviour
   /* Abstract methods */
   protected abstract void Move();
   protected abstract void Attack();
+  //TODO: Probably gonna remove the methods below
   public abstract void RecruitFollower(Follower follower);
   protected abstract void Die();
 }

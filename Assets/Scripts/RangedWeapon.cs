@@ -14,10 +14,9 @@ public class RangedWeapon : Weapon
       return;
 
     cooldownTimer = cooldown;
-    animator.SetFloat("cooldownTimer", cooldownTimer);
-    var projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation, transform.parent.parent);
+    var projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation, transform.parent);
     Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
     rb.AddForce(firePoint.right * projectileForce, ForceMode2D.Impulse);
-
+    recoilScript.AddRecoil();
   }
 }
