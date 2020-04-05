@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -5602813530348549102}
   - component: {fileID: -6906897709931417240}
   - component: {fileID: -5620080775616942381}
-  - component: {fileID: -6024756275005015397}
   m_Layer: 12
   m_Name: Deep One
   m_TagString: Enemy
@@ -30,10 +29,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8671040359916251570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4308810952838489643}
+  - {fileID: 8698570936906090136}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -172,25 +171,7 @@ MonoBehaviour:
     m_Bits: 0
   visibleTargets: []
   closestTarget: {fileID: 0}
---- !u!114 &-6024756275005015397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8671040359916251570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e560d0a5d95d9f42a19a03f0bf1ac54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackPower: 10
-  splash: 1
-  cooldown: 1
-  projectilePrefab: {fileID: 2739718080901117103, guid: 4d0d916e79b333a4cbc1dbea79f442ae,
-    type: 3}
-  projectileForce: 4
---- !u!1001 &6963209985315066686
+--- !u!1001 &2584567022138127245
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -200,7 +181,7 @@ PrefabInstance:
     - target: {fileID: 4817231642374507868, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
       propertyPath: m_Name
-      value: Gun
+      value: Tommy Gun
       objectReference: {fileID: 0}
     - target: {fileID: 6586991837681579285, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
@@ -259,9 +240,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2af2190b197e24e98d3c559da79166, type: 3}
---- !u!4 &4308810952838489643 stripped
+--- !u!4 &8698570936906090136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6586991837681579285, guid: ad2af2190b197e24e98d3c559da79166,
     type: 3}
-  m_PrefabInstance: {fileID: 6963209985315066686}
+  m_PrefabInstance: {fileID: 2584567022138127245}
   m_PrefabAsset: {fileID: 0}

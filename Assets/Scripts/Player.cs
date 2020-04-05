@@ -20,7 +20,8 @@ public class Player : MovingCharacter
   {
     rb = GetComponent<Rigidbody2D>();
     PreviousPositions = new Queue<Vector2>();
-    activeWeapon = gameObject.GetComponentInChildren<Weapon>();
+    Hands hands = GetComponentInChildren<Hands>();
+    activeWeapon = Instantiate(weapons[0], hands.transform.position, Quaternion.identity, hands.transform);
   }
 
   void OnEnable()
@@ -35,9 +36,9 @@ public class Player : MovingCharacter
     controls.Player.Movement.performed += ctx => ChangeDirection(ctx.ReadValue<Vector2>());
   }
 
-  private void ChangeDirection(Vector2 newDirection) => Direction = newDirection;
-
   void OnDisable() => controls.Disable();
+
+  private void ChangeDirection(Vector2 newDirection) => Direction = newDirection;
 
   // Start is called before the first frame update
 
@@ -73,6 +74,7 @@ public class Player : MovingCharacter
     Destroy(gameObject);
   }
 
+  // TODO: The Player won't care about his followers in the future
   public void RemoveFollower(Follower deadFollower)
   {
     followers.Remove(deadFollower);

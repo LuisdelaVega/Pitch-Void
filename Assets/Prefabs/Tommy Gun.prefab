@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6586991837681579285}
   - component: {fileID: 3501246300566999006}
   - component: {fileID: 4206024002109007232}
+  - component: {fileID: 5282560875721643368}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: Tommy Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,11 +100,31 @@ MonoBehaviour:
   firePoint: {fileID: 3444253564461638858}
   attackPower: 10
   splash: 1
-  cooldown: 0.25
+  cooldown: 0.1
   cooldownTimer: 0
+  animator: {fileID: 5282560875721643368}
   projectilePrefab: {fileID: 2739718080901117103, guid: 4d0d916e79b333a4cbc1dbea79f442ae,
     type: 3}
   projectileForce: 20
+--- !u!95 &5282560875721643368
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4817231642374507868}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c89dcb7f2f559c43a183af28870b288, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5318045076150576130
 GameObject:
   m_ObjectHideFlags: 0

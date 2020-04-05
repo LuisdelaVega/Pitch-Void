@@ -13,13 +13,11 @@ public class RangedWeapon : Weapon
     if (cooldownTimer > 0.01f)
       return;
 
-    Vector2 direction = GetDirection();
-    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-    var projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation, transform.parent);
+    cooldownTimer = cooldown;
+    animator.SetFloat("cooldownTimer", cooldownTimer);
+    var projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation, transform.parent.parent);
     Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
     rb.AddForce(firePoint.right * projectileForce, ForceMode2D.Impulse);
 
-    cooldownTimer = cooldown;
   }
 }
