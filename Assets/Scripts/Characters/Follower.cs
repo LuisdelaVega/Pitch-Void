@@ -53,22 +53,4 @@ public class Follower : MovingCharacter
     follower = newFollower;
     newFollower.SwitchLeader(this);
   }
-
-  protected override void Die()
-  {
-    // If I have a follower, make him follow my Leader
-    if (follower != null)
-      follower.SwitchLeader(Leader);
-
-    // Find the Player and remove myself from the list of Characters following him
-    MovingCharacter player = Leader;
-    while (player.Leader != null)
-      player = player.Leader;
-
-    player.GetComponent<Player>().RemoveFollower(this);
-
-    // Subscribe myself to the available Followers
-    string name = this.name.Substring(0, this.name.Length - "(Clone)".Length);
-    GameManager.instance.followers.Insert(GameManager.instance.followers.Count, name);
-  }
 }

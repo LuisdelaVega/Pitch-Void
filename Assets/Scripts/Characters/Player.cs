@@ -62,14 +62,12 @@ public class Player : MovingCharacter
     followers.Insert(followers.Count, newFollower);
   }
 
-  protected override void Die()
+  private void OnDestroy()
   {
     foreach (var currentFollower in followers)
     {
       Destroy(currentFollower.gameObject);
     }
-
-    Destroy(gameObject);
   }
 
   // TODO: Remove this. The Player won't care about his followers in the future

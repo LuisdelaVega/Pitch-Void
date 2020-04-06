@@ -10,7 +10,7 @@ public class RangedWeapon : Weapon
 
   public override void Attack()
   {
-    if (cooldownTimer > 0.01f)
+    if (cooldownTimer > 0)
       return;
 
     cooldownTimer = cooldown;

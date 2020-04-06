@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &4206024002109007232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumOffsetDistance: 0.3
-  recoilAcceleration: 50
-  weaponRecoilStartSpeend: -10
+  recoilAcceleration: 40
+  weaponRecoilStartSpeend: -8
 --- !u!1 &5318045076150576130
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,10 +18,10 @@ public abstract class Weapon : MonoBehaviour
 
   private void Start() => recoilScript = GetComponent<Recoil>();
 
-  private void FixedUpdate()
+  private void Update()
   {
     if (cooldownTimer > 0)
-      cooldownTimer -= Time.fixedDeltaTime;
+      cooldownTimer = Mathf.Clamp(cooldownTimer - Time.deltaTime, 0, cooldown);
 
     Rotate();
   }
@@ -31,7 +31,7 @@ public abstract class Weapon : MonoBehaviour
     Vector2 direction = GetDirection();
     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), 12 * Time.fixedDeltaTime);
+    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), 12 * Time.deltaTime);
   }
 
   private Vector2 GetDirection()

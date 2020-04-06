@@ -25,18 +25,12 @@ public abstract class MovingCharacter : MonoBehaviour
 
   private void Update()
   {
-    if (health <= 0)
-    {
-      Die();
-      Destroy(gameObject);
-    }
+    if (holdAttack)
+      Attack();
   }
 
   void FixedUpdate()
   {
-    if (holdAttack)
-      Attack();
-
     if (moveSpeed > 0)
       Move();
 
@@ -63,5 +57,4 @@ public abstract class MovingCharacter : MonoBehaviour
   protected abstract void Attack();
   //TODO: Probably gonna remove the methods below
   public abstract void RecruitFollower(Follower follower);
-  protected abstract void Die();
 }

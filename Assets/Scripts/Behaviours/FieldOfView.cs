@@ -45,7 +45,7 @@ public class FieldOfView : MonoBehaviour
       Vector2 directionToTarget = (target.position - transform.position).normalized;
       float distanceToTarget = Vector2.Distance(transform.position, target.position);
 
-      if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
+      if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
       {
         visibleTargets.Add(target);
       }

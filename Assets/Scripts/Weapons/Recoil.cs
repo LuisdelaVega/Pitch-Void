@@ -15,8 +15,6 @@ public class Recoil : MonoBehaviour
   private Vector3 offsetPosiiton;
   private Vector3 recoilSpeed;
 
-  private Vector3 originalPosition;
-
   public void AddRecoil()
   {
     recoilInEffect = true;
@@ -27,7 +25,6 @@ public class Recoil : MonoBehaviour
 
   private void Start()
   {
-    originalPosition = transform.position;
     recoilSpeed = Vector3.zero;
     offsetPosiiton = Vector3.zero;
 
@@ -59,7 +56,6 @@ public class Recoil : MonoBehaviour
 
       recoilInEffect = false;
       weaponHeadedBackToStartPosition = false;
-      //   transform.position = originalPosition;
       return;
     }
 

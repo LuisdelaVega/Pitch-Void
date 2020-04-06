@@ -16,13 +16,20 @@ public class Projectile : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    int layerMask = 1 << other.gameObject.layer;
-    if (layerMask == targetMask)
+
+    if (other.gameObject != transform.parent.gameObject && other.TryGetComponent<IDamageable>(out var damageable))
     {
-      other.GetComponent<MovingCharacter>().ApplyDamage(damage);
+      damageable.DealDamage(damage);
       Destroy(gameObject);
     }
     else if (other.tag == "Wall")
       Destroy(gameObject);
+
+    // int layerMask = 1 << other.gameObject.layer;
+    // if (layerMask == targetMask)
+    // {
+    //   other.GetComponent<MovingCharacter>().ApplyDamage(damage);
+    //   Destroy(gameObject);
+    // }
   }
 }
