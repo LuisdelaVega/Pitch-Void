@@ -34,7 +34,7 @@ public abstract class MovingCharacter : MonoBehaviour
     if (moveSpeed > 0)
       Move();
 
-    // TODO: Remove this
+    // TODO: Remove the code below
     Vector2 previousPosition = new Vector2(transform.position.x, transform.position.y);
     PreviousPositions.Enqueue(previousPosition);
 
@@ -42,11 +42,6 @@ public abstract class MovingCharacter : MonoBehaviour
     {
       PreviousPositions.Dequeue();
     }
-  }
-
-  private void OnDestroy()
-  {
-    PreviousPositions.Clear();
   }
 
   public void RestoreHealth(float amount) => health += health <= 0 ? 0 : health;

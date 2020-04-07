@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Border
   - Food
   - Tail
   - Spawner
@@ -12,6 +11,7 @@ TagManager:
   - Attack
   - Follower
   - Wall
+  - Blocking Object
   layers:
   - Default
   - TransparentFX

@@ -47,6 +47,12 @@ public class Follower : MovingCharacter
   // TODO: Implement this
   protected override void Attack() => Debug.Log("Attack");
 
+  private void OnDestroy()
+  {
+    //TODO: Remove the code below
+    PreviousPositions.Clear();
+  }
+
   public override void RecruitFollower(Follower newFollower)
   {
     // Set my new follower then set me as his Leader

@@ -16,7 +16,15 @@ public abstract class Weapon : MonoBehaviour
   /* Recoil */
   protected Recoil recoilScript;
 
-  private void Start() => recoilScript = GetComponent<Recoil>();
+  /* Sprite */
+  SpriteRenderer spriteRenderer;
+  private float rotationSpeed = 12f;
+
+  private void Start()
+  {
+    spriteRenderer = GetComponent<SpriteRenderer>();
+    recoilScript = GetComponent<Recoil>();
+  }
 
   private void Update()
   {
@@ -30,8 +38,9 @@ public abstract class Weapon : MonoBehaviour
   {
     Vector2 direction = GetDirection();
     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    spriteRenderer.flipY = angle > 90 || angle < -90;
 
-    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), 12 * Time.deltaTime);
+    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotationSpeed * Time.deltaTime);
   }
 
   private Vector2 GetDirection()

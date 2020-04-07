@@ -19,7 +19,7 @@ public class Player : MovingCharacter
   void Start()
   {
     rb = GetComponent<Rigidbody2D>();
-    PreviousPositions = new Queue<Vector2>();
+    PreviousPositions = new Queue<Vector2>(); // TODO: Remove this
     Vector3 weaponPosition = new Vector3(transform.position.x, transform.position.y - 0.25f, transform.position.z);
     activeWeapon = Instantiate(weapons[0], weaponPosition, Quaternion.identity, transform);
   }
@@ -64,6 +64,9 @@ public class Player : MovingCharacter
 
   private void OnDestroy()
   {
+    // We probably want to run some death animation here, if the object hasn't been removed already
+    Destroy(activeWeapon);
+    // TODO: Remove the code below
     foreach (var currentFollower in followers)
     {
       Destroy(currentFollower.gameObject);

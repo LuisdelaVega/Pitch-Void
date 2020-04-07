@@ -9,7 +9,7 @@ public class BoardManager : MonoBehaviour
   public GameObject SetupScene(int level, GameObject playerPrefab, CinemachineVirtualCamera vcam1)
   {
 
-    var player = Instantiate(playerPrefab, new Vector2(0, -8), Quaternion.identity);
+    var player = Instantiate(playerPrefab, new Vector2(0, 0), Quaternion.identity);
     // player.AddComponent(typeof(Player)); // TODO: Instead of doing this, add an isAcive boolean to the Player script and add the Player script to all Player Characters
     player.tag = "Player";
     vcam1.m_LookAt = player.transform;

@@ -89,6 +89,12 @@ public class Enemy : MovingCharacter
     if (Random.Range(0, 100) < probabilityOfTurn) FindNewDirection();
   }
 
+  private void OnDestroy()
+  {
+    //TODO: Remove the code below
+    PreviousPositions.Clear();
+  }
+
   /* Getters and setters */
   public void SetPlayer(Player playerCharacter) => player = playerCharacter;
   public void SetDiagonalOfRoom(Vector2 roomSize) => diagonalOfRoom = Mathf.Sqrt(Mathf.Pow(roomSize.x, 2) + Mathf.Pow(roomSize.y, 2));
