@@ -15,6 +15,7 @@ public abstract class MovingCharacter : MonoBehaviour
   [SerializeField] private int maxPreviousPositions = 14;
   public Queue<Vector2> PreviousPositions { get; protected set; }
   public Vector2 Direction { get; protected set; }
+  protected bool canMove = true;
 
   /* Related Characters */
   public MovingCharacter Leader { get; protected set; }
@@ -31,7 +32,7 @@ public abstract class MovingCharacter : MonoBehaviour
 
   void FixedUpdate()
   {
-    if (moveSpeed > 0)
+    if (canMove)
       Move();
 
     // TODO: Remove the code below

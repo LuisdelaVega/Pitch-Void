@@ -160,8 +160,6 @@ public class GameManager : MonoBehaviour
 
           int index = Random.Range(0, innsmouthEnemies.Count);
           var enemy = Instantiate(innsmouthEnemies[index], new Vector2(x, y), Quaternion.identity);
-          enemy.SetPlayer(player);
-          enemy.SetDiagonalOfRoom(borders.bounds.size);
           break;
       }
 

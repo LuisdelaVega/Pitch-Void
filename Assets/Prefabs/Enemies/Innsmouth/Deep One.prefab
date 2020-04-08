@@ -149,8 +149,9 @@ MonoBehaviour:
   health: 100
   moveSpeed: 2.75
   maxPreviousPositions: 14
-  randomTurnInterval: 2.5
-  randomTurnChance: 100
+  attackProbability: 50
+  moveProbability: 80
+  randomMovementInterval: 3
 --- !u!114 &-5620080775616942381
 MonoBehaviour:
   m_ObjectHideFlags: 0

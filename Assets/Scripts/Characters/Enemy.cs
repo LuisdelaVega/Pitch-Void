@@ -4,43 +4,35 @@ using UnityEngine;
 
 public class Enemy : MovingCharacter
 {
-  [SerializeField] private float randomTurnInterval = 3f; // Secconds
-  [SerializeField] private int randomTurnChance = 100;
-  private Vector2[] directions = new Vector2[]
-      {
-        Vector2.up,
-        Vector2.right,
-        Vector2.down,
-        Vector2.left
-      };
+
+  /* Probabilities */
+  [SerializeField, Range(0, 100)] private int attackProbability = 50;
+  [SerializeField, Range(0, 100)] private int moveProbability = 75;
+
+  /* Movement */
+  [SerializeField] private float randomMovementInterval = 3f; // Secconds
   private Vector2 lastDirection;
-  private Player player;
-  private float diagonalOfRoom;
 
   // Start is called before the first frame update
   void Start()
   {
     rb = GetComponent<Rigidbody2D>();
     PreviousPositions = new Queue<Vector2>();
-
-    FindNewDirection();
-    InvokeRepeating("RandomDirection", randomTurnInterval, randomTurnInterval);
+    InvokeRepeating("RandomDirection", randomMovementInterval, randomMovementInterval);
   }
 
-  // Update is called once per frame
-  // void Update() => AvoidBorders();
-
-  private void AvoidBorders()
+  private void AvoidObstacles()
   {
-    RaycastHit2D raycastHit = Physics2D.Raycast(transform.position + (Vector3)Direction, Direction, 0.3f);
-    // Debug.DrawRay(transform.position + (Vector3) Direction, Direction, Color.red, 0.1f);
+    RaycastHit2D raycastHit = Physics2D.Raycast(transform.position + (Vector3)Direction, Direction, 1f);
+    Debug.DrawRay(transform.position, Direction * 1f, Color.red, 0.1f);
     if (raycastHit.collider != null)
     {
       switch (raycastHit.collider.tag)
       {
         case "Enemy":
         case "Wall":
-          FindNewDirection();
+        case "Blocking Object":
+          FindNewDirection(true);
           break;
         default:
           break;
@@ -50,36 +42,34 @@ public class Enemy : MovingCharacter
 
   protected override void Move()
   {
-    AvoidBorders();
+    AvoidObstacles();
     rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
   }
 
-  private void FindNewDirection()
+  private void FindNewDirection() => FindNewDirection(false);
+  private void FindNewDirection(bool avoid)
   {
-    Vector2 newDirection;
-    int index;
-    do
-    {
-      index = Random.Range(0, 4);
-      newDirection = directions[index];
-    } while (
-        newDirection == Direction || // Makes sure to change the direction
-        newDirection == lastDirection || // Avoids running into the previous border
-        Direction == directions[(index + 2) % directions.Length] // Avoids making a 180 turn
-    );
+    canMove = true;
+    // Debug.Log("FindNewDirection");
+    // TODO: Revisit this. Maybe make movement based on player location, so they sort of follow him but not like zombies
+    Vector2 newDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
 
+    // Avoid going through walls and other obstacles
+    if (avoid)
+    {
+      if ((newDirection.x <= 0 && lastDirection.x <= 0) || (newDirection.x >= 0 && lastDirection.x >= 0))
+        newDirection.x *= -1;
+      if ((newDirection.y <= 0 && lastDirection.y <= 0) || (newDirection.y >= 0 && lastDirection.y >= 0))
+        newDirection.y *= -1;
+    }
     lastDirection = Direction;
     Direction = newDirection;
   }
 
   private void RandomDirection()
   {
-    if (player == null) return;
-
-    var distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-    var distanceToPlayerPercentage = Mathf.Abs(distanceToPlayer) / diagonalOfRoom;
-    var probabilityOfTurn = randomTurnChance * distanceToPlayerPercentage;
-    if (Random.Range(0, 100) < probabilityOfTurn) FindNewDirection();
+    if (Random.Range(0, 100) < moveProbability) FindNewDirection();
+    else canMove = false;
   }
 
   private void OnDestroy()
@@ -94,8 +84,4 @@ public class Enemy : MovingCharacter
   {
     // TODO: Implement this to be used when generating enemies so we have enemy trains
   }
-
-  /* Getters and setters */
-  public void SetPlayer(Player playerCharacter) => player = playerCharacter;
-  public void SetDiagonalOfRoom(Vector2 roomSize) => diagonalOfRoom = Mathf.Sqrt(Mathf.Pow(roomSize.x, 2) + Mathf.Pow(roomSize.y, 2));
 }
