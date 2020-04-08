@@ -54,13 +54,6 @@ public class Enemy : MovingCharacter
     rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
   }
 
-  protected override void Attack() => Debug.Log("Enemy Attack");
-
-  public override void RecruitFollower(Follower follower)
-  {
-    // TODO: Implement this to be used when generating enemies so we have enemy trains
-  }
-
   private void FindNewDirection()
   {
     Vector2 newDirection;
@@ -93,6 +86,13 @@ public class Enemy : MovingCharacter
   {
     //TODO: Remove the code below
     PreviousPositions.Clear();
+  }
+
+  protected override void Attack() => Debug.Log("Enemy Attack");
+
+  public override void RecruitFollower(Follower follower)
+  {
+    // TODO: Implement this to be used when generating enemies so we have enemy trains
   }
 
   /* Getters and setters */

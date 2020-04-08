@@ -4,34 +4,40 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
+  /* Fire Point */
   public Transform firePoint;
+
   /* Attack */
   [SerializeField] protected float attackPower = 10f;
+  public float AttackPower { get => attackPower; }
   [SerializeField] protected float splash = 1f;
 
   /* Cooldown */
   [SerializeField] protected float cooldown = 0.1f;
-  [SerializeField] protected float cooldownTimer = 0f;
-
-  /* Recoil */
-  protected Recoil recoilScript;
+  protected bool onCooldown = false;
+  private bool cooldownCoroutineInProcess = false;
 
   /* Sprite */
   SpriteRenderer spriteRenderer;
+
+  /* Rotation */
   private float rotationSpeed = 12f;
 
-  private void Start()
-  {
-    spriteRenderer = GetComponent<SpriteRenderer>();
-    recoilScript = GetComponent<Recoil>();
-  }
+  private void Awake() => spriteRenderer = GetComponent<SpriteRenderer>();
 
   private void Update()
   {
-    if (cooldownTimer > 0)
-      cooldownTimer = Mathf.Clamp(cooldownTimer - Time.deltaTime, 0, cooldown);
-
     Rotate();
+
+    if (onCooldown && !cooldownCoroutineInProcess)
+      StartCoroutine(WaitForCooldown());
+  }
+
+  private IEnumerator WaitForCooldown()
+  {
+    cooldownCoroutineInProcess = true;
+    yield return new WaitForSeconds(cooldown);
+    onCooldown = cooldownCoroutineInProcess = false;
   }
 
   private void Rotate()
@@ -58,8 +64,6 @@ public abstract class Weapon : MonoBehaviour
 
     return distanceVector;
   }
-
-  public float GetAttackPower() => attackPower;
 
   /* Abstract methods */
   public abstract void Attack();
