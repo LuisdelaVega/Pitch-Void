@@ -53,6 +53,7 @@ public class Follower : MovingCharacter
     PreviousPositions.Clear();
   }
 
+  // TODO: Remove this
   public override void RecruitFollower(Follower newFollower)
   {
     // Set my new follower then set me as his Leader

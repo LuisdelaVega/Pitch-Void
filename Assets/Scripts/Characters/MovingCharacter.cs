@@ -24,19 +24,21 @@ public abstract class MovingCharacter : MonoBehaviour
   /* Components */
   protected Rigidbody2D rb;
   public Animator animator;
+  private SpriteRenderer spriteRenderer;
 
   void Start()
   {
     rb = GetComponent<Rigidbody2D>();
+    spriteRenderer = GetComponent<SpriteRenderer>();
     PreviousPositions = new Queue<Vector2>(); // TODO: Remove this
   }
 
   private void Update()
   {
-    // TODO: This is to avoid errors on enemies without animators yet
     if (animator != null)
     {
       animator.SetFloat("Horizontal", Direction.x);
+      spriteRenderer.flipX = Direction.x <= -0.866f; // TODO: This won't happen in the future. I think...
       animator.SetFloat("Vertical", Direction.y);
       animator.SetFloat("Speed", Direction.sqrMagnitude);
     }

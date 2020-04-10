@@ -150,9 +150,10 @@ MonoBehaviour:
   moveSpeed: 2.75
   maxPreviousPositions: 14
   animator: {fileID: 0}
-  attackProbability: 50
   moveProbability: 80
   randomMovementInterval: 3
+  attackProbability: 30
+  attackDelay: 0.1
 --- !u!114 &-5620080775616942381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +195,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5290927916988005377}
     m_Modifications:
+    - target: {fileID: 4206024002109007232, guid: ad2af2190b197e24e98d3c559da79166,
+        type: 3}
+      propertyPath: cooldown
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4817231642374507868, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
       propertyPath: m_Name

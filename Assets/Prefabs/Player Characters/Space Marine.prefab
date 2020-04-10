@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4772985831027489955}
   - component: {fileID: 922502665102953778}
   m_Layer: 11
-  m_Name: Plague Doctor
+  m_Name: Space Marine
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
+  m_Offset: {x: 0, y: -0.26}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.68, y: 0.41}
+  m_Size: {x: 0.77, y: 0.68}
   m_EdgeRadius: 0
 --- !u!50 &8094088734949012531
 Rigidbody2D:

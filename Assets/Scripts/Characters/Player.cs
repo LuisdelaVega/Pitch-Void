@@ -61,21 +61,11 @@ public class Player : MovingCharacter
 
   private void OnDestroy()
   {
-    // We probably want to run some death animation here, if the object hasn't been removed already
+    // We probably want to do some death animation here, if the object hasn't been removed already
     Destroy(activeWeapon);
-    // TODO: Remove the code below
-    foreach (var currentFollower in followers)
-    {
-      Destroy(currentFollower.gameObject);
-    }
   }
 
-  // TODO: Remove this. The Player won't care about his followers in the future
-  public void RemoveFollower(Follower deadFollower)
-  {
-    followers.Remove(deadFollower);
-  }
-
+  // TODO: Remove everything below
   /* Getters and Setters */
   public int GetFollowerCount() => followers.Count;
   public Follower GetLastFollower() => followers.Count != 0 ? followers[followers.Count - 1] : null;

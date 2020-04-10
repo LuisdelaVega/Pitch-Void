@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class Enemy : MovingCharacter
 {
-
-  /* Probabilities */
-  [SerializeField, Range(0, 100)] private int attackProbability = 50;
-  [SerializeField, Range(0, 100)] private int moveProbability = 75;
-
   /* Movement */
+  [SerializeField, Range(0, 100)] private int moveProbability = 75;
   [SerializeField] private float randomMovementInterval = 3f; // Secconds
   private Vector2 lastDirection;
 
+  /* Attack */
+  [SerializeField, Range(0, 100)] private int attackProbability = 50;
+  [SerializeField] private float attackDelay = 0.5f;
+
   // Start is called before the first frame update
-  void Awake() => InvokeRepeating("RandomDirection", randomMovementInterval, randomMovementInterval);
+  void Awake()
+  {
+    InvokeRepeating("RandomDirection", randomMovementInterval, randomMovementInterval);
+    InvokeRepeating("Attack", attackDelay, attackDelay);
+  }
 
   private void AvoidObstacles()
   {
@@ -73,10 +77,21 @@ public class Enemy : MovingCharacter
     PreviousPositions.Clear();
   }
 
-  protected override void Attack() => Debug.Log("Enemy Attack");
+  protected override void Attack() => Invoke("PerformAttack", attackDelay);
 
+  private void PerformAttack()
+  {
+    List<Transform> visibleTargets = GetComponent<FieldOfView>().visibleTargets;
+    if (visibleTargets.Count == 0) return;
+    if (Random.Range(0, 100) < attackProbability)
+    {
+      Weapon weapon = GetComponentInChildren<Weapon>();
+      weapon.Attack();
+    }
+  }
+
+  // TODO: Remove this
   public override void RecruitFollower(Follower follower)
   {
-    // TODO: Implement this to be used when generating enemies so we have enemy trains
   }
 }

@@ -127,7 +127,6 @@ public class GameManager : MonoBehaviour
     enemiesToSpawn = Random.Range(enemiesCount.minimum, enemiesCount.maximum);
 
     InvokeRepeating("SpawnEnemies", 3, 4);
-    // InvokeRepeating("SpawnFollowwers", 3, 4);
   }
 
   //Hides black image used between levels
@@ -165,22 +164,6 @@ public class GameManager : MonoBehaviour
 
       enemiesSpawnedInRoom++;
     }
-  }
-
-  // TODO: This will not happen here in the future. Enemies will spawn the followers when they die
-  private void SpawnFollowwers()
-  {
-    if (followers.Count == 0) return;
-
-    // We cast the coordinates to int to make sure that the food is always spawned at a position like (1, 2) but never at something like (1.234, 2.74565)
-    int x = (int)Random.Range(borders.bounds.min.x + 2, borders.bounds.max.x - 2);
-    int y = (int)Random.Range(borders.bounds.min.y + 2, borders.bounds.max.y - 2);
-
-    int index = Random.Range(0, followers.Count);
-    var followerPrefab = characters.Find(character => character.name == followers[index]);
-    var follower = Instantiate(followerPrefab, new Vector2(x, y), Quaternion.identity).AddComponent(typeof(Follower));
-    follower.tag = "Follower";
-    followers.Remove(follower.name.Substring(0, follower.name.Length - "(Clone)".Length));
   }
 
   public void GameOver()
