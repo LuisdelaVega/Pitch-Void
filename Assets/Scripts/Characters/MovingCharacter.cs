@@ -21,11 +21,26 @@ public abstract class MovingCharacter : MonoBehaviour
   public MovingCharacter Leader { get; protected set; }
   protected Follower follower;
 
-  /* Protected variables */
+  /* Components */
   protected Rigidbody2D rb;
+  public Animator animator;
+
+  void Start()
+  {
+    rb = GetComponent<Rigidbody2D>();
+    PreviousPositions = new Queue<Vector2>(); // TODO: Remove this
+  }
 
   private void Update()
   {
+    // TODO: This is to avoid errors on enemies without animators yet
+    if (animator != null)
+    {
+      animator.SetFloat("Horizontal", Direction.x);
+      animator.SetFloat("Vertical", Direction.y);
+      animator.SetFloat("Speed", Direction.sqrMagnitude);
+    }
+
     if (holdAttack)
       Attack();
   }

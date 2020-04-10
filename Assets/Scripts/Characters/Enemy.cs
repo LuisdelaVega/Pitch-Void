@@ -14,12 +14,7 @@ public class Enemy : MovingCharacter
   private Vector2 lastDirection;
 
   // Start is called before the first frame update
-  void Start()
-  {
-    rb = GetComponent<Rigidbody2D>();
-    PreviousPositions = new Queue<Vector2>();
-    InvokeRepeating("RandomDirection", randomMovementInterval, randomMovementInterval);
-  }
+  void Awake() => InvokeRepeating("RandomDirection", randomMovementInterval, randomMovementInterval);
 
   private void AvoidObstacles()
   {

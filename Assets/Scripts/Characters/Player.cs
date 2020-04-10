@@ -14,12 +14,9 @@ public class Player : MovingCharacter
   /* Player controls */
   private Controls controls;
 
-  void Awake() => controls = new Controls();
-
-  void Start()
+  void Awake()
   {
-    rb = GetComponent<Rigidbody2D>();
-    PreviousPositions = new Queue<Vector2>(); // TODO: Remove this
+    controls = new Controls();
     Vector3 weaponPosition = new Vector3(transform.position.x, transform.position.y - 0.25f, transform.position.z);
     activeWeapon = Instantiate(weapons[0], weaponPosition, Quaternion.identity, transform);
   }

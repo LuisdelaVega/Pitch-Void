@@ -18,7 +18,7 @@ public abstract class Weapon : MonoBehaviour
   private bool cooldownCoroutineInProcess = false;
 
   /* Sprite */
-  SpriteRenderer spriteRenderer;
+  private SpriteRenderer spriteRenderer;
 
   /* Rotation */
   private float rotationSpeed = 12f;
