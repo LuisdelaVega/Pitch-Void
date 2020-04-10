@@ -4,13 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Border
   - Food
   - Tail
   - Spawner
   - Enemy
   - Attack
   - Follower
+  - Wall
+  - Blocking Object
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - 
   - 
   - Ground
-  - Border
+  - Walls
   - Blocking
   - Player
   - Enemy
@@ -56,4 +57,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Weapon
+    uniqueID: 2919788845
     locked: 0

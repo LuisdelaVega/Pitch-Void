@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8, y: 1.8}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!50 &5152595336001106018
 Rigidbody2D:
@@ -119,19 +119,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4932159034399749592}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7685492218180208135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a33fe95dcab0d44964752396e4a62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewAngle: 170
   viewRadius: 7
   targetMask:
     serializedVersion: 2
@@ -152,7 +151,6 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
-  attackSpeed: 0.1
   visibleTargets: []
 --- !u!114 &597786977414534693
 MonoBehaviour:
@@ -161,7 +159,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4932159034399749592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e560d0a5d95d9f42a19a03f0bf1ac54, type: 3}
   m_Name: 
@@ -171,3 +169,4 @@ MonoBehaviour:
   cooldown: 1
   projectilePrefab: {fileID: 2739718080901117103, guid: 4d0d916e79b333a4cbc1dbea79f442ae,
     type: 3}
+  projectileForce: 1
