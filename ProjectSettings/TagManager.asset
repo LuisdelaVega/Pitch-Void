@@ -27,7 +27,7 @@ TagManager:
   - Player
   - Enemy
   - Projectiles
-  - 
+  - Lights
   - 
   - 
   - 
@@ -52,11 +52,17 @@ TagManager:
   - name: Border
     uniqueID: 2929589363
     locked: 0
-  - name: Projectile
-    uniqueID: 3452103993
+  - name: Enemy
+    uniqueID: 801933395
+    locked: 0
+  - name: Blocking Objects
+    uniqueID: 1377367873
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Projectile
+    uniqueID: 3452103993
     locked: 0
   - name: Weapon
     uniqueID: 2919788845
