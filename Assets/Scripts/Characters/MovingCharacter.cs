@@ -24,7 +24,7 @@ public abstract class MovingCharacter : MonoBehaviour
   /* Components */
   protected Rigidbody2D rb;
   public Animator animator;
-  public SpriteRenderer spriteRenderer;
+  [HideInInspector] public SpriteRenderer spriteRenderer;
 
   void Start()
   {

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.4
-  m_Color: {r: 1, g: 0.43867922, b: 0.43867922, a: 1}
+  m_Color: {r: 1, g: 0.43921566, b: 0.51220167, a: 1}
   m_Intensity: 0.7
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 5542352673fc9dae0000000041f71852
@@ -219,15 +219,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0694fe706a2170b469e1facca5e5d18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  moveSpeed: 2.75
+  health: 200
+  moveSpeed: 2.5
   maxPreviousPositions: 14
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  moveProbability: 80
-  randomMovementInterval: 3
-  attackProbability: 30
-  attackDelay: 0.1
+  movementTimes:
+    minimum: 1
+    maximum: 3
+  movementCooldownTimes:
+    minimum: 1
+    maximum: 3
+  randomDirectionProbability: 15
+  attackTimes:
+    minimum: 1
+    maximum: 2
+  attackCooldownTimes:
+    minimum: 1
+    maximum: 3
 --- !u!114 &-5620080775616942381
 MonoBehaviour:
   m_ObjectHideFlags: 0
