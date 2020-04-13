@@ -17,7 +17,7 @@ public class Player : MovingCharacter
   void Awake()
   {
     controls = new Controls();
-    Vector3 weaponPosition = new Vector3(transform.position.x, transform.position.y - 0.25f, transform.position.z);
+    Vector3 weaponPosition = new Vector3(transform.position.x, transform.position.y + 0.03125f, transform.position.z);
     activeWeapon = Instantiate(weapons[0], weaponPosition, Quaternion.identity, transform);
   }
 

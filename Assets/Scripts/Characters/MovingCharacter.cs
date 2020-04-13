@@ -24,7 +24,7 @@ public abstract class MovingCharacter : MonoBehaviour
   /* Components */
   protected Rigidbody2D rb;
   public Animator animator;
-  private SpriteRenderer spriteRenderer;
+  public SpriteRenderer spriteRenderer;
 
   void Start()
   {
@@ -35,16 +35,9 @@ public abstract class MovingCharacter : MonoBehaviour
 
   private void Update()
   {
-    if (animator != null)
-    {
-      animator.SetFloat("Horizontal", Direction.x);
-      spriteRenderer.flipX = Direction.x <= -0.866f; // TODO: This won't happen in the future. I think...
-      animator.SetFloat("Vertical", Direction.y);
-      animator.SetFloat("Speed", Direction.sqrMagnitude);
-    }
+    if (animator != null) animator.SetFloat("Speed", Direction.sqrMagnitude); // TODO: The conditional will not be needed in the future
 
-    if (holdAttack)
-      Attack();
+    if (holdAttack) Attack();
   }
 
   void FixedUpdate()

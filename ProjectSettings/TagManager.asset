@@ -12,6 +12,7 @@ TagManager:
   - Follower
   - Wall
   - Blocking Object
+  - Point Light
   layers:
   - Default
   - TransparentFX
@@ -58,11 +59,11 @@ TagManager:
   - name: Blocking Objects
     uniqueID: 1377367873
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Projectile
     uniqueID: 3452103993
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Weapon
     uniqueID: 2919788845

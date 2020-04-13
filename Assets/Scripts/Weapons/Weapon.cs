@@ -44,7 +44,18 @@ public abstract class Weapon : MonoBehaviour
   {
     Vector2 direction = GetDirection();
     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    spriteRenderer.flipY = angle > 90 || angle < -90;
+    bool flipStrite = angle > 90 || angle < -90;
+    if (angle > 67.5 && angle < 112.5 && spriteRenderer.sortingOrder != 0)
+      spriteRenderer.sortingOrder = 0;
+    else if ((angle <= 67.5 || angle >= 112.5) && spriteRenderer.sortingOrder != 2)
+      spriteRenderer.sortingOrder = 2;
+
+    if (transform.parent != null && transform.parent.tag == "Player") // TODO: Make this happen for Enemies in the future
+    {
+      transform.parent.GetComponent<MovingCharacter>().animator.SetFloat("Angle", angle / 180);
+      transform.parent.GetComponent<MovingCharacter>().spriteRenderer.flipX = flipStrite; // TODO: This won't happen in the future. I think...
+    }
+    spriteRenderer.flipY = flipStrite;
 
     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotationSpeed * Time.deltaTime);
   }

@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
   private Player player;
   private GameObject playerPrefab;
   [HideInInspector] public List<String> followers;
+
+  /* Enemies */
   public List<Enemy> innsmouthEnemies;
   private Count enemiesCount;
   private int enemiesToSpawn;
