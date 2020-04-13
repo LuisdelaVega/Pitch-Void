@@ -4821,6 +4821,10 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 2f0bd3e8b4ed53d4281a12628421ea6f, type: 2}
   - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: 44b0879829c72b146a89cb7b0bc4ba70, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -4866,6 +4870,10 @@ Tilemap:
   - m_RefCount: 10
     m_Data: {fileID: -1003415261003586189, guid: 146e0bc7341a18f4a87780a2a4964bc0,
       type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 382
     m_Data:
@@ -4909,8 +4917,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -13, y: -12, z: 0}
-  m_Size: {x: 27, y: 26, z: 1}
+  m_Origin: {x: -26, y: -12, z: 0}
+  m_Size: {x: 40, y: 26, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -6996,7 +7004,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.45
+  m_Intensity: 0.5
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 5542352673fc9dae5388cc2f41f718520000000039edc2cd2d7108ae
   m_LightCookieSprite: {fileID: 0}
