@@ -219,7 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0694fe706a2170b469e1facca5e5d18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
   moveSpeed: 2.5
   maxPreviousPositions: 14
   animator: {fileID: 0}
@@ -230,7 +229,6 @@ MonoBehaviour:
   movementCooldownTimes:
     minimum: 1
     maximum: 3
-  randomDirectionProbability: 15
   attackTimes:
     minimum: 1
     maximum: 2
@@ -249,7 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a33fe95dcab0d44964752396e4a62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 4.3
+  viewRadius: 3.8
+  viewAngle: 130
   targetMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -270,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1690ad2c99e7624c8c70f0e7d3263bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
+  maxHealth: 20
 --- !u!1001 &9008205079215335018
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Player : MovingCharacter
 {
-  /* Private variables */
-  private List<Follower> followers = new List<Follower>();
+  /* Shadow Follower */
+  public ShadowCameraTargetGroup shadowCameraTargetGroupPrefab;
+  [HideInInspector] public ShadowCameraTargetGroup shadowCameraTargetGroup;
+  private List<Follower> followers = new List<Follower>(); // TODO: Remove this
 
   /* Weapons */
   public List<Weapon> weapons;
@@ -19,6 +21,8 @@ public class Player : MovingCharacter
     controls = new Controls();
     Vector3 weaponPosition = new Vector3(transform.position.x, transform.position.y + 0.03125f, transform.position.z);
     activeWeapon = Instantiate(weapons[0], weaponPosition, Quaternion.identity, transform);
+    shadowCameraTargetGroup = Instantiate(shadowCameraTargetGroupPrefab, transform.position, Quaternion.identity);
+    shadowCameraTargetGroup.player = gameObject;
   }
 
   void OnEnable()

@@ -8,17 +8,16 @@ public class Enemy : MovingCharacter
   [SerializeField] private GameManager.Count movementTimes = new GameManager.Count(1, 2);
   private float movementTimer;
   private Vector2 lastDirection;
+  private bool foundDirectioThisTurn = false;
   [SerializeField] private GameManager.Count movementCooldownTimes = new GameManager.Count(1, 2);
   private bool movementOnCooldown = false;
   private bool movementCooldownInProcess = false;
-  [SerializeField, Range(0, 100)] private int randomDirectionProbability = 75;
-  private bool movedRandomlyThisTurn = false;
 
   /* Attack */
   [SerializeField] private GameManager.Count attackTimes = new GameManager.Count(1, 2);
-  protected float attackTimer;
+  private float attackTimer;
   [SerializeField] private GameManager.Count attackCooldownTimes = new GameManager.Count(1, 2);
-  protected bool attackOnCooldown = false;
+  private bool attackOnCooldown = false;
   private bool attackCooldownInProcess = false;
 
   // Start is called before the first frame update
@@ -30,6 +29,7 @@ public class Enemy : MovingCharacter
     attackTimer = GetRandomInRange(attackTimes);
   }
 
+  /* Movement */
   protected override void Move()
   {
     if (!movementOnCooldown && canMove)
@@ -41,16 +41,8 @@ public class Enemy : MovingCharacter
   private void PerformMovement()
   {
     Transform closestTarget = GetComponent<FieldOfView>().closestTarget;
-    if (closestTarget != null)
-    {
-      lastDirection = Direction;
-      Vector2 newDirection = closestTarget.position - transform.position;
-      newDirection.Normalize();
-      Direction = newDirection;
-    }
-
-    if (!movedRandomlyThisTurn)
-      RandomDirection();
+    if (closestTarget != null) FindNewDirection(closestTarget.position);
+    else if (!foundDirectioThisTurn) FindNewDirection();
 
     AvoidObstacles();
     rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
@@ -79,25 +71,12 @@ public class Enemy : MovingCharacter
     }
   }
 
-  private void RandomDirection()
-  {
-    if (Random.Range(0, 100) < randomDirectionProbability)
-    {
-      FindNewDirection();
-      movedRandomlyThisTurn = true;
-    }
-  }
-
-  private IEnumerator MovementCooldown()
-  {
-    movementCooldownInProcess = true;
-    yield return new WaitForSeconds(GetRandomInRange(movementCooldownTimes));
-    movementOnCooldown = movedRandomlyThisTurn = movementCooldownInProcess = false;
-    movementTimer = GetRandomInRange(movementTimes);
-    FindNewDirection();
-  }
-
   private void FindNewDirection() => FindNewDirection(false);
+  private void FindNewDirection(Vector3 position)
+  {
+    Vector2 newDirection = position - transform.position;
+    SetDirection(newDirection);
+  }
   private void FindNewDirection(bool avoid)
   {
     Vector2 newDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
@@ -111,11 +90,18 @@ public class Enemy : MovingCharacter
         newDirection.y *= -1;
     }
 
-    newDirection.Normalize();
-    lastDirection = Direction;
-    Direction = newDirection;
+    SetDirection(newDirection);
   }
 
+  private void SetDirection(Vector2 newDirection)
+  {
+    lastDirection = Direction;
+    newDirection.Normalize();
+    Direction = newDirection;
+    foundDirectioThisTurn = true;
+  }
+
+  /* Attack */
   protected override void Attack()
   {
     if (!attackOnCooldown)
@@ -134,6 +120,22 @@ public class Enemy : MovingCharacter
     attackTimer = AdjustTimer(attackTimer, attackTimes);
     if (attackTimer <= 0)
       attackOnCooldown = true;
+  }
+
+  public void Alert(Vector3 position)
+  {
+    FindNewDirection(position);
+    movementOnCooldown = movementCooldownInProcess = false;
+    movementTimer = GetRandomInRange(movementTimes);
+  }
+
+  /* Cooldowns */
+  private IEnumerator MovementCooldown()
+  {
+    movementCooldownInProcess = true;
+    yield return new WaitForSeconds(GetRandomInRange(movementCooldownTimes));
+    movementOnCooldown = foundDirectioThisTurn = movementCooldownInProcess = false;
+    movementTimer = GetRandomInRange(movementTimes);
   }
 
   private IEnumerator AttackCooldown()

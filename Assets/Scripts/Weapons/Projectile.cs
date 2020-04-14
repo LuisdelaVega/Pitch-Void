@@ -20,6 +20,13 @@ public class Projectile : MonoBehaviour
     if (other.gameObject != transform.parent.gameObject && other.TryGetComponent<IDamageable>(out var damageable))
     {
       damageable.DealDamage(damage);
+
+      // If damaged object was an enemy make him move towards where he got shot
+      if (other.TryGetComponent<Enemy>(out var enemy))
+      {
+        enemy.Alert(transform.position);
+      }
+
       Destroy(gameObject);
     }
     else if (other.tag == "Wall")

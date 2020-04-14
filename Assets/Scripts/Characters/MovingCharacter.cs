@@ -4,9 +4,6 @@ using UnityEngine;
 
 public abstract class MovingCharacter : MonoBehaviour
 {
-  /* Health */
-  [SerializeField] protected float health = 500f;
-
   /* Attack */
   protected bool holdAttack = false;
 
@@ -54,9 +51,6 @@ public abstract class MovingCharacter : MonoBehaviour
       PreviousPositions.Dequeue();
     }
   }
-
-  public void RestoreHealth(float amount) => health += health <= 0 ? 0 : health;
-  public void ApplyDamage(float damage) => health -= damage <= 0 ? 0 : damage;
 
   /* Abstract methods */
   protected abstract void Move();
