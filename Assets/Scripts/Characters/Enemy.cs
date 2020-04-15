@@ -146,6 +146,14 @@ public class Enemy : MovingCharacter
     attackTimer = GetRandomInRange(attackTimes);
   }
 
+  private void OnDestroy()
+  {
+    if (TryGetComponent<ScreenShake>(out var screenShake))
+    {
+      screenShake.Shake();
+    }
+  }
+
   /* Helper Methods */
   private int GetRandomInRange(GameManager.Count range) => Random.Range(range.minimum, range.maximum + 1);
   private float AdjustTimer(float timer, GameManager.Count range) => Mathf.Clamp(timer - Time.fixedDeltaTime, 0, range.maximum);

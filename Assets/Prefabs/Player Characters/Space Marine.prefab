@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 8094088734949012530}
   - component: {fileID: 5534301065370956156}
   - component: {fileID: 4772985831027489955}
+  - component: {fileID: 7634051370192839493}
   m_Layer: 11
   m_Name: Space Marine
   m_TagString: Player
@@ -282,3 +283,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+--- !u!114 &7634051370192839493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8094088734949012541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017b0bd7a0875f84aa3fe4e3c19f7771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShakeDuration: 0.3
+  ShakeAmplitude: 1.2
+  ShakeFrequency: 2

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8461538277211663961
 Transform:
   m_ObjectHideFlags: 0
@@ -58,8 +58,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 65
   m_PointLightOuterAngle: 130
-  m_PointLightInnerRadius: 2
-  m_PointLightOuterRadius: 3.8
+  m_PointLightInnerRadius: 2.25
+  m_PointLightOuterRadius: 4.5
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: -6906897709931417240}
   - component: {fileID: -5620080775616942381}
   - component: {fileID: 6827218778598763356}
+  - component: {fileID: 3704513491835802638}
   m_Layer: 12
   m_Name: Deep One
   m_TagString: Enemy
@@ -318,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a33fe95dcab0d44964752396e4a62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 3.8
+  viewRadius: 4.5
   viewAngle: 90
   targetMask:
     serializedVersion: 2
@@ -341,6 +342,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+--- !u!114 &3704513491835802638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8671040359916251570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017b0bd7a0875f84aa3fe4e3c19f7771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShakeDuration: 0.2
+  ShakeAmplitude: 0.5
+  ShakeFrequency: 1.8
 --- !u!1001 &9008205079215335018
 PrefabInstance:
   m_ObjectHideFlags: 0

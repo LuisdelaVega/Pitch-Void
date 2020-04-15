@@ -22,6 +22,12 @@ public class RangedWeapon : Weapon
     Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
     rb.AddForce(firePoint.right * projectileForce, ForceMode2D.Impulse);
     recoilScript.AddRecoil();
+
+    if (TryGetComponent<ScreenShake>(out var screenShake))
+    {
+      screenShake.Shake();
+    }
+
     onCooldown = true;
   }
 }

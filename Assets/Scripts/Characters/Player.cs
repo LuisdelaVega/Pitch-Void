@@ -43,7 +43,11 @@ public class Player : MovingCharacter
 
   private void OnDestroy()
   {
+    if (TryGetComponent<ScreenShake>(out var screenShake))
+    {
+      screenShake.Shake();
+    }
     // We probably want to do some death animation here, if the object hasn't been removed already
-    Destroy(activeWeapon);
+    // Destroy(activeWeapon);
   }
 }
