@@ -16,8 +16,10 @@ public class Projectile : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D other)
   {
-
-    if (other.gameObject != transform.parent.gameObject && other.TryGetComponent<IDamageable>(out var damageable))
+    // Avoid Fiendly Fire
+    int otherLayerMask = 1 << other.gameObject.layer;
+    int parentLayerMask = 1 << transform.parent.gameObject.layer;
+    if (otherLayerMask != parentLayerMask && other.TryGetComponent<IDamageable>(out var damageable))
     {
       damageable.DealDamage(damage);
 
@@ -31,12 +33,5 @@ public class Projectile : MonoBehaviour
     }
     else if (other.tag == "Wall")
       Destroy(gameObject);
-
-    // int layerMask = 1 << other.gameObject.layer;
-    // if (layerMask == targetMask)
-    // {
-    //   other.GetComponent<MovingCharacter>().ApplyDamage(damage);
-    //   Destroy(gameObject);
-    // }
   }
 }

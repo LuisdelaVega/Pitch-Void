@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
   [HideInInspector] public List<String> followers;
 
   /* Enemies */
-  public List<Enemy> innsmouthEnemies;
+  public List<Enemy> enemyPrefabList;
   private Count enemiesCount;
   private int enemiesToSpawn;
   private int enemiesSpawnedInRoom = 0;
@@ -53,12 +53,7 @@ public class GameManager : MonoBehaviour
   private BoardManager boardManager;
   [SerializeField] private float levelStartDelay = 0f;
   private GameObject levelImage;
-  private int level = 1;
-  private string[] levels = new string[]
-      {
-            "Innsmouth",
-            "Dunwich"
-      };
+  private int level = 6;
   // private Text levelText;
   // private bool doingSetup = true;
 
@@ -125,10 +120,8 @@ public class GameManager : MonoBehaviour
     Invoke("HideLevelImage", levelStartDelay);
 
     player = boardManager.SetupScene(level, playerPrefab, vcam1).GetComponent<Player>();
-
     enemiesToSpawn = Random.Range(enemiesCount.minimum, enemiesCount.maximum);
-
-    InvokeRepeating("SpawnEnemies", 3, 4);
+    InvokeRepeating("SpawnEnemies", 2, 2);
   }
 
   //Hides black image used between levels
@@ -136,37 +129,32 @@ public class GameManager : MonoBehaviour
   {
     //Disable the levelImage gameObject.
     levelImage.SetActive(false);
-
-    //Set doingSetup to false allowing player to move again.
-    // doingSetup = false;
   }
-
-  // Update is called once per frame
-  // void Update()
-  // {
-  //     if (doingSetup) return;
-  // }
 
   private void SpawnEnemies()
   {
+    if (player == null) return;
     if (enemiesSpawnedInRoom < enemiesToSpawn)
     {
-      switch (levels[level])
+      Vector2 distanceToPlayer;
+      Vector2 spawnLocation;
+
+      do
       {
-        case "Innsmouth":
-        default:
-          // We cast the coordinates to int to make sure that the food is always spawned at a position like (1, 2) but never at something like (1.234, 2.74565)
-          int x = (int)Random.Range(borders.bounds.min.x + 2, borders.bounds.max.x - 2);
-          int y = (int)Random.Range(borders.bounds.min.y + 2, borders.bounds.max.y - 2);
+        spawnLocation = new Vector2(
+          Random.Range(borders.bounds.min.x + 2, borders.bounds.max.x - 2),
+          Random.Range(borders.bounds.min.y + 2, borders.bounds.max.y - 2)
+        );
+        distanceToPlayer = spawnLocation - (Vector2)player.transform.position;
+      } while (distanceToPlayer.sqrMagnitude < 60); // TODO: Revisit this number
 
-          int index = Random.Range(0, innsmouthEnemies.Count);
-          var enemy = Instantiate(innsmouthEnemies[index], new Vector2(x, y), Quaternion.identity);
-          break;
-      }
-
-      enemiesSpawnedInRoom++;
+      int index = Random.Range(0, enemyPrefabList.Count);
+      var enemy = Instantiate(enemyPrefabList[index], spawnLocation, Quaternion.identity);
     }
+
+    enemiesSpawnedInRoom++;
   }
+
 
   public void GameOver()
   {

@@ -45,6 +45,8 @@ public abstract class Weapon : MonoBehaviour
   private void Rotate()
   {
     Vector2 direction = GetDirection();
+    if (direction.sqrMagnitude == 0) return;
+
     Angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     bool flipStrite = Angle > 90 || Angle < -90;
 
@@ -71,14 +73,14 @@ public abstract class Weapon : MonoBehaviour
   private Vector2 GetDirection()
   {
     Transform parent = transform.parent;
-    Vector2 distanceVector = Vector2.right;
+    Vector2 distanceVector = Vector2.zero;
     if (parent != null)
     {
-      Transform closestTarget = transform.parent.GetComponent<FieldOfView>().closestTarget;
+      Transform closestTarget = parent.GetComponent<FieldOfView>().closestTarget;
       if (closestTarget != null) // Point to the closest target
         distanceVector = closestTarget.position - transform.position;
       else // If no targert in range, point towards the direction the player is moving
-        distanceVector = transform.parent.GetComponent<MovingCharacter>().Direction;
+        distanceVector = parent.GetComponent<MovingCharacter>().Direction;
     }
 
     return distanceVector;

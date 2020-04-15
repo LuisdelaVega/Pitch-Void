@@ -8050,6 +8050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8831576070855812757, guid: eaac4ee7e8e63c743a4a609dd267c379,
         type: 3}
+      propertyPath: enemyPrefabList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831576070855812757, guid: eaac4ee7e8e63c743a4a609dd267c379,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
@@ -8163,6 +8168,12 @@ PrefabInstance:
       propertyPath: characters.Array.data[9]
       value: 
       objectReference: {fileID: 6568174001349965434, guid: bb1634eabd3278d43a06be0de0a1241b,
+        type: 3}
+    - target: {fileID: 8831576070855812757, guid: eaac4ee7e8e63c743a4a609dd267c379,
+        type: 3}
+      propertyPath: enemyPrefabList.Array.data[0]
+      value: 
+      objectReference: {fileID: -6906897709931417240, guid: 72dbbbb26c2493b49aa521e5f11072e0,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaac4ee7e8e63c743a4a609dd267c379, type: 3}

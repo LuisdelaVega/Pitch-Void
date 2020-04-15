@@ -7,7 +7,6 @@ public class Player : MovingCharacter
   /* Shadow Follower */
   public ShadowCameraTargetGroup shadowCameraTargetGroupPrefab;
   [HideInInspector] public ShadowCameraTargetGroup shadowCameraTargetGroup;
-  private List<Follower> followers = new List<Follower>(); // TODO: Remove this
 
   /* Weapons */
   public List<Weapon> weapons;
@@ -38,39 +37,13 @@ public class Player : MovingCharacter
   }
 
   void OnDisable() => controls.Disable();
-
   private void ChangeDirection(Vector2 newDirection) => Direction = newDirection;
-
-  void OnTriggerEnter2D(Collider2D other)
-  {
-    switch (other.tag)
-    {
-      case "Border":
-        // GameManager.instance.GameOver();
-        break;
-    }
-  }
-
   protected override void Move() => rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
-
   protected override void Attack() => activeWeapon.Attack();
-
-  public override void RecruitFollower(Follower newFollower)
-  {
-    if (followers.Count == 0)
-      follower = newFollower;
-
-    followers.Insert(followers.Count, newFollower);
-  }
 
   private void OnDestroy()
   {
     // We probably want to do some death animation here, if the object hasn't been removed already
     Destroy(activeWeapon);
   }
-
-  // TODO: Remove everything below
-  /* Getters and Setters */
-  public int GetFollowerCount() => followers.Count;
-  public Follower GetLastFollower() => followers.Count != 0 ? followers[followers.Count - 1] : null;
 }

@@ -100,7 +100,7 @@ MonoBehaviour:
   firePoint: {fileID: 3444253564461638858}
   attackPower: 10
   splash: 1
-  cooldown: 0.1
+  cooldown: 0.3
   projectilePrefab: {fileID: 2739718080901117103, guid: 4d0d916e79b333a4cbc1dbea79f442ae,
     type: 3}
   projectileForce: 20
