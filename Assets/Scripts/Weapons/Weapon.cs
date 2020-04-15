@@ -21,7 +21,7 @@ public abstract class Weapon : MonoBehaviour
   private SpriteRenderer spriteRenderer;
 
   /* Rotation */
-  private float rotationSpeed = 24f;
+  private float rotationSpeed = 100f;
   private float angle = 0;
   [HideInInspector] public float Angle { get => angle; private set => angle = value; }
 

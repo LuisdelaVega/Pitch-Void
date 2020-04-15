@@ -13,20 +13,12 @@ public class Enemy : MovingCharacter
   private bool movementOnCooldown = false;
   private bool movementCooldownInProcess = false;
 
-  /* Attack */
-  [SerializeField] private GameManager.Count attackTimes = new GameManager.Count(1, 2);
-  private float attackTimer;
-  [SerializeField] private GameManager.Count attackCooldownTimes = new GameManager.Count(1, 2);
-  private bool attackOnCooldown = false;
-  private bool attackCooldownInProcess = false;
-
   // Start is called before the first frame update
   void Awake()
   {
     holdAttack = true;
     FindNewDirection();
     movementTimer = GetRandomInRange(movementTimes);
-    attackTimer = GetRandomInRange(attackTimes);
   }
 
   /* Movement */
@@ -102,13 +94,7 @@ public class Enemy : MovingCharacter
   }
 
   /* Attack */
-  protected override void Attack()
-  {
-    if (!attackOnCooldown)
-      PerformAttack();
-    else if (attackOnCooldown && !attackCooldownInProcess)
-      StartCoroutine(AttackCooldown());
-  }
+  protected override void Attack() => PerformAttack();
 
   private void PerformAttack()
   {
@@ -116,10 +102,6 @@ public class Enemy : MovingCharacter
     if (visibleTargets.Count == 0) return;
 
     GetComponentInChildren<Weapon>().Attack();
-
-    attackTimer = AdjustTimer(attackTimer, attackTimes);
-    if (attackTimer <= 0)
-      attackOnCooldown = true;
   }
 
   public void Alert(Vector3 position)
@@ -136,14 +118,6 @@ public class Enemy : MovingCharacter
     yield return new WaitForSeconds(GetRandomInRange(movementCooldownTimes));
     movementOnCooldown = foundDirectioThisTurn = movementCooldownInProcess = false;
     movementTimer = GetRandomInRange(movementTimes);
-  }
-
-  private IEnumerator AttackCooldown()
-  {
-    attackCooldownInProcess = true;
-    yield return new WaitForSeconds(GetRandomInRange(attackCooldownTimes));
-    attackOnCooldown = attackCooldownInProcess = false;
-    attackTimer = GetRandomInRange(attackTimes);
   }
 
   private void OnDestroy()

@@ -16,10 +16,14 @@ public class Projectile : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    // Avoid Fiendly Fire
     int otherLayerMask = 1 << other.gameObject.layer;
+    int thisLayerMask = 1 << gameObject.layer;
     int parentLayerMask = 1 << transform.parent.gameObject.layer;
-    if (otherLayerMask != parentLayerMask && other.TryGetComponent<IDamageable>(out var damageable))
+    if (
+      otherLayerMask != parentLayerMask && // Avoid Fiendly Fire
+      otherLayerMask != thisLayerMask && // Avoid triggering on other Projectiles
+      other.TryGetComponent<IDamageable>(out var damageable)
+    )
     {
       damageable.DealDamage(damage);
 

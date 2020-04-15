@@ -7496,6 +7496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1381215744}
+  - component: {fileID: 1381215745}
   m_Layer: 0
   m_Name: LightsManager
   m_TagString: Untagged
@@ -7523,6 +7524,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1381215745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381215743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2a3140c509a5a49a0b5f08bb66f99e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1409056073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6137933806738068132, guid: 0f42b00369b56484b933ee5010c42aa0,
@@ -8175,6 +8188,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -6906897709931417240, guid: 72dbbbb26c2493b49aa521e5f11072e0,
         type: 3}
+    - target: {fileID: 8831576070855812757, guid: eaac4ee7e8e63c743a4a609dd267c379,
+        type: 3}
+      propertyPath: lightsManager
+      value: 
+      objectReference: {fileID: 1381215745}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaac4ee7e8e63c743a4a609dd267c379, type: 3}
 --- !u!1001 &2014939339

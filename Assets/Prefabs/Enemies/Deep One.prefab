@@ -301,12 +301,6 @@ MonoBehaviour:
   movementCooldownTimes:
     minimum: 1
     maximum: 3
-  attackTimes:
-    minimum: 1
-    maximum: 2
-  attackCooldownTimes:
-    minimum: 1
-    maximum: 3
 --- !u!114 &-5620080775616942381
 MonoBehaviour:
   m_ObjectHideFlags: 0

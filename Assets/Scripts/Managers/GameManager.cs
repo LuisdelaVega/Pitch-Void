@@ -49,6 +49,9 @@ public class GameManager : MonoBehaviour
   /* Cinemachine */
   public CinemachineVirtualCamera vcam1;
 
+  /* Lights Manager */
+  public LightsManager lightsManager;
+
   /* Private variables */
   private BoardManager boardManager;
   [SerializeField] private float levelStartDelay = 0f;
@@ -112,6 +115,8 @@ public class GameManager : MonoBehaviour
   {
     //While doingSetup is true the player can't move, prevent player from moving while title card is up.
     // doingSetup = true;
+
+    StartCoroutine(lightsManager.Flashing());
 
     //Get a reference to our image LevelImage by finding it by name.
     levelImage = GameObject.Find("LevelImage");
