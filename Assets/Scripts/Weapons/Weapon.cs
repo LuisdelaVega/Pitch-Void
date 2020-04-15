@@ -25,9 +25,6 @@ public abstract class Weapon : MonoBehaviour
   private float angle = 0;
   [HideInInspector] public float Angle { get => angle; private set => angle = value; }
 
-  /* Screen Shake */
-
-
   private void Awake() => spriteRenderer = GetComponent<SpriteRenderer>();
 
   private void Update()

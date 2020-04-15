@@ -13,6 +13,10 @@ public class Enemy : MovingCharacter
   private bool movementOnCooldown = false;
   private bool movementCooldownInProcess = false;
 
+  /* Attacking */
+  private bool attacking = false;
+  [SerializeField] private float attackDelay = 0.3f;
+
   // Start is called before the first frame update
   void Awake()
   {
@@ -94,14 +98,22 @@ public class Enemy : MovingCharacter
   }
 
   /* Attack */
-  protected override void Attack() => PerformAttack();
-
-  private void PerformAttack()
+  protected override void Attack()
   {
-    List<Transform> visibleTargets = GetComponent<FieldOfView>().visibleTargets;
-    if (visibleTargets.Count == 0) return;
+    if (!attacking)
+      StartCoroutine(PerformAttack());
+  }
 
-    GetComponentInChildren<Weapon>().Attack();
+  private IEnumerator PerformAttack()
+  {
+    attacking = true;
+    yield return new WaitForSeconds(attackDelay);
+
+    List<Transform> visibleTargets = GetComponent<FieldOfView>().visibleTargets;
+    if (visibleTargets.Count != 0)
+      GetComponentInChildren<Weapon>().Attack();
+
+    attacking = false;
   }
 
   public void Alert(Vector3 position)

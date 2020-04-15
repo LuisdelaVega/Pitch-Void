@@ -301,6 +301,7 @@ MonoBehaviour:
   movementCooldownTimes:
     minimum: 1
     maximum: 3
+  attackDelay: 0.3
 --- !u!114 &-5620080775616942381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +372,7 @@ PrefabInstance:
     - target: {fileID: 4206024002109007232, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
       propertyPath: cooldown
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4817231642374507868, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}

@@ -5,8 +5,17 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class LightsManager : MonoBehaviour
 {
+  public static LightsManager instance = null;
   private Light2D[] roomLights;
   private bool turnOff = true;
+
+  private void Awake()
+  {
+    if (instance == null)
+      instance = this;
+    else if (instance != this)
+      Destroy(gameObject);
+  }
 
   // Start is called before the first frame update
   void Start()
