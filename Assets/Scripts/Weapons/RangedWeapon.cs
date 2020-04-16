@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RangedWeapon : Weapon
 {
@@ -9,24 +7,18 @@ public class RangedWeapon : Weapon
   public Projectile projectilePrefab;
   [SerializeField] private float projectileForce = 20f;
 
-  /* Recoil */
-  protected Recoil recoilScript;
-
-  private void Start() => recoilScript = GetComponent<Recoil>();
+  /* Fire Point */
+  public Transform firePoint;
 
   public override void Attack()
   {
     if (onCooldown) return;
 
     var projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation, transform.parent);
-    Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-    rb.AddForce(firePoint.right * projectileForce, ForceMode2D.Impulse);
-    recoilScript.AddRecoil();
-
-    if (TryGetComponent<ScreenShake>(out var screenShake))
-    {
-      screenShake.Shake();
-    }
+    projectile.GetComponent<Rigidbody2D>()?.AddForce(firePoint.right * projectileForce, ForceMode2D.Impulse);
+    GetComponent<AudioSource>()?.Play();
+    GetComponent<Recoil>()?.AddRecoil();
+    GetComponent<ScreenShake>()?.Shake();
 
     onCooldown = true;
   }

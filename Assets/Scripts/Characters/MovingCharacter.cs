@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class MovingCharacter : MonoBehaviour
@@ -31,8 +29,7 @@ public abstract class MovingCharacter : MonoBehaviour
 
   void FixedUpdate()
   {
-    if (canMove)
-      Move();
+    if (canMove) Move();
   }
 
   /* Abstract methods */

@@ -1,27 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Recoil : MonoBehaviour
 {
 
-  public float maximumOffsetDistance;
-  public float recoilAcceleration;
-  public float weaponRecoilStartSpeend;
+  [SerializeField] private float maximumOffsetDistance = 0.3f;
+  [SerializeField] private float recoilAcceleration = 40;
+  [SerializeField] private float weaponRecoilStartSpeed = -8;
 
   private bool recoilInEffect;
   private bool weaponHeadedBackToStartPosition;
 
   private Vector3 offsetPosiiton;
   private Vector3 recoilSpeed;
-
-  public void AddRecoil()
-  {
-    recoilInEffect = true;
-    weaponHeadedBackToStartPosition = false;
-
-    recoilSpeed = transform.right * weaponRecoilStartSpeend;
-  }
 
   private void Start()
   {
@@ -61,5 +51,13 @@ public class Recoil : MonoBehaviour
 
     transform.position = newTransformPosition + newOffsetPosition;
     offsetPosiiton = newOffsetPosition;
+  }
+
+  public void AddRecoil()
+  {
+    recoilInEffect = true;
+    weaponHeadedBackToStartPosition = false;
+
+    recoilSpeed = transform.right * weaponRecoilStartSpeed;
   }
 }

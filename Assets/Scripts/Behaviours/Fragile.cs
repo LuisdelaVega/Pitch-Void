@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 // TODO: Delete this class maybe?
 public class Fragile : MonoBehaviour, IDamageable

@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 using System.Collections.Generic;
-using System.Collections;
 using Cinemachine;
 using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
 
@@ -66,7 +65,10 @@ public class GameManager : MonoBehaviour
     if (instance == null)
       instance = this;
     else if (instance != this)
+    {
       Destroy(gameObject);
+      return;
+    }
 
     DontDestroyOnLoad(gameObject);
 

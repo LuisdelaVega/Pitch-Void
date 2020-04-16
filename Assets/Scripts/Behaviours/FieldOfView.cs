@@ -34,9 +34,9 @@ public class FieldOfView : MonoBehaviour
 
     Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(transform.position, viewRadius, targetMask);
 
-    for (int i = 0; i < targetsInViewRadius.Length; i++)
+    foreach (Collider2D targetCollider in targetsInViewRadius)
     {
-      Transform target = targetsInViewRadius[i].transform;
+      Transform target = targetCollider.transform;
       Vector2 directionToTarget = (target.position - transform.position).normalized;
       if (TryGetComponent<MovingCharacter>(out var thisMovingCharacter))
       {
@@ -88,7 +88,7 @@ public class FieldOfView : MonoBehaviour
         Weapon weapon = thisMovingCharacter.GetComponentInChildren<Weapon>();
         if (weapon != null)
         {
-          float weaponAngle = thisMovingCharacter.GetComponentInChildren<Weapon>().Angle;
+          float weaponAngle = weapon.Angle;
           if (weaponAngle > 0 && weaponAngle <= 180)
             angleInDegrees -= weaponAngle - 90;
           else if (weaponAngle <= 0 && weaponAngle >= -180)

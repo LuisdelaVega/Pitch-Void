@@ -1,13 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class LightsManager : MonoBehaviour
 {
   public static LightsManager instance = null;
-  private Light2D[] roomLights;
   public Light2D globalLight;
+  private Light2D[] roomLights;
   private bool dimPointLights = true;
   private bool dimToggle = false;
   [SerializeField] private float dimAmount = 0.05f;
@@ -20,7 +19,12 @@ public class LightsManager : MonoBehaviour
     if (instance == null)
       instance = this;
     else if (instance != this)
+    {
       Destroy(gameObject);
+      return;
+    }
+
+    DontDestroyOnLoad(gameObject);
   }
 
   // Start is called before the first frame update
@@ -32,6 +36,7 @@ public class LightsManager : MonoBehaviour
     while (dimToggle)
     {
       yield return new WaitForSeconds(dimInterval);
+
       for (int index = 0; index < roomLights.Length; index++)
       {
         Light2D light = roomLights[index];

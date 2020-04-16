@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShadowCameraTargetGroup : MonoBehaviour
 {
-  //   [SerializeField] private Vector3 offset;
   [HideInInspector] public GameObject player;
   [HideInInspector] public GameObject closestTarget;
 
@@ -19,5 +16,4 @@ public class ShadowCameraTargetGroup : MonoBehaviour
       );
     }
   }
-
 }

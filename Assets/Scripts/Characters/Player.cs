@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MovingCharacter
@@ -37,17 +36,10 @@ public class Player : MovingCharacter
   }
 
   void OnDisable() => controls.Disable();
+  private void OnDestroy() => GetComponent<ScreenShake>()?.Shake();
+
   private void ChangeDirection(Vector2 newDirection) => Direction = newDirection;
   protected override void Move() => rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
   protected override void Attack() => activeWeapon.Attack();
 
-  private void OnDestroy()
-  {
-    if (TryGetComponent<ScreenShake>(out var screenShake))
-    {
-      screenShake.Shake();
-    }
-    // We probably want to do some death animation here, if the object hasn't been removed already
-    // Destroy(activeWeapon);
-  }
 }

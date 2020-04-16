@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Cinemachine;
 
 public class ScreenShake : MonoBehaviour
@@ -14,8 +12,8 @@ public class ScreenShake : MonoBehaviour
   // Cinemachine Shake
   private CinemachineVirtualCamera VirtualCamera;
   private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
-  // Start is called before the first frame update
-  void Start()
+
+  private void Start()
   {
     VirtualCamera = GameManager.instance.vcam1;
     // Get Virtual Camera Noise Profile
