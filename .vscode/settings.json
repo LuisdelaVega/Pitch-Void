@@ -59,6 +59,8 @@
     "Assets/Gizmos/": true,
     "Assets/Sprites/": true,
     "Assets/Tiles/": true,
-    "**/*.inputactions": true
+    "**/*.inputactions": true,
+    "**/*.csproj": true,
+    "**/*.sln": true
   }
 }
