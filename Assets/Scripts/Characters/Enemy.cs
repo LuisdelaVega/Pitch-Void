@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
 
 public class Enemy : MovingCharacter
 {
   /* Movement */
-  [SerializeField] private GameManager.Count movementTimes = new GameManager.Count(1, 2);
+  [SerializeField] private Count movementTimes = new Count(1, 2);
   private float movementTimer;
   private Vector2 lastDirection;
   private bool foundDirectioThisTurn = false;
-  [SerializeField] private GameManager.Count movementCooldownTimes = new GameManager.Count(1, 2);
+  [SerializeField] private Count movementCooldownTimes = new Count(1, 2);
   private bool movementOnCooldown = false;
   private bool movementCooldownInProcess = false;
 
@@ -141,6 +142,6 @@ public class Enemy : MovingCharacter
   }
 
   /* Helper Methods */
-  private int GetRandomInRange(GameManager.Count range) => Random.Range(range.minimum, range.maximum + 1);
-  private float AdjustTimer(float timer, GameManager.Count range) => Mathf.Clamp(timer - Time.fixedDeltaTime, 0, range.maximum);
+  private int GetRandomInRange(Count range) => Random.Range(range.minimum, range.maximum + 1);
+  private float AdjustTimer(float timer, Count range) => Mathf.Clamp(timer - Time.fixedDeltaTime, 0, range.maximum);
 }

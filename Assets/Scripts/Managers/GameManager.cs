@@ -9,23 +9,6 @@ using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random
 
 public class GameManager : MonoBehaviour
 {
-
-  // Using Serializable allows us to embed a class with sub properties in the inspector.
-  [Serializable]
-  public class Count
-  {
-    public int minimum; //Minimum value for our Count class.
-    public int maximum; //Maximum value for our Count class.
-
-
-    //Assignment constructor.
-    public Count(int min, int max)
-    {
-      minimum = min;
-      maximum = max;
-    }
-  }
-
   /* Public variables */
   public static GameManager instance = null;
   public CompositeCollider2D borders;

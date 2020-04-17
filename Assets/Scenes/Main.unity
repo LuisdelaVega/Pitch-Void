@@ -1155,9 +1155,15 @@ MonoBehaviour:
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: 870a68b99617b6e438deb0510df1314c, type: 3}
-    volume: 0.33
+    volume: 0.4
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Gunshot
+    clip: {fileID: 8300000, guid: 26f0face97ba6094c9397dc95177eae3, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!1001 &568541755
 PrefabInstance:

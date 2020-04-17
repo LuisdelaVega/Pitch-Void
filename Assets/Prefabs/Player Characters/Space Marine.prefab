@@ -85,8 +85,8 @@ GameObject:
   - component: {fileID: 8094088734949012528}
   - component: {fileID: 8094088734949012531}
   - component: {fileID: 922502665102953778}
-  - component: {fileID: 8094088734949012530}
   - component: {fileID: 5534301065370956156}
+  - component: {fileID: 8094088734949012530}
   - component: {fileID: 4772985831027489955}
   - component: {fileID: 7634051370192839493}
   m_Layer: 11
@@ -228,6 +228,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5534301065370956156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8094088734949012541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eced7b12408a1a4d8c6c1e5946cb6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6.05
+  animator: {fileID: 922502665102953778}
+  spriteRenderer: {fileID: 0}
+  shadowCameraTargetGroupPrefab: {fileID: 5154651576158194082, guid: f6e787ea283601d439d08666ec26c138,
+    type: 3}
+  shadowCameraTargetGroup: {fileID: 0}
+  weapons:
+  - {fileID: 4206024002109007232, guid: ad2af2190b197e24e98d3c559da79166, type: 3}
 --- !u!114 &8094088734949012530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,26 +270,6 @@ MonoBehaviour:
     m_Bits: 1024
   visibleTargets: []
   closestTarget: {fileID: 0}
---- !u!114 &5534301065370956156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8094088734949012541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eced7b12408a1a4d8c6c1e5946cb6db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5.5
-  animator: {fileID: 922502665102953778}
-  spriteRenderer: {fileID: 0}
-  shadowCameraTargetGroupPrefab: {fileID: 5154651576158194082, guid: f6e787ea283601d439d08666ec26c138,
-    type: 3}
-  shadowCameraTargetGroup: {fileID: 0}
-  weapons:
-  - {fileID: 4206024002109007232, guid: ad2af2190b197e24e98d3c559da79166, type: 3}
 --- !u!114 &4772985831027489955
 MonoBehaviour:
   m_ObjectHideFlags: 0
