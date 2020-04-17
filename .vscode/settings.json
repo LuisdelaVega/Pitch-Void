@@ -51,6 +51,19 @@
     "Obj/": true,
     "ProjectSettings/": true,
     "temp/": true,
-    "Temp/": true
+    "Temp/": true,
+    "Assets/Animations/": true,
+    "Assets/Palettes/": true,
+    "Assets/Prefabs/": true,
+    "Assets/Scenes/": true,
+    "Assets/Gizmos/": true,
+    "Assets/Sprites/": true,
+    "Assets/Tiles/": true,
+    "Assets/Audio/": true,
+    "Assets/Fonts/": true,
+    "Assets/Shaders/": true,
+    "**/*.inputactions": true,
+    "**/*.csproj": true,
+    "**/*.sln": true
   }
 }
