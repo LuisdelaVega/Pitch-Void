@@ -9,20 +9,18 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-  /* Public variables */
   public static GameManager instance = null;
 
-
+  /* Room */
   public CompositeCollider2D borders;
 
   /* Characters */
   public GameObject playerPrefab;
   private Player player;
-  [HideInInspector] public List<String> followers;
-  /* Enemies */
   public List<Enemy> enemyPrefabList;
   private Count enemiesCount;
   private int enemiesToSpawn;
+  private bool waitingToSpawnEnemy;
   // private int enemiesSpawnedInRoom = 0;
 
   /* Items */
@@ -37,9 +35,11 @@ public class GameManager : MonoBehaviour
   /* Controls */
   Controls controls;
 
-  /* Private variables */
+  /* Level */
   private int level = 6;
-  private bool waitingToSpawnEnemy;
+
+  /* UI */
+  private GameObject resetText;
 
   // Start is called before the first frame update
   void Awake()
@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
 
     // Initialize Controls
     controls = new Controls();
+
+    resetText = GameObject.Find("ResetText");
 
     // Get the min and max amount of enemies for this room
     InitializeEnemiesCount();
@@ -101,6 +103,7 @@ public class GameManager : MonoBehaviour
 
   void InitGame()
   {
+    resetText.SetActive(false);
     StartCoroutine(lightsManager.ToggleDim(true));
 
     player = GetComponent<BoardManager>().SetupScene(level, playerPrefab, vcam1).GetComponent<Player>();
@@ -137,6 +140,8 @@ public class GameManager : MonoBehaviour
 
     waitingToSpawnEnemy = false;
   }
+
+  public void GameOver() => resetText.SetActive(true);
 
   private void Restart()
   {

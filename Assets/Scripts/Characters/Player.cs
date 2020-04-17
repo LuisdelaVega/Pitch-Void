@@ -35,9 +35,8 @@ public class Player : MovingCharacter
     controls.Player.Movement.performed += ctx => ChangeDirection(ctx.ReadValue<Vector2>());
   }
 
+  public void Die() => GameManager.instance.GameOver();
   void OnDisable() => controls.Disable();
-  private void OnDestroy() => GetComponent<ScreenShake>()?.Shake();
-
   private void ChangeDirection(Vector2 newDirection) => Direction = newDirection;
   protected override void Move() => rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
   protected override void Attack() => activeWeapon.Attack();

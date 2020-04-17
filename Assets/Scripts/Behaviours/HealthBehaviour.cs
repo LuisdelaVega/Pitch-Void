@@ -34,7 +34,11 @@ public class HealthBehaviour : MonoBehaviour, IDamageable
     Health -= value;
 
     if (Health == 0)
+    {
+      GetComponent<ScreenShake>()?.Shake();
+      GetComponent<Player>()?.Die();
       Destroy(gameObject);
+    }
   }
 
   public void DealDamage(float damageValue) => Remove(damageValue);
