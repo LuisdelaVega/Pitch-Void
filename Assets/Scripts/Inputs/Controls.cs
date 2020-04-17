@@ -221,6 +221,33 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""GameManager"",
+            ""id"": ""9c7c1ed7-ef2c-4215-ab61-f225f6a27db0"",
+            ""actions"": [
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""c191fb8a-c392-42b5-9ee8-736b08eb2fee"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.4,pressPoint=0.5)""
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c6359bef-ca55-4e47-89c2-27c453e098ca"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -259,6 +286,9 @@ public class @Controls : IInputActionCollection, IDisposable
         // Weapon
         m_Weapon = asset.FindActionMap("Weapon", throwIfNotFound: true);
         m_Weapon_Attack = m_Weapon.FindAction("Attack", throwIfNotFound: true);
+        // GameManager
+        m_GameManager = asset.FindActionMap("GameManager", throwIfNotFound: true);
+        m_GameManager_Restart = m_GameManager.FindAction("Restart", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -370,6 +400,39 @@ public class @Controls : IInputActionCollection, IDisposable
         }
     }
     public WeaponActions @Weapon => new WeaponActions(this);
+
+    // GameManager
+    private readonly InputActionMap m_GameManager;
+    private IGameManagerActions m_GameManagerActionsCallbackInterface;
+    private readonly InputAction m_GameManager_Restart;
+    public struct GameManagerActions
+    {
+        private @Controls m_Wrapper;
+        public GameManagerActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Restart => m_Wrapper.m_GameManager_Restart;
+        public InputActionMap Get() { return m_Wrapper.m_GameManager; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GameManagerActions set) { return set.Get(); }
+        public void SetCallbacks(IGameManagerActions instance)
+        {
+            if (m_Wrapper.m_GameManagerActionsCallbackInterface != null)
+            {
+                @Restart.started -= m_Wrapper.m_GameManagerActionsCallbackInterface.OnRestart;
+                @Restart.performed -= m_Wrapper.m_GameManagerActionsCallbackInterface.OnRestart;
+                @Restart.canceled -= m_Wrapper.m_GameManagerActionsCallbackInterface.OnRestart;
+            }
+            m_Wrapper.m_GameManagerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Restart.started += instance.OnRestart;
+                @Restart.performed += instance.OnRestart;
+                @Restart.canceled += instance.OnRestart;
+            }
+        }
+    }
+    public GameManagerActions @GameManager => new GameManagerActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -395,5 +458,9 @@ public class @Controls : IInputActionCollection, IDisposable
     public interface IWeaponActions
     {
         void OnAttack(InputAction.CallbackContext context);
+    }
+    public interface IGameManagerActions
+    {
+        void OnRestart(InputAction.CallbackContext context);
     }
 }

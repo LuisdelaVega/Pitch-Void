@@ -208,6 +208,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "GameManager",
+            "id": "9c7c1ed7-ef2c-4215-ab61-f225f6a27db0",
+            "actions": [
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "c191fb8a-c392-42b5-9ee8-736b08eb2fee",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.4,pressPoint=0.5)"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c6359bef-ca55-4e47-89c2-27c453e098ca",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
