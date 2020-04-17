@@ -59,6 +59,9 @@
     "Assets/Gizmos/": true,
     "Assets/Sprites/": true,
     "Assets/Tiles/": true,
+    "Assets/Audio/": true,
+    "Assets/Fonts/": true,
+    "Assets/Shaders/": true,
     "**/*.inputactions": true,
     "**/*.csproj": true,
     "**/*.sln": true

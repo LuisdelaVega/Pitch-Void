@@ -156,6 +156,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Enemies
+    // enemiesSpawnedInRoom = 0;
     waitingToSpawnEnemy = false;
     Enemy[] enemies = FindObjectsOfType<Enemy>();
     foreach (Enemy enemy in enemies)
@@ -163,7 +164,6 @@ public class GameManager : MonoBehaviour
       enemy.enabled = false;
       Destroy(enemy.gameObject);
     }
-    // enemiesSpawnedInRoom = 0;
 
     // Init game
     instance.InitializeEnemiesCount();
