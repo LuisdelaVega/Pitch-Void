@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class RangedWeapon : Weapon
 {
@@ -9,6 +10,13 @@ public class RangedWeapon : Weapon
 
   /* Fire Point */
   public Transform firePoint;
+
+  /* Sound */
+  [SerializeField] private bool silenced = false;
+  [SerializeField] private float soundDistance = 30;
+
+  /* Event */
+  public static event Action<Vector2, float> OnShotFired;
 
   public override void Attack()
   {
@@ -21,5 +29,8 @@ public class RangedWeapon : Weapon
     GetComponent<ScreenShake>()?.Shake();
 
     onCooldown = true;
+
+    if (!silenced && transform.parent.TryGetComponent<Player>(out var player))
+      OnShotFired?.Invoke(player.transform.position, soundDistance);
   }
 }

@@ -35,4 +35,5 @@ public abstract class MovingCharacter : MonoBehaviour
   /* Abstract methods */
   protected abstract void Move();
   protected abstract void Attack();
+  public abstract void Die();
 }

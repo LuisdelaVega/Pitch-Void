@@ -65,15 +65,14 @@ public abstract class Weapon : MonoBehaviour
 
   private Vector2 GetDirection()
   {
-    Transform parent = transform.parent;
     Vector2 distanceVector = Vector2.zero;
-    if (parent != null)
+    if (transform.parent != null)
     {
-      Transform closestTarget = parent.GetComponent<FieldOfView>().closestTarget;
+      Transform closestTarget = transform.parent.GetComponent<FieldOfView>().closestTarget;
       if (closestTarget != null) // Point to the closest target
         distanceVector = closestTarget.position - transform.position;
       else // If no targert in range, point towards the direction the player is moving
-        distanceVector = parent.GetComponent<MovingCharacter>().Direction;
+        distanceVector = transform.parent.GetComponent<MovingCharacter>().Direction;
     }
 
     return distanceVector;

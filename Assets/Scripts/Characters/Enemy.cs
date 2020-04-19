@@ -26,6 +26,9 @@ public class Enemy : MovingCharacter
     movementTimer = GetRandomInRange(movementTimes);
   }
 
+  private void OnEnable() => RangedWeapon.OnShotFired += Alert;
+  private void OnDisable() => RangedWeapon.OnShotFired -= Alert;
+
   /* Movement */
   protected override void Move()
   {
@@ -117,9 +120,14 @@ public class Enemy : MovingCharacter
     attacking = false;
   }
 
-  public void Alert(Vector3 position)
+  public void Alert(Vector2 position, float distance)
   {
-    FindNewDirection(position);
+    Vector2 playerPosition = position;
+    float distanceToTarget = Vector2.Distance(transform.position, playerPosition);
+
+    if (distanceToTarget > distance) return;
+
+    FindNewDirection(playerPosition);
     movementOnCooldown = movementCooldownInProcess = false;
     movementTimer = GetRandomInRange(movementTimes);
   }
@@ -132,6 +140,8 @@ public class Enemy : MovingCharacter
     movementOnCooldown = foundDirectioThisTurn = movementCooldownInProcess = false;
     movementTimer = GetRandomInRange(movementTimes);
   }
+
+  public override void Die() => enabled = false;
 
   /* Helper Methods */
   private int GetRandomInRange(Count range) => Random.Range(range.minimum, range.maximum + 1);

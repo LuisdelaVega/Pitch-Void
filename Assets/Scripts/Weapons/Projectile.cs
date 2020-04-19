@@ -19,8 +19,6 @@ public class Projectile : MonoBehaviour
     )
     {
       damageable.DealDamage(damage);
-      // If damaged object was an enemy make him move towards where he got shot
-      other.GetComponent<Enemy>()?.Alert(transform.position);
       Destroy(gameObject);
     }
     else if (other.tag == "Wall")
