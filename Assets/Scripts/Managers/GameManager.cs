@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
   public CinemachineVirtualCamera vcam1;
 
   /* Lights Manager */
-  public LightsManager lightsManager;
+  // public LightsManager lightsManager;
 
   /* Controls */
   Controls controls;
@@ -72,10 +72,12 @@ public class GameManager : MonoBehaviour
     controls.GameManager.Restart.performed += _ => Restart();
   }
 
+  void OnDisable() => controls.Disable();
+
   private void Update()
   {
-    if (!waitingToSpawnEnemy)
-      StartCoroutine(SpawnEnemies());
+    // if (!waitingToSpawnEnemy)
+    //   StartCoroutine(SpawnEnemies());
   }
 
   // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -104,7 +106,7 @@ public class GameManager : MonoBehaviour
   void InitGame()
   {
     resetText.SetActive(false);
-    StartCoroutine(lightsManager.ToggleDim(true));
+    // StartCoroutine(lightsManager.ToggleDim(true));
 
     player = GetComponent<BoardManager>().SetupScene(level, playerPrefab, vcam1).GetComponent<Player>();
     enemiesToSpawn = Random.Range(enemiesCount.minimum, enemiesCount.maximum);
@@ -148,14 +150,14 @@ public class GameManager : MonoBehaviour
     // Coroutines
     StopAllCoroutines();
 
-    // Player Character
+    // // Player Character
     if (player != null)
     {
       player.enabled = false;
       Destroy(player.gameObject);
     }
 
-    // Enemies
+    // // Enemies
     // enemiesSpawnedInRoom = 0;
     waitingToSpawnEnemy = false;
     Enemy[] enemies = FindObjectsOfType<Enemy>();
@@ -165,8 +167,12 @@ public class GameManager : MonoBehaviour
       Destroy(enemy.gameObject);
     }
 
-    // Init game
-    instance.InitializeEnemiesCount();
-    instance.InitGame();
+    // // Init game
+    // instance.InitializeEnemiesCount();
+    // instance.InitGame();
+    instance = null;
+    enabled = false;
+    Destroy(gameObject);
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
   }
 }

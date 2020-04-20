@@ -70,7 +70,7 @@ public class FieldOfView : MonoBehaviour
         player.shadowCameraTargetGroup.closestTarget = closestTarget.gameObject;
         GameManager.instance.vcam1.Follow = player.shadowCameraTargetGroup.transform;
       }
-      else if (GameManager.instance.vcam1.m_Follow != player.transform)
+      else if (GameManager.instance != null && GameManager.instance.vcam1.m_Follow != player.transform)
       {
         player.shadowCameraTargetGroup.closestTarget = null;
         GameManager.instance.vcam1.Follow = player.transform;
