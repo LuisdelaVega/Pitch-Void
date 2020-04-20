@@ -13,6 +13,8 @@ TagManager:
   - Wall
   - Blocking Object
   - Point Light
+  - SpawnPoint
+  - Rooms
   layers:
   - Default
   - TransparentFX
@@ -67,4 +69,7 @@ TagManager:
     locked: 0
   - name: Weapon
     uniqueID: 2919788845
+    locked: 0
+  - name: Ceiling
+    uniqueID: 500721715
     locked: 0

@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 8309509585734906880}
   - component: {fileID: 3969533068437451313}
   m_Layer: 12
-  m_Name: Point Light 2D (1)
+  m_Name: Point Light 2D
   m_TagString: Point Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 0.8
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 5542352673fc9dae0000000041f71852
+  m_ApplyToSortingLayers: 5542352673fc9dae0000000041f718523368d81d
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 6827218778598763356}
   - component: {fileID: 3704513491835802638}
   m_Layer: 12
-  m_Name: Deep One
+  m_Name: Space Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,18 +247,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.016126275, y: 0.056}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.48641998, y: 0.39674306}
-    oldSize: {x: 0.7916667, y: 1.125}
+    oldSize: {x: 1.1875, y: 1.6875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1875, y: 1.45}
   m_EdgeRadius: 0
 --- !u!50 &-5602813530348549102
 Rigidbody2D:
