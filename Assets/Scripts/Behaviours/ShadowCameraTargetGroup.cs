@@ -15,5 +15,7 @@ public class ShadowCameraTargetGroup : MonoBehaviour
             player.transform.position.z
       );
     }
+    else
+      transform.position = player.transform.position;
   }
 }
