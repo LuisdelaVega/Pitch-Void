@@ -8585,11 +8585,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a27bcb61c7cc644afca4c2d2509b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arcadeMode: 0
   walls: {fileID: 8487454324516313010}
   roomLightsManager: {fileID: 8749031389415424228}
   enemyPrefabList:
   - {fileID: -6906897709931417240, guid: 72dbbbb26c2493b49aa521e5f11072e0, type: 3}
-  spawnEnemyCooldown: 2
+  spawnEnemyCooldown: 1
 --- !u!1 &8487454324516313005
 GameObject:
   m_ObjectHideFlags: 0

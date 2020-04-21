@@ -21,7 +21,7 @@ public class RoomManager : MonoBehaviour
   private bool waitingToSpawnEnemy = true;
   private int enemiesSpawnedInRoom = 0;
   private int enemiesInRoom = 0;
-  [SerializeField] private float spawnEnemyCooldown = 2f;
+  [SerializeField] private float spawnEnemyCooldown = 1f;
 
   private void Start()
   {
@@ -32,11 +32,11 @@ public class RoomManager : MonoBehaviour
   {
     if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn) // TODO: Open the doors
     {
+      if (!arcadeMode)
+        Enemy.OnEnemyKilled -= UpdateEnemyCount;
       roomIsActive = false;
-      Debug.Log("Cleared room");
       StopCoroutine(toggleDim);
       roomLightsManager.TurnOnLights();
-      Enemy.OnEnemyKilled -= UpdateEnemyCount;
     }
   }
 
