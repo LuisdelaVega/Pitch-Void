@@ -131,11 +131,11 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 40
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2560
+    m_Bits: 34816
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: e9afbd635f3d88c409bf26ce0f76d519, type: 2}
   m_TargetDisplay: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eced7b12408a1a4d8c6c1e5946cb6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6.05
+  moveSpeed: 6.3
   animator: {fileID: 922502665102953778}
   spriteRenderer: {fileID: 0}
   shadowCameraTargetGroupPrefab: {fileID: 5154651576158194082, guid: f6e787ea283601d439d08666ec26c138,
