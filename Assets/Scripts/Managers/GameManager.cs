@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
 using System.Collections.Generic;
 using Cinemachine;
 using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
@@ -21,7 +19,7 @@ public class GameManager : MonoBehaviour
   private Count enemiesCount;
   private int enemiesToSpawn;
   private bool waitingToSpawnEnemy;
-  // private int enemiesSpawnedInRoom = 0;
+  private int enemiesSpawnedInRoom = 0;
 
   /* Items */
   public List<GameObject> weapons;
@@ -76,8 +74,8 @@ public class GameManager : MonoBehaviour
 
   private void Update()
   {
-    // if (!waitingToSpawnEnemy)
-    //   StartCoroutine(SpawnEnemies());
+    if (!waitingToSpawnEnemy)
+      StartCoroutine(SpawnEnemies());
   }
 
   // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -106,11 +104,10 @@ public class GameManager : MonoBehaviour
   void InitGame()
   {
     resetText.SetActive(false);
-    // StartCoroutine(lightsManager.ToggleDim(true));
 
     player = GetComponent<BoardManager>().SetupScene(level, playerPrefab, vcam1).GetComponent<Player>();
+
     enemiesToSpawn = Random.Range(enemiesCount.minimum, enemiesCount.maximum);
-    // InvokeRepeating("SpawnEnemies", 2, 2);
   }
 
   public IEnumerator SpawnEnemies()
@@ -158,7 +155,7 @@ public class GameManager : MonoBehaviour
     }
 
     // // Enemies
-    // enemiesSpawnedInRoom = 0;
+    enemiesSpawnedInRoom = 0;
     waitingToSpawnEnemy = false;
     Enemy[] enemies = FindObjectsOfType<Enemy>();
     foreach (Enemy enemy in enemies)
