@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
@@ -17,6 +18,9 @@ public class Enemy : MovingCharacter
   /* Attacking */
   private bool attacking = false;
   [SerializeField] private float attackDelay = 0.3f;
+
+  /* Event */
+  public static event Action OnEnemyKilled;
 
   // Start is called before the first frame update
   void Awake()
@@ -141,7 +145,7 @@ public class Enemy : MovingCharacter
     movementTimer = GetRandomInRange(movementTimes);
   }
 
-  public override void Die() => enabled = false;
+  public override void Die() => OnEnemyKilled?.Invoke();
 
   /* Helper Methods */
   private int GetRandomInRange(Count range) => Random.Range(range.minimum, range.maximum + 1);

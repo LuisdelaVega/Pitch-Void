@@ -17,6 +17,11 @@ public abstract class Weapon : MonoBehaviour
   private float angle = 0;
   public float Angle { get => angle; private set => angle = value; }
 
+  /* Audio */
+  protected AudioManager audioManager;
+
+  private void Awake() => audioManager = FindObjectOfType<AudioManager>();
+
   private void Update()
   {
     Rotate();
