@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
@@ -18,6 +19,9 @@ public class Enemy : MovingCharacter
   private bool attacking = false;
   [SerializeField] private float attackDelay = 0.3f;
 
+  /* Event */
+  public static event Action OnEnemyKilled;
+
   // Start is called before the first frame update
   void Awake()
   {
@@ -25,6 +29,9 @@ public class Enemy : MovingCharacter
     FindNewDirection();
     movementTimer = GetRandomInRange(movementTimes);
   }
+
+  private void OnEnable() => RangedWeapon.OnShotFired += Alert;
+  private void OnDisable() => RangedWeapon.OnShotFired -= Alert;
 
   /* Movement */
   protected override void Move()
@@ -42,11 +49,15 @@ public class Enemy : MovingCharacter
     else if (!foundDirectioThisTurn) FindNewDirection();
 
     AvoidObstacles();
+    animator.SetFloat("Speed", Direction.sqrMagnitude);
     rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
 
     movementTimer = AdjustTimer(movementTimer, movementTimes);
     if (movementTimer <= 0)
+    {
+      animator.SetFloat("Speed", 0);
       movementOnCooldown = true;
+    }
   }
 
   private void AvoidObstacles()
@@ -117,9 +128,14 @@ public class Enemy : MovingCharacter
     attacking = false;
   }
 
-  public void Alert(Vector3 position)
+  public void Alert(Vector2 position, float distance)
   {
-    FindNewDirection(position);
+    Vector2 playerPosition = position;
+    float distanceToTarget = Vector2.Distance(transform.position, playerPosition);
+
+    if (distanceToTarget > distance) return;
+
+    FindNewDirection(playerPosition);
     movementOnCooldown = movementCooldownInProcess = false;
     movementTimer = GetRandomInRange(movementTimes);
   }
@@ -132,6 +148,8 @@ public class Enemy : MovingCharacter
     movementOnCooldown = foundDirectioThisTurn = movementCooldownInProcess = false;
     movementTimer = GetRandomInRange(movementTimes);
   }
+
+  public override void Die() => OnEnemyKilled?.Invoke();
 
   /* Helper Methods */
   private int GetRandomInRange(Count range) => Random.Range(range.minimum, range.maximum + 1);

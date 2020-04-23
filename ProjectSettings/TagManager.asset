@@ -13,6 +13,8 @@ TagManager:
   - Wall
   - Blocking Object
   - Point Light
+  - SpawnPoint
+  - Rooms
   layers:
   - Default
   - TransparentFX
@@ -29,7 +31,7 @@ TagManager:
   - Enemy
   - Projectiles
   - Lights
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -67,4 +69,10 @@ TagManager:
     locked: 0
   - name: Weapon
     uniqueID: 2919788845
+    locked: 0
+  - name: Ceiling
+    uniqueID: 500721715
+    locked: 0
+  - name: Minimap
+    uniqueID: 3792105607
     locked: 0

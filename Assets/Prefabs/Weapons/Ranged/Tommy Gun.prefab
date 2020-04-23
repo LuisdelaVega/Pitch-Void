@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -7837294106855103285, guid: 60916486e51ed0649bd645528010130e,
+  m_Sprite: {fileID: -4035873092113196105, guid: 60916486e51ed0649bd645528010130e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,6 +104,8 @@ MonoBehaviour:
     type: 3}
   projectileForce: 22
   firePoint: {fileID: 3444253564461638858}
+  silenced: 0
+  soundDistance: 9
 --- !u!114 &921994697273736414
 MonoBehaviour:
   m_ObjectHideFlags: 0

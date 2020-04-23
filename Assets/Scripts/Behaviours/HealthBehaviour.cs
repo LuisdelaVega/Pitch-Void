@@ -36,7 +36,7 @@ public class HealthBehaviour : MonoBehaviour, IDamageable
     if (Health == 0)
     {
       GetComponent<ScreenShake>()?.Shake();
-      GetComponent<Player>()?.Die();
+      GetComponent<MovingCharacter>()?.Die();
       Destroy(gameObject);
     }
   }
