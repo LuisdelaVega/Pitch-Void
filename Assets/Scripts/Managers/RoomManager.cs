@@ -23,20 +23,28 @@ public class RoomManager : MonoBehaviour
   private int enemiesInRoom = 0;
   [SerializeField] private float spawnEnemyCooldown = 1f;
 
+  /* Door */
+  public GameObject[] doors;
+
+
+  private void Awake() => ActivateDoors(false);
+
   private void Start()
   {
     if (arcadeMode) SetUpRoom();
   }
 
+  private void OnDisable() => Enemy.OnEnemyKilled -= UpdateEnemyCount;
+
   private void UpdateEnemyCount()
   {
     if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn) // TODO: Open the doors
     {
-      if (!arcadeMode)
-        Enemy.OnEnemyKilled -= UpdateEnemyCount;
+      ActivateDoors(false);
       roomIsActive = false;
       StopCoroutine(toggleDim);
       roomLightsManager.TurnOnLights();
+      enabled = false;
     }
   }
 
@@ -49,7 +57,9 @@ public class RoomManager : MonoBehaviour
 
   public void SetUpRoom()
   {
-    enemiesToSpawn = GetAmountOfEnemiesToSpawn();
+    ActivateDoors(true);
+
+    enemiesInRoom = enemiesToSpawn = GetAmountOfEnemiesToSpawn();
     toggleDim = StartCoroutine(roomLightsManager.ToggleDim(true));
     waitingToSpawnEnemy = false;
     roomIsActive = true;
@@ -76,13 +86,10 @@ public class RoomManager : MonoBehaviour
       } while (distanceToPlayer.sqrMagnitude < 50); // TODO: Revisit this number
 
       int index = Random.Range(0, enemyPrefabList.Count);
-      var enemy = Instantiate(enemyPrefabList[index], spawnLocation, Quaternion.identity);
+      Instantiate(enemyPrefabList[index], spawnLocation, Quaternion.identity);
 
       if (!arcadeMode)
-      {
         ++enemiesSpawnedInRoom;
-        ++enemiesInRoom;
-      }
     }
 
     waitingToSpawnEnemy = false;
@@ -92,4 +99,10 @@ public class RoomManager : MonoBehaviour
         Mathf.FloorToInt(Mathf.Log(GameManager.instance.level + 2, 2)),
         Mathf.CeilToInt(Mathf.Log(GameManager.instance.level + 2, 2) * 2)
     );
+
+  private void ActivateDoors(bool isActive)
+  {
+    foreach (GameObject door in doors)
+      door.SetActive(isActive);
+  }
 }

@@ -13,9 +13,9 @@ public class ActivateRoom : MonoBehaviour
       Destroy(GetComponent<CompositeCollider2D>());
       Destroy(GetComponent<Rigidbody2D>());
 
-      Invoke("SetUp", 0.5f);
+      Invoke("SetUp", 0.1f);
     }
   }
 
-  private void SetUp() => roomManager.SetUpRoom();
+  private void SetUp() => roomManager?.SetUpRoom();
 }
