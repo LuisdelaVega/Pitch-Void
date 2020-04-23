@@ -76,20 +76,15 @@ public class GameManager : MonoBehaviour
     if (player != null)
       Destroy(player.gameObject);
 
-    // // Enemies
-    // enemiesSpawnedInRoom = 0;
-    // waitingToSpawnEnemy = false;
-    // Enemy[] enemies = FindObjectsOfType<Enemy>();
-    // foreach (Enemy enemy in enemies)
-    // {
-    //   enemy.enabled = false;
-    //   Destroy(enemy.gameObject);
-    // }
-
     // Init game
+    DestroyGameManager();
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+  }
+
+  public void DestroyGameManager()
+  {
     instance = null;
     enabled = false;
     Destroy(gameObject);
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
   }
 }
