@@ -23,7 +23,6 @@ public abstract class MovingCharacter : MonoBehaviour
 
   private void Update()
   {
-    if (animator != null) animator.SetFloat("Speed", Direction.sqrMagnitude); // TODO: This won't have to be on an if statement in the future when every Character has animation
     if (holdAttack) Attack();
   }
 

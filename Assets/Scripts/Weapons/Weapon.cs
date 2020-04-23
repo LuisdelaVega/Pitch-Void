@@ -20,7 +20,14 @@ public abstract class Weapon : MonoBehaviour
   /* Audio */
   protected AudioManager audioManager;
 
-  private void Awake() => audioManager = FindObjectOfType<AudioManager>();
+  /* Sprite */
+  SpriteRenderer spriteRenderer;
+
+  private void Awake()
+  {
+    spriteRenderer = GetComponent<SpriteRenderer>();
+    audioManager = FindObjectOfType<AudioManager>();
+  }
 
   private void Update()
   {
@@ -40,28 +47,30 @@ public abstract class Weapon : MonoBehaviour
   private void Rotate()
   {
     Vector2 direction = GetDirection();
-    if (direction.sqrMagnitude == 0) return;
+    if (direction.sqrMagnitude == 0)
+    {
+      spriteRenderer.sortingOrder = 2;
+      return;
+    }
 
     Angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     bool flipStrite = Angle > 90 || Angle < -90;
 
     // Flip the Weapon
-    if (TryGetComponent<SpriteRenderer>(out var spriteRenderer))
-    {
-      spriteRenderer.flipY = flipStrite;
 
-      // Hide the Weapon behind the Character
-      if (Angle > 67.5 && Angle < 112.5 && spriteRenderer.sortingOrder != 0)
-        spriteRenderer.sortingOrder = 0;
-      else if ((Angle <= 67.5 || Angle >= 112.5) && spriteRenderer.sortingOrder != 2)
-        spriteRenderer.sortingOrder = 2;
-    }
+    spriteRenderer.flipY = flipStrite;
+
+    // Hide the Weapon behind the Character
+    if (Angle > 67.5 && Angle < 112.5 && spriteRenderer.sortingOrder != 0)
+      spriteRenderer.sortingOrder = 0;
+    else if ((Angle <= 67.5 || Angle >= 112.5) && spriteRenderer.sortingOrder != 2)
+      spriteRenderer.sortingOrder = 2;
 
     // Set the direction of the Character relative to the Weapon's angle
-    if (transform.parent != null && transform.parent.tag == "Player") // TODO: Make this happen for Enemies in the future
+    if (transform.parent != null) // TODO: Make this happen for Enemies in the future
     {
       transform.parent.GetComponent<MovingCharacter>()?.animator.SetFloat("Angle", Angle / 180);
-      transform.parent.GetComponent<MovingCharacter>().spriteRenderer.flipX = flipStrite; // TODO: This won't happen in the future. I think...
+      transform.parent.GetComponent<MovingCharacter>().spriteRenderer.flipX = flipStrite;
     }
 
     // Rotate the Weapon

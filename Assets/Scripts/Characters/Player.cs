@@ -37,7 +37,11 @@ public class Player : MovingCharacter
 
   void OnDisable() => controls.Disable();
   private void ChangeDirection(Vector2 newDirection) => Direction = newDirection;
-  protected override void Move() => rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
+  protected override void Move()
+  {
+    animator.SetFloat("Speed", Direction.sqrMagnitude);
+    rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
+  }
   protected override void Attack() => activeWeapon.Attack();
   public override void Die()
   {

@@ -28,19 +28,19 @@ public class RoomSpawner : MonoBehaviour
     {
       case 1:
         // Need to spawn a room with a BOTTOM door
-        Instantiate(templates.bottomRooms[Random.Range(0, templates.bottomRooms.Length)], transform.position, transform.rotation);
+        Instantiate(templates.bottomRooms[Random.Range(0, templates.bottomRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();//?.SpawnCover();
         break;
       case 2:
         // Need to spawn a room with a LEFT door
-        Instantiate(templates.leftRooms[Random.Range(0, templates.leftRooms.Length)], transform.position, transform.rotation);
+        Instantiate(templates.leftRooms[Random.Range(0, templates.leftRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();//?.SpawnCover();
         break;
       case 3:
         // Need to spawn a room with a TOP door
-        Instantiate(templates.topRooms[Random.Range(0, templates.topRooms.Length)], transform.position, transform.rotation);
+        Instantiate(templates.topRooms[Random.Range(0, templates.topRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();//?.SpawnCover();
         break;
       default:
         // Need to spawn a room with a RIGHT door
-        Instantiate(templates.rightRooms[Random.Range(0, templates.rightRooms.Length)], transform.position, transform.rotation);
+        Instantiate(templates.rightRooms[Random.Range(0, templates.rightRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();//?.SpawnCover();
         break;
     }
 

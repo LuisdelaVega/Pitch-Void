@@ -10,7 +10,7 @@ public class RoomTemplates : MonoBehaviour
   public GameObject[] leftRooms;
 
   public GameObject closedRoom;
-  public GameObject bossRoom; // This doesn't have to be a list. It be updated by every room and set equal to itself. Then the room restarts the wait time. Once wait time is < 0, then this cariable will contain the value of the last room
+  [HideInInspector] public GameObject bossRoom; // Maybe create a list of boss rooms and replace the one here with one of those
 
   public float waitTime = 2;
   public float timer = 2;

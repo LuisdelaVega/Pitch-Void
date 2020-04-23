@@ -49,11 +49,15 @@ public class Enemy : MovingCharacter
     else if (!foundDirectioThisTurn) FindNewDirection();
 
     AvoidObstacles();
+    animator.SetFloat("Speed", Direction.sqrMagnitude);
     rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
 
     movementTimer = AdjustTimer(movementTimer, movementTimes);
     if (movementTimer <= 0)
+    {
+      animator.SetFloat("Speed", 0);
       movementOnCooldown = true;
+    }
   }
 
   private void AvoidObstacles()

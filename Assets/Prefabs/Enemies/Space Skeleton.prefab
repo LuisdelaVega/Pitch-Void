@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: -5620080775616942381}
   - component: {fileID: 6827218778598763356}
   - component: {fileID: 3704513491835802638}
+  - component: {fileID: 2307577401785852470}
   m_Layer: 12
   m_Name: Space Skeleton
   m_TagString: Enemy
@@ -247,7 +248,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016126275, y: 0.056}
+  m_Offset: {x: 0, y: 0.06}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.48641998, y: 0.39674306}
@@ -258,7 +259,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1875, y: 1.45}
+  m_Size: {x: 1.1875, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &-5602813530348549102
 Rigidbody2D:
@@ -294,14 +295,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  animator: {fileID: 0}
+  animator: {fileID: 2307577401785852470}
   spriteRenderer: {fileID: 0}
   movementTimes:
     minimum: 2
     maximum: 4
   movementCooldownTimes:
     minimum: 1
-    maximum: 3
+    maximum: 4
   attackDelay: 0.3
 --- !u!114 &-5620080775616942381
 MonoBehaviour:
@@ -353,6 +354,25 @@ MonoBehaviour:
   ShakeDuration: 0.2
   ShakeAmplitude: 0.5
   ShakeFrequency: 1.8
+--- !u!95 &2307577401785852470
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8671040359916251570}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f31b615e668012d4bb9173bde0d5c1c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &9008205079215335018
 PrefabInstance:
   m_ObjectHideFlags: 0
