@@ -72,6 +72,78 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &6673291239014348172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8912123270969781452}
+  - component: {fileID: 4494526069525643447}
+  m_Layer: 12
+  m_Name: Alert Light
+  m_TagString: Point Light
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8912123270969781452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6673291239014348172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5290927916988005377}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4494526069525643447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6673291239014348172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.4
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.8
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 5388cc2f2d7108ae5542352673fc9dae41f71852013ce510000000003368d81d
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 1
+  m_PointLightOuterRadius: 1.5
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &6747575327549019493
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +193,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 0.8
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 5542352673fc9dae0000000041f718523368d81d
+  m_ApplyToSortingLayers: 5542352673fc9dae0000000041f718523368d81d013ce510
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -181,6 +253,7 @@ Transform:
   m_Children:
   - {fileID: 2768061099849257855}
   - {fileID: 8309509585734906880}
+  - {fileID: 8912123270969781452}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -221,7 +294,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 801933395
-  m_SortingLayer: -3
+  m_SortingLayer: -2
   m_SortingOrder: 1
   m_Sprite: {fileID: 8300089242491667876, guid: 0eb0f26949c9e874ba158d7c486f4741,
     type: 3}
@@ -297,6 +370,10 @@ MonoBehaviour:
   moveSpeed: 3
   animator: {fileID: 2307577401785852470}
   spriteRenderer: {fileID: 0}
+  bloodParticleEffect: {fileID: 5936509768155569356, guid: f1def601c9609504cb884bc5a5da10ba,
+    type: 3}
+  bloodStain: {fileID: 801542175488566912, guid: bf13995d19504c54a8762ec6c6c29f7b,
+    type: 3}
   movementTimes:
     minimum: 2
     maximum: 4
@@ -304,6 +381,11 @@ MonoBehaviour:
     minimum: 1
     maximum: 4
   attackDelay: 0.3
+  alertLight: {fileID: 4494526069525643447}
+  maxIntensity: 0.8
+  alertLightTime: 1
+  alertLightOn: 0
+  corpse: {fileID: 731604617656964825, guid: e2dd8ccb976389d459e97934a592c83e, type: 3}
 --- !u!114 &-5620080775616942381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,7 +470,7 @@ PrefabInstance:
     - target: {fileID: 3501246300566999006, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
       propertyPath: m_SortingLayer
-      value: -3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4206024002109007232, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}

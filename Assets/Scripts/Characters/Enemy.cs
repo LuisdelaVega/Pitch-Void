@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
 
 public class Enemy : MovingCharacter
@@ -22,11 +23,21 @@ public class Enemy : MovingCharacter
   /* Event */
   public static event Action OnEnemyKilled;
 
+  /* Light */
+  public Light2D alertLight;
+  public float maxIntensity = 0.8f;
+  public float alertLightTime = 1f;
+  public bool alertLightOn = false;
+
+  /* Corpse */ // TODO: Move this to Moving Character
+  public GameObject corpse;
+
   // Start is called before the first frame update
   void Awake()
   {
     holdAttack = true;
     FindNewDirection();
+    alertLight.intensity = 0;
     movementTimer = GetRandomInRange(movementTimes);
   }
 
@@ -135,6 +146,9 @@ public class Enemy : MovingCharacter
 
     if (distanceToTarget > distance) return;
 
+    alertLight.intensity = maxIntensity;
+    if (!alertLightOn)
+      StartCoroutine(AlertLightTimer());
     FindNewDirection(playerPosition);
     movementOnCooldown = movementCooldownInProcess = false;
     movementTimer = GetRandomInRange(movementTimes);
@@ -149,7 +163,21 @@ public class Enemy : MovingCharacter
     movementTimer = GetRandomInRange(movementTimes);
   }
 
-  public override void Die() => OnEnemyKilled?.Invoke();
+  private IEnumerator AlertLightTimer()
+  {
+    alertLightOn = true;
+    yield return new WaitForSeconds(alertLightTime);
+    alertLight.intensity = 0;
+    alertLightOn = false;
+  }
+
+  public override void Die(Quaternion rotation)
+  {
+    Instantiate(bloodParticleEffect, transform.position, rotation);
+    Instantiate(bloodStain, transform.position, rotation);
+    Instantiate(corpse, transform.position, rotation);
+    OnEnemyKilled?.Invoke();
+  }
 
   /* Helper Methods */
   private int GetRandomInRange(Count range) => Random.Range(range.minimum, range.maximum + 1);

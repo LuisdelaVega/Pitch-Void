@@ -17,17 +17,10 @@ public abstract class Weapon : MonoBehaviour
   private float angle = 0;
   public float Angle { get => angle; private set => angle = value; }
 
-  /* Audio */
-  protected AudioManager audioManager;
-
   /* Sprite */
   SpriteRenderer spriteRenderer;
 
-  private void Awake()
-  {
-    spriteRenderer = GetComponent<SpriteRenderer>();
-    audioManager = FindObjectOfType<AudioManager>();
-  }
+  private void Awake() => spriteRenderer = GetComponent<SpriteRenderer>();
 
   private void Update()
   {

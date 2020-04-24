@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
 
 public class RoomManager : MonoBehaviour
@@ -26,6 +27,8 @@ public class RoomManager : MonoBehaviour
   /* Door */
   public GameObject[] doors;
 
+  /* Minimap Texture */
+  public GameObject minimapTexture;
 
   private void Awake() => ActivateDoors(false);
 
@@ -38,12 +41,14 @@ public class RoomManager : MonoBehaviour
 
   private void UpdateEnemyCount()
   {
-    if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn) // TODO: Open the doors
+    if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn)
     {
       ActivateDoors(false);
       roomIsActive = false;
       StopCoroutine(toggleDim);
-      roomLightsManager.TurnOnLights();
+      roomLightsManager.TurnOnLights(true);
+      minimapTexture.GetComponent<Tilemap>().color = new Color(0, 255, 0);
+      minimapTexture.GetComponent<TilemapRenderer>().sortingOrder += 1;
       enabled = false;
     }
   }

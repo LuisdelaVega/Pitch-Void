@@ -43,8 +43,11 @@ public class Player : MovingCharacter
     rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
   }
   protected override void Attack() => activeWeapon.Attack();
-  public override void Die()
+  public override void Die(Quaternion rotation)
   {
+    Instantiate(bloodParticleEffect, transform.position, rotation);
+    Instantiate(bloodStain, transform.position, rotation);
+    AudioManager.instance.Play("Death");
     enabled = false;
     GameManager.instance.GameOver();
   }
