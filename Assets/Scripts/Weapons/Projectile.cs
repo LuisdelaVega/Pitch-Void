@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
       other.TryGetComponent<IDamageable>(out var damageable)
     )
     {
-      damageable.DealDamage(damage);
+      damageable.DealDamage(damage, transform.rotation);
       Destroy(gameObject);
     }
     else if (other.tag == "Wall")

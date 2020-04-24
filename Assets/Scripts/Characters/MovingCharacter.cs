@@ -15,6 +15,10 @@ public abstract class MovingCharacter : MonoBehaviour
   public Animator animator;
   [HideInInspector] public SpriteRenderer spriteRenderer;
 
+  /* Blood Effects */
+  public GameObject bloodParticleEffect;
+  public GameObject bloodStain;
+
   void Start()
   {
     rb = GetComponent<Rigidbody2D>();
@@ -34,5 +38,5 @@ public abstract class MovingCharacter : MonoBehaviour
   /* Abstract methods */
   protected abstract void Move();
   protected abstract void Attack();
-  public abstract void Die();
+  public abstract void Die(Quaternion rotation);
 }

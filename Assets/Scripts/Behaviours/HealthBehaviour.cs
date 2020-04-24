@@ -28,7 +28,7 @@ public class HealthBehaviour : MonoBehaviour, IDamageable
     Health += value;
   }
 
-  private void Remove(float value)
+  private void Remove(float value, Quaternion rotation)
   {
     value = Mathf.Max(value, 0f);
     Health -= value;
@@ -36,12 +36,15 @@ public class HealthBehaviour : MonoBehaviour, IDamageable
     if (Health == 0)
     {
       GetComponent<ScreenShake>()?.Shake();
-      GetComponent<MovingCharacter>()?.Die();
+      if (TryGetComponent<MovingCharacter>(out MovingCharacter character))
+      {
+        character.Die(rotation);
+      }
       Destroy(gameObject);
     }
   }
 
-  public void DealDamage(float damageValue) => Remove(damageValue);
+  public void DealDamage(float damageValue, Quaternion rotation) => Remove(damageValue, rotation);
 
   // TODO: Figure out why events are throwing errors
   //   public class HealthChangedEventArgs : EventArgs

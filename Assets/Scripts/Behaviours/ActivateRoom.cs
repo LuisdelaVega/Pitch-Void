@@ -11,7 +11,7 @@ public class ActivateRoom : MonoBehaviour
     {
       Destroy(GetComponent<TilemapCollider2D>());
       Destroy(GetComponent<CompositeCollider2D>());
-      Destroy(GetComponent<Rigidbody2D>());
+      // Destroy(GetComponent<Rigidbody2D>());
 
       Invoke("SetUp", 0.1f);
     }

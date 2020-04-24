@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.5
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 5542352673fc9dae5388cc2f41f71852000000002d7108ae3368d81d
+  m_ApplyToSortingLayers: 5542352673fc9dae5388cc2f41f71852000000002d7108ae3368d81d013ce510
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -131,11 +131,11 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 25
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 34816
+    m_Bits: 35072
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: e9afbd635f3d88c409bf26ce0f76d519, type: 2}
   m_TargetDisplay: 0
@@ -349,6 +349,10 @@ MonoBehaviour:
   moveSpeed: 6.3
   animator: {fileID: 922502665102953778}
   spriteRenderer: {fileID: 0}
+  bloodParticleEffect: {fileID: 5936509768155569356, guid: f1def601c9609504cb884bc5a5da10ba,
+    type: 3}
+  bloodStain: {fileID: 801542175488566912, guid: bf13995d19504c54a8762ec6c6c29f7b,
+    type: 3}
   shadowCameraTargetGroupPrefab: {fileID: 5154651576158194082, guid: f6e787ea283601d439d08666ec26c138,
     type: 3}
   shadowCameraTargetGroup: {fileID: 0}
