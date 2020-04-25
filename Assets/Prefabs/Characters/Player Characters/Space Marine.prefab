@@ -135,7 +135,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 35072
+    m_Bits: 34816
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: e9afbd635f3d88c409bf26ce0f76d519, type: 2}
   m_TargetDisplay: 0
@@ -313,7 +313,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &922502665102953778
 Animator:
@@ -358,6 +358,11 @@ MonoBehaviour:
   shadowCameraTargetGroup: {fileID: 0}
   weapons:
   - {fileID: 4206024002109007232, guid: ad2af2190b197e24e98d3c559da79166, type: 3}
+  dashSpeed: 50
+  startDashTime: 0.15
+  dashEcho: {fileID: 5943743110085063298, guid: a6f79e8664211d74b9885fcf91de3163,
+    type: 3}
+  echoLifeSpan: 0.2
 --- !u!114 &8094088734949012530
 MonoBehaviour:
   m_ObjectHideFlags: 0

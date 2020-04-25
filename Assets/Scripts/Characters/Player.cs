@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MovingCharacter
@@ -11,6 +12,15 @@ public class Player : MovingCharacter
   public List<Weapon> weapons;
   private Weapon activeWeapon;
 
+  /* Dash */
+  [SerializeField] private float dashSpeed = 50f;
+  [SerializeField] private float startDashTime = 0.15f;
+  private float dashTime;
+  private bool isDashing = false;
+  public GameObject dashEcho;
+  [SerializeField] private float echoLifeSpan = 0.3f;
+  // private bool echoCooldown = false;
+
   /* Player controls */
   private Controls controls;
 
@@ -21,6 +31,8 @@ public class Player : MovingCharacter
     activeWeapon = Instantiate(weapons[0], weaponPosition, Quaternion.identity, transform);
     shadowCameraTargetGroup = Instantiate(shadowCameraTargetGroupPrefab, transform.position, Quaternion.identity);
     shadowCameraTargetGroup.player = gameObject;
+
+    dashTime = startDashTime;
   }
 
   void OnEnable()
@@ -33,15 +45,50 @@ public class Player : MovingCharacter
       holdAttack = ctx.ReadValue<float>() >= 0.9f;
     };
     controls.Player.Movement.performed += ctx => ChangeDirection(ctx.ReadValue<Vector2>());
+
+    controls.Player.Dash.performed += _ => Dash();
   }
 
   void OnDisable() => controls.Disable();
-  private void ChangeDirection(Vector2 newDirection) => Direction = newDirection;
+  private void ChangeDirection(Vector2 newDirection) => Direction = newDirection.normalized;
   protected override void Move()
   {
     animator.SetFloat("Speed", Direction.sqrMagnitude);
-    rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
+
+    rb.velocity = Direction * (!isDashing ? moveSpeed : dashSpeed);
+    // rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
   }
+  private void Dash()
+  {
+    if (!isDashing && Direction.sqrMagnitude > 0)
+    {
+      StartCoroutine(DashTimer());
+      StartCoroutine(CreateEcho());
+    }
+  }
+
+  private IEnumerator DashTimer()
+  {
+    isDashing = true;
+    while (dashTime > 0)
+    {
+      dashTime -= Time.fixedDeltaTime;
+      yield return null;
+    }
+
+    dashTime = startDashTime;
+    isDashing = false;
+  }
+
+  private IEnumerator CreateEcho()
+  {
+    while (dashTime > 0)
+    {
+      Destroy(Instantiate(dashEcho, transform.position, transform.rotation), echoLifeSpan);
+      yield return null;
+    }
+  }
+
   protected override void Attack() => activeWeapon.Attack();
   public override void Die(Quaternion rotation)
   {
