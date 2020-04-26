@@ -68,3 +68,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Door Open
+    clip: {fileID: 8300000, guid: 6280062c01ceff547aa7ae93d2a94938, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Door Close
+    clip: {fileID: 8300000, guid: 78652d660dedd724f9ea782936d72664, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

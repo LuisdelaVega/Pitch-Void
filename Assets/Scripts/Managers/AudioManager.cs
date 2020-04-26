@@ -63,10 +63,7 @@ public class AudioManager : MonoBehaviour
     sound.source.Play();
   }
 
-  public void PlayWithRandomPitch(string name, float minPitch, float maxPitch)
-  {
-    PlayWithRandomPitch(name, -1, minPitch, maxPitch);
-  }
+  public void PlayWithRandomPitch(string name, float minPitch, float maxPitch) => PlayWithRandomPitch(name, -1, minPitch, maxPitch);
   public void PlayWithRandomPitch(string name, float volume, float minPitch, float maxPitch)
   {
     Sound sound = FindSound(name);

@@ -30,7 +30,7 @@ public class RoomManager : MonoBehaviour
   /* Minimap Texture */
   public GameObject minimapTexture;
 
-  private void Awake() => StartCoroutine(ActivateDoors(false));
+  private void Awake() => StartCoroutine(ActivateDoors(false, false));
 
   private void Start()
   {
@@ -105,8 +105,12 @@ public class RoomManager : MonoBehaviour
         Mathf.CeilToInt(Mathf.Log(GameManager.instance.level + 2, 2) * 2)
     );
 
-  private IEnumerator ActivateDoors(bool isActive)
+  private IEnumerator ActivateDoors(bool isActive) => ActivateDoors(isActive, true);
+  private IEnumerator ActivateDoors(bool isActive, bool playAudio)
   {
+    if (playAudio)
+      AudioManager.instance.PlayWithRandomPitch(isActive ? "Door Open" : "Door Close", 0.9f, 1.1f);
+
     foreach (GameObject door in doors)
     {
       if (!isActive)
