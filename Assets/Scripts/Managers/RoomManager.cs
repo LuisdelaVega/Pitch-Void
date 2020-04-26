@@ -30,7 +30,7 @@ public class RoomManager : MonoBehaviour
   /* Minimap Texture */
   public GameObject minimapTexture;
 
-  private void Awake() => ActivateDoors(false);
+  private void Awake() => StartCoroutine(ActivateDoors(false));
 
   private void Start()
   {
@@ -43,7 +43,7 @@ public class RoomManager : MonoBehaviour
   {
     if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn)
     {
-      ActivateDoors(false);
+      StartCoroutine(ActivateDoors(false));
       roomIsActive = false;
       StopCoroutine(toggleDim);
       roomLightsManager.TurnOnLights(true);
@@ -62,7 +62,7 @@ public class RoomManager : MonoBehaviour
 
   public void SetUpRoom()
   {
-    ActivateDoors(true);
+    StartCoroutine(ActivateDoors(true));
 
     enemiesInRoom = enemiesToSpawn = GetAmountOfEnemiesToSpawn();
     toggleDim = StartCoroutine(roomLightsManager.ToggleDim(true));
@@ -105,9 +105,21 @@ public class RoomManager : MonoBehaviour
         Mathf.CeilToInt(Mathf.Log(GameManager.instance.level + 2, 2) * 2)
     );
 
-  private void ActivateDoors(bool isActive)
+  private IEnumerator ActivateDoors(bool isActive)
   {
     foreach (GameObject door in doors)
-      door.SetActive(isActive);
+    {
+      if (!isActive)
+      {
+        door.GetComponent<Animator>()?.SetBool("Open", !isActive);
+        yield return new WaitForSeconds(0.2f);
+        door.SetActive(isActive);
+      }
+      else
+      {
+        door.SetActive(isActive);
+        door.GetComponent<Animator>()?.SetBool("Open", !isActive);
+      }
+    }
   }
 }
