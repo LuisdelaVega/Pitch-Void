@@ -13,7 +13,7 @@ public class RangedWeapon : Weapon
 
   /* Sound */
   [SerializeField] private bool silenced = false;
-  [SerializeField] private float soundDistance = 30;
+  [SerializeField] private float soundDistance = 10;
 
   /* Event */
   public static event Action<Vector2, float> OnShotFired;

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
   private Controls controls;
 
   /* Level */
-  public int level = 6;
+  public int level = 1;
 
   /* UI */
   private GameObject resetText;
@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
     //Call the InitGame function to initialize the first level 
     InitGame();
   }
+
+  private void Start() => AudioManager.instance.PlayWithRandomPitch("Door Open", 0.9f, 1.1f);
 
   void OnEnable()
   {

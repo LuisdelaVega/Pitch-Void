@@ -191,7 +191,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.4
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 0.8
+  m_Intensity: 0.7
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 5542352673fc9dae0000000041f718523368d81d013ce510
   m_LightCookieSprite: {fileID: 0}
@@ -321,7 +321,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.06}
+  m_Offset: {x: 0.016126275, y: 0.17424607}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.48641998, y: 0.39674306}
@@ -332,7 +332,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1875, y: 1}
+  m_Size: {x: 1.1875, y: 1.51}
   m_EdgeRadius: 0
 --- !u!50 &-5602813530348549102
 Rigidbody2D:
@@ -386,6 +386,8 @@ MonoBehaviour:
   alertLightTime: 1
   alertLightOn: 0
   corpse: {fileID: 731604617656964825, guid: e2dd8ccb976389d459e97934a592c83e, type: 3}
+  floatingText: {fileID: 7259344148936252179, guid: a16eff0ce71fdb246af8136c363f03cd,
+    type: 3}
 --- !u!114 &-5620080775616942381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a33fe95dcab0d44964752396e4a62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 4.5
+  viewRadius: 4.6
   viewAngle: 90
   targetMask:
     serializedVersion: 2

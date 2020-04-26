@@ -32,6 +32,9 @@ public class Enemy : MovingCharacter
   /* Corpse */ // TODO: Move this to Moving Character
   public GameObject corpse;
 
+  /* Popup Text */
+  public FloatingTextManager floatingText;
+
   // Start is called before the first frame update
   void Awake()
   {
@@ -39,6 +42,7 @@ public class Enemy : MovingCharacter
     FindNewDirection();
     alertLight.intensity = 0;
     movementTimer = GetRandomInRange(movementTimes);
+    floatingText = GameObject.Find("Floating Text Parent").GetComponent<FloatingTextManager>();
   }
 
   private void OnEnable() => RangedWeapon.OnShotFired += Alert;
@@ -175,7 +179,7 @@ public class Enemy : MovingCharacter
   {
     Instantiate(bloodParticleEffect, transform.position, rotation);
     Instantiate(bloodStain, transform.position, rotation);
-    Instantiate(corpse, transform.position, rotation);
+    floatingText.CreateFloatingText(Instantiate(corpse, transform.position, rotation).transform);
     OnEnemyKilled?.Invoke();
   }
 

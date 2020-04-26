@@ -1,0 +1,317 @@
+fileFormatVersion: 2
+guid: 6118ebcff3d1fb347911da6fa4f7621b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3792345690950796093
+    second: Icon Tiles_0
+  - first:
+      213: -8532418176387423075
+    second: Icon Tiles_1
+  - first:
+      213: 9103679711304403219
+    second: Icon Tiles_2
+  - first:
+      213: 693921598973176275
+    second: Icon Tiles_3
+  - first:
+      213: 7889258127721003073
+    second: Icon Tiles_4
+  - first:
+      213: 1670200597884282530
+    second: Icon Tiles_5
+  - first:
+      213: -6486358223389133923
+    second: Icon Tiles_6
+  - first:
+      213: -4878734063710746677
+    second: Icon Tiles_7
+  - first:
+      213: 6037138923380794747
+    second: Icon Tiles_8
+  - first:
+      213: -3602501376251105677
+    second: Icon Tiles_9
+  - first:
+      213: 1208949211058872161
+    second: Icon Tiles_10
+  - first:
+      213: 2697394263254779345
+    second: Icon Tiles_11
+  - first:
+      213: 5571190045599059800
+    second: Icon Tiles_12
+  - first:
+      213: 2574083630447372107
+    second: Icon Tiles_13
+  - first:
+      213: 6879303438360015267
+    second: Icon Tiles_14
+  - first:
+      213: 6849840806546726979
+    second: Icon Tiles_15
+  - first:
+      213: 5230999214778602483
+    second: Icon Tiles_16
+  - first:
+      213: 4493375404794055779
+    second: Icon Tiles_17
+  - first:
+      213: 2513768734564354827
+    second: Icon Tiles_18
+  - first:
+      213: -4636907724954332877
+    second: Icon Tiles_19
+  - first:
+      213: -3774840956027445107
+    second: Icon Tiles_20
+  - first:
+      213: -3152307124823963119
+    second: Icon Tiles_21
+  - first:
+      213: 3116757777003114960
+    second: Icon Tiles_22
+  - first:
+      213: 7727192152440452697
+    second: Icon Tiles_23
+  - first:
+      213: -621603941640398134
+    second: Icon Tiles_24
+  - first:
+      213: 8715834222978986171
+    second: Icon Tiles_25
+  - first:
+      213: 3395158428873070729
+    second: Icon Tiles_26
+  - first:
+      213: 7099419497457085718
+    second: Icon Tiles_27
+  - first:
+      213: 2705786496173694423
+    second: Icon Tiles_28
+  - first:
+      213: 8258489828107635229
+    second: Icon Tiles_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Icon Tiles_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 104
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94675110e2c69980800000000000000
+      internalID: -8532418176387423075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon Tiles_2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 106
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319ca3dc674c65e70800000000000000
+      internalID: 9103679711304403219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon Tiles_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 109
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d964c8840e41a900800000000000000
+      internalID: 693921598973176275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

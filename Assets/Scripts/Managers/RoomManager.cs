@@ -101,8 +101,8 @@ public class RoomManager : MonoBehaviour
   }
 
   private int GetAmountOfEnemiesToSpawn() => Random.Range(
-        Mathf.FloorToInt(Mathf.Log(GameManager.instance.level + 2, 2)),
-        Mathf.CeilToInt(Mathf.Log(GameManager.instance.level + 2, 2) * 2)
+        Mathf.FloorToInt(Mathf.Log(GameManager.instance.level + 10, 2)),
+        Mathf.CeilToInt(Mathf.Log(GameManager.instance.level + 10, 2) * 2)
     );
 
   private IEnumerator ActivateDoors(bool isActive) => ActivateDoors(isActive, true);

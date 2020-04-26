@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MovingCharacter
 {
@@ -14,15 +15,17 @@ public class Player : MovingCharacter
 
   /* Dash */
   [SerializeField] private float dashSpeed = 50f;
-  [SerializeField] private float startDashTime = 0.15f;
-  private float dashTime;
+  [SerializeField] private float dashTime = 0.05f;
   private bool isDashing = false;
-  public GameObject dashEcho;
+  private bool dashOnCooldown = false;
+  [SerializeField] private float dashCooldownTimer = 1f;
+  public GameObject echo;
   [SerializeField] private float echoLifeSpan = 0.3f;
-  // private bool echoCooldown = false;
 
   /* Player controls */
   private Controls controls;
+
+  private Image dashIcon;
 
   void Awake()
   {
@@ -31,8 +34,7 @@ public class Player : MovingCharacter
     activeWeapon = Instantiate(weapons[0], weaponPosition, Quaternion.identity, transform);
     shadowCameraTargetGroup = Instantiate(shadowCameraTargetGroupPrefab, transform.position, Quaternion.identity);
     shadowCameraTargetGroup.player = gameObject;
-
-    dashTime = startDashTime;
+    dashIcon = GameObject.Find("Dash Icon").GetComponent<Image>();
   }
 
   void OnEnable()
@@ -54,13 +56,11 @@ public class Player : MovingCharacter
   protected override void Move()
   {
     animator.SetFloat("Speed", Direction.sqrMagnitude);
-
     rb.velocity = Direction * (!isDashing ? moveSpeed : dashSpeed);
-    // rb.MovePosition(rb.position + Direction * moveSpeed * Time.fixedDeltaTime);
   }
   private void Dash()
   {
-    if (!isDashing && Direction.sqrMagnitude > 0)
+    if (!dashOnCooldown && Direction.sqrMagnitude > 0)
     {
       StartCoroutine(DashTimer());
       StartCoroutine(CreateEcho());
@@ -70,21 +70,25 @@ public class Player : MovingCharacter
   private IEnumerator DashTimer()
   {
     isDashing = true;
-    while (dashTime > 0)
-    {
-      dashTime -= Time.fixedDeltaTime;
-      yield return null;
-    }
-
-    dashTime = startDashTime;
+    yield return new WaitForSeconds(dashTime);
     isDashing = false;
+    StartCoroutine(DashCooldown());
+  }
+
+  private IEnumerator DashCooldown()
+  {
+    dashOnCooldown = true;
+    dashIcon.color = new Color(255, 0, 0);
+    yield return new WaitForSeconds(dashCooldownTimer);
+    dashOnCooldown = false;
+    dashIcon.color = new Color(255, 255, 255);
   }
 
   private IEnumerator CreateEcho()
   {
-    while (dashTime > 0)
+    while (isDashing)
     {
-      Destroy(Instantiate(dashEcho, transform.position, transform.rotation), echoLifeSpan);
+      Destroy(Instantiate(echo, transform.position, transform.rotation), echoLifeSpan);
       yield return null;
     }
   }
