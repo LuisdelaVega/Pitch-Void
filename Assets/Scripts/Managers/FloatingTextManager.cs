@@ -13,7 +13,7 @@ public class FloatingTextManager : MonoBehaviour
     floatingText.transform.SetParent(canvas.transform, false);
     floatingText.GetComponent<FloatingText>().location = location;
     SetText(floatingText);
-    Destroy(floatingText, 1);
+    Destroy(floatingText, 2);
   }
 
   public void SetText(Text floatingText) => floatingText.text = finalWords[Random.Range(0, finalWords.Length)];

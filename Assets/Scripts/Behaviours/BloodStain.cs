@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
 
 public class BloodStain : MonoBehaviour
 {

@@ -10,6 +10,8 @@ public class RoomTemplates : MonoBehaviour
   public GameObject[] leftRooms;
 
   public GameObject closedRoom;
+  public GameObject closedHorizontalWall;
+  public GameObject closedVerticalWall;
   [HideInInspector] public GameObject bossRoom; // Maybe create a list of boss rooms and replace the one here with one of those
 
   public float waitTime = 2;

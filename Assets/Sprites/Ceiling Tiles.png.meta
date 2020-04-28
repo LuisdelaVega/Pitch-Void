@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: 0eb0f26949c9e874ba158d7c486f4741
+guid: edfc031f32d64d44f8533cb6b633e8d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8300089242491667876
-    second: skellyAstro_0
+      213: -6543331045660357504
+    second: Ceiling Tiles_0
+  - first:
+      213: 7415762736510170053
+    second: Ceiling Tiles_1
+  - first:
+      213: -1465174664407920753
+    second: Ceiling Tiles_2
+  - first:
+      213: 4649295165989811065
+    second: Ceiling Tiles_3
+  - first:
+      213: -975871595009521884
+    second: Ceiling Tiles_4
+  - first:
+      213: 6597258500545822451
+    second: Ceiling Tiles_0
+  - first:
+      213: -6925332950325243841
+    second: Ceiling Tiles_1
+  - first:
+      213: 2639226025752740197
+    second: Ceiling Tiles_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -87,6 +108,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: tvOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -134,38 +167,89 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skellyAstro_0
+      name: Ceiling Tiles_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 85
-        width: 38
-        height: 54
-      alignment: 9
-      pivot: {x: 0.48641998, y: 0.39674306}
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a5c1c6b037df2370800000000000000
-      internalID: 8300089242491667876
+      spriteID: 3feb57807ab2e8b50800000000000000
+      internalID: 6597258500545822451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceiling Tiles_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f305e88af5644ef90800000000000000
+      internalID: -6925332950325243841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceiling Tiles_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56145f2561a60a420800000000000000
+      internalID: 2639226025752740197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceiling Tiles_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97373c8025d958040800000000000000
+      internalID: 4649295165989811065
       vertices: []
       indices: 
       edges: []

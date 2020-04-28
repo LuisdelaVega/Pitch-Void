@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
 
 public class RoomManager : MonoBehaviour
 {
@@ -28,12 +27,17 @@ public class RoomManager : MonoBehaviour
   public GameObject[] doors;
 
   /* Minimap Texture */
-  public GameObject minimapTexture;
+  public GameObject clearedRoomTexture;
+
+  /* Colors */
+  private Color clearedRoom = new Color(0, 255, 0);
 
   private void Awake() => StartCoroutine(ActivateDoors(false, false));
 
   private void Start()
   {
+    if (clearedRoomTexture != null)
+      clearedRoomTexture?.SetActive(false);
     if (arcadeMode) SetUpRoom();
   }
 
@@ -43,12 +47,12 @@ public class RoomManager : MonoBehaviour
   {
     if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn)
     {
+      if (clearedRoomTexture != null)
+        clearedRoomTexture?.SetActive(true);
       StartCoroutine(ActivateDoors(false));
       roomIsActive = false;
       StopCoroutine(toggleDim);
       roomLightsManager.TurnOnLights(true);
-      minimapTexture.GetComponent<Tilemap>().color = new Color(0, 255, 0);
-      minimapTexture.GetComponent<TilemapRenderer>().sortingOrder += 1;
       enabled = false;
     }
   }
@@ -88,7 +92,7 @@ public class RoomManager : MonoBehaviour
           Random.Range(walls.bounds.min.y + 5, walls.bounds.max.y - 5)
         );
         distanceToPlayer = spawnLocation - (Vector2)GameManager.instance.player.transform.position;
-      } while (distanceToPlayer.sqrMagnitude < 50); // TODO: Revisit this number
+      } while (distanceToPlayer.sqrMagnitude < 50);
 
       int index = Random.Range(0, enemyPrefabList.Count);
       Instantiate(enemyPrefabList[index], spawnLocation, Quaternion.identity);

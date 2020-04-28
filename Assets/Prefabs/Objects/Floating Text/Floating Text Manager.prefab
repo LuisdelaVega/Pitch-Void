@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3669703655068707149}
   - component: {fileID: 8195445797050908327}
   m_Layer: 5
-  m_Name: Floating Text Parent
+  m_Name: Floating Text Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,6 +54,27 @@ MonoBehaviour:
   - NICE SHOT!
   - WHY?
   - WHY ME?
-  - AT LEAST I HAVE CHICKEN
+  - DID I LEAVE THE STOVE ON?
+  - NICE!
+  - SO THIS IS IT, HUH?
+  - GOOD SHOT!
+  - I LOVED YOU!
+  - YOU MONSTER!
+  - STOP!
+  - PLEASE DON'T...
+  - YOU NEED THERAPY!
+  - ARE YOU SATISFIED?
+  - OK...
+  - SURE...
+  - FUCK ME, RIGHT?
+  - F
+  - TO DIE, TO SLEEP...
+  - BYE!
+  - YIKES!
+  - KEEP IT UP. PROUD OF YOU!
+  - K THX BYE!
+  - YOU'RE CRAZY!
+  - THAT'S CRINGE BRO...
+  - BRUH...
   floatingTextPrefab: {fileID: 8725013930534762113, guid: 4e4107ca1e9537949931b63c982718bb,
     type: 3}

@@ -23,11 +23,12 @@ public class Enemy : MovingCharacter
   /* Event */
   public static event Action OnEnemyKilled;
 
-  /* Light */
+  /* Alert */
   public Light2D alertLight;
   public float maxIntensity = 0.8f;
   public float alertLightTime = 1f;
   public bool alertLightOn = false;
+  public GameObject alertBangPrefab;
 
   /* Corpse */ // TODO: Move this to Moving Character
   public GameObject corpse;
@@ -150,6 +151,7 @@ public class Enemy : MovingCharacter
 
     if (distanceToTarget > distance) return;
 
+    Destroy(Instantiate(alertBangPrefab, new Vector2(transform.position.x, transform.position.y + 1.2f), Quaternion.identity, transform), alertLightTime);
     alertLight.intensity = maxIntensity;
     if (!alertLightOn)
       StartCoroutine(AlertLightTimer());
