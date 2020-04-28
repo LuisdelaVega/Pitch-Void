@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +26,8 @@ public class Player : MovingCharacter
   /* Player controls */
   private Controls controls;
 
-  private Image dashIcon;
+  /* Dash */
+  public static event Action<float> OnDash;
 
   void Awake()
   {
@@ -34,7 +36,6 @@ public class Player : MovingCharacter
     activeWeapon = Instantiate(weapons[0], weaponPosition, Quaternion.identity, transform);
     shadowCameraTargetGroup = Instantiate(shadowCameraTargetGroupPrefab, transform.position, Quaternion.identity);
     shadowCameraTargetGroup.player = gameObject;
-    dashIcon = GameObject.Find("Dash Icon").GetComponent<Image>();
   }
 
   void OnEnable()
@@ -78,10 +79,9 @@ public class Player : MovingCharacter
   private IEnumerator DashCooldown()
   {
     dashOnCooldown = true;
-    dashIcon.color = new Color(255, 0, 0);
+    OnDash?.Invoke(dashCooldownTimer);
     yield return new WaitForSeconds(dashCooldownTimer);
     dashOnCooldown = false;
-    dashIcon.color = new Color(255, 255, 255);
   }
 
   private IEnumerator CreateEcho()
@@ -102,5 +102,4 @@ public class Player : MovingCharacter
     enabled = false;
     GameManager.instance.GameOver();
   }
-
 }

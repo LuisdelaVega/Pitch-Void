@@ -56,25 +56,27 @@ MonoBehaviour:
   - WHY ME?
   - DID I LEAVE THE STOVE ON?
   - NICE!
-  - SO THIS IS IT, HUH?
+  - SO THIS IS IT...
   - GOOD SHOT!
   - I LOVED YOU!
   - YOU MONSTER!
   - STOP!
   - PLEASE DON'T...
-  - YOU NEED THERAPY!
+  - YOU NEED THERAPY...
   - ARE YOU SATISFIED?
   - OK...
   - SURE...
-  - FUCK ME, RIGHT?
+  - YOU'RE DOING GREAT!
   - F
-  - TO DIE, TO SLEEP...
+  - ZzZzZz...
   - BYE!
   - YIKES!
   - KEEP IT UP. PROUD OF YOU!
   - K THX BYE!
   - YOU'RE CRAZY!
-  - THAT'S CRINGE BRO...
-  - BRUH...
+  - 1) We carried you here
+  - 2) After you crash landed
+  - 3) We didn't know what to do
+  - 4) We've been stuck on this asteroid for centuries
   floatingTextPrefab: {fileID: 8725013930534762113, guid: 4e4107ca1e9537949931b63c982718bb,
     type: 3}

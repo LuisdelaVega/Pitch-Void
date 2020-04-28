@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
   public int level = 1;
 
   /* UI */
-  private GameObject resetText;
+  public GameObject resetText;
+
+  [SerializeField] private bool promo = false;
 
   // Start is called before the first frame update
   void Awake()
@@ -37,8 +39,6 @@ public class GameManager : MonoBehaviour
 
     // Initialize Controls
     controls = new Controls();
-
-    resetText = GameObject.Find("ResetText");
 
     //Call the InitGame function to initialize the first level 
     InitGame();
@@ -57,7 +57,8 @@ public class GameManager : MonoBehaviour
   void InitGame()
   {
     resetText.SetActive(false);
-    InstantiatePlayer();
+    if (!promo)
+      InstantiatePlayer();
   }
 
   public void InstantiatePlayer()

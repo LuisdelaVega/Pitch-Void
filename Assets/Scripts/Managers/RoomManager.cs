@@ -37,7 +37,7 @@ public class RoomManager : MonoBehaviour
   private void Start()
   {
     if (clearedRoomTexture != null)
-      clearedRoomTexture?.SetActive(false);
+      clearedRoomTexture.SetActive(false);
     if (arcadeMode) SetUpRoom();
   }
 
@@ -48,7 +48,7 @@ public class RoomManager : MonoBehaviour
     if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn)
     {
       if (clearedRoomTexture != null)
-        clearedRoomTexture?.SetActive(true);
+        clearedRoomTexture.SetActive(true);
       StartCoroutine(ActivateDoors(false));
       roomIsActive = false;
       StopCoroutine(toggleDim);
