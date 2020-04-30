@@ -29,6 +29,9 @@ public class Player : MovingCharacter
   /* Dash */
   public static event Action<float> OnDash;
 
+  /* Popup Text */
+  public FloatingTextManager floatingText;
+
   void Awake()
   {
     controls = new Controls();
@@ -36,6 +39,7 @@ public class Player : MovingCharacter
     activeWeapon = Instantiate(weapons[0], weaponPosition, Quaternion.identity, transform);
     shadowCameraTargetGroup = Instantiate(shadowCameraTargetGroupPrefab, transform.position, Quaternion.identity);
     shadowCameraTargetGroup.player = gameObject;
+    floatingText = GameObject.Find("Floating Text Manager").GetComponent<FloatingTextManager>();
   }
 
   void OnEnable()
@@ -92,6 +96,8 @@ public class Player : MovingCharacter
       yield return null;
     }
   }
+
+  public void SayName(string name) => floatingText.CreateFloatingText(transform, $"{name} reporting for duty!");
 
   protected override void Attack() => activeWeapon.Attack();
   public override void Die(Quaternion rotation)

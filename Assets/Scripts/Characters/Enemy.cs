@@ -43,7 +43,7 @@ public class Enemy : MovingCharacter
     FindNewDirection();
     alertLight.intensity = 0;
     movementTimer = GetRandomInRange(movementTimes);
-    floatingText = GameObject.Find("Floating Text Parent").GetComponent<FloatingTextManager>();
+    floatingText = GameObject.Find("Floating Text Manager").GetComponent<FloatingTextManager>();
   }
 
   private void OnEnable() => RangedWeapon.OnShotFired += Alert;

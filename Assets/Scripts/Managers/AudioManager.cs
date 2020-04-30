@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using UnityEngine.Audio;
-using System;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
 
 public class AudioManager : MonoBehaviour

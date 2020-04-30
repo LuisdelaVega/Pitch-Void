@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour
   public void QuitGame()
   {
     Resume();
-    GameManager.instance.DestroyGameManager();
+    Destroy(GameManager.instance.gameObject);
     SceneManager.LoadScene("Main Menu");
   }
 }

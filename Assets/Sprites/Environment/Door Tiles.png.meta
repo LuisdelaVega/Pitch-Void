@@ -7,13 +7,13 @@ TextureImporter:
     second: Door Tiles_0
   - first:
       213: -4259766110273549235
-    second: Door Tiles_1
+    second: Door Tiles_10
   - first:
       213: 6630241545691130751
     second: Door Tiles_2
   - first:
       213: -3259849415664049516
-    second: Door Tiles_3
+    second: Door Tiles_30
   - first:
       213: -606333470993631360
     second: Door Tiles_4
@@ -92,6 +92,15 @@ TextureImporter:
   - first:
       213: 3329140567868040226
     second: Door Tiles_29
+  - first:
+      213: 7811803072468492
+    second: Door Tiles_0
+  - first:
+      213: -4259766110273549235
+    second: Door Tiles_1
+  - first:
+      213: -3259849415664049516
+    second: Door Tiles_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -251,8 +260,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e509adf78f0715ec0800000000000000
-      internalID: -3579956016183603106
+      spriteID: c0690332bc0cb1000800000000000000
+      internalID: 7811803072468492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Tiles_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4cc5eaba4542e4c0800000000000000
+      internalID: -4259766110273549235
       vertices: []
       indices: 
       edges: []
@@ -261,7 +291,7 @@ TextureImporter:
       name: Door Tiles_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 80
         width: 64
         height: 48
@@ -279,10 +309,31 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Door Tiles_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 80
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49264165a30b2c2d0800000000000000
+      internalID: -3259849415664049516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Door Tiles_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 256
         y: 80
         width: 64
         height: 48
@@ -300,13 +351,34 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Door Tiles_6
+      name: Door Tiles_5
       rect:
         serializedVersion: 2
-        x: 192
+        x: 320
         y: 80
         width: 64
         height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9dfa7d63c69746e0800000000000000
+      internalID: -1853346955540103780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Tiles_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,13 +393,34 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Door Tiles_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca7654a060ac1170800000000000000
+      internalID: 8150565762568190670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Door Tiles_8
       rect:
         serializedVersion: 2
-        x: 256
-        y: 80
+        x: 128
+        y: 0
         width: 64
-        height: 48
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,15 +435,36 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Door Tiles_9
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f3d3c212fb098e0800000000000000
+      internalID: -1688639711066898578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Door Tiles_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 32
-        height: 32
+        x: 256
+        y: 0
+        width: 64
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -366,12 +480,12 @@ TextureImporter:
       name: Door Tiles_11
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
-        width: 32
-        height: 32
+        x: 320
+        y: 0
+        width: 64
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -379,174 +493,6 @@ TextureImporter:
       bones: []
       spriteID: 83a24317d325f5d70800000000000000
       internalID: 9034029801374231096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door Tiles_12
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 48
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17ddf1009dc59d440800000000000000
-      internalID: 4961098551605058929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door Tiles_13
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 48
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec6f62cdf2050bbf0800000000000000
-      internalID: -310660207801338162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door Tiles_14
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 48
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cf97b616a5632010800000000000000
-      internalID: 1162884892811829189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door Tiles_20
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bec25619b56fdefc0800000000000000
-      internalID: -3463841665236259605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door Tiles_22
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb9491ddab54a3e50800000000000000
-      internalID: 6789816057090099644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door Tiles_24
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2fbf4443b0f6d4390800000000000000
-      internalID: -7832482083015164942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door Tiles_26
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad51afd163a473f70800000000000000
-      internalID: 9166877162827552218
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door Tiles_28
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7d8c9239dfc539d0800000000000000
-      internalID: -2795099461949551234
       vertices: []
       indices: 
       edges: []

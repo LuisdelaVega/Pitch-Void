@@ -188,51 +188,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2049027142892940948, guid: 428bf997b958ebf4899e8c0cae129f43,
-        type: 3}
-      propertyPath: sounds.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049027142892940948, guid: 428bf997b958ebf4899e8c0cae129f43,
-        type: 3}
-      propertyPath: sounds.Array.data[6].name
-      value: Evil Laugh
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049027142892940948, guid: 428bf997b958ebf4899e8c0cae129f43,
-        type: 3}
-      propertyPath: sounds.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: c4fe088829823b146890e1bdcd5b9e27, type: 3}
-    - target: {fileID: 2049027142892940948, guid: 428bf997b958ebf4899e8c0cae129f43,
-        type: 3}
-      propertyPath: sounds.Array.data[6].volume
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049027142892940948, guid: 428bf997b958ebf4899e8c0cae129f43,
-        type: 3}
-      propertyPath: sounds.Array.data[6].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049027142892940948, guid: 428bf997b958ebf4899e8c0cae129f43,
-        type: 3}
-      propertyPath: sounds.Array.data[7].name
-      value: Vinyl Rewind
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049027142892940948, guid: 428bf997b958ebf4899e8c0cae129f43,
-        type: 3}
-      propertyPath: sounds.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 156d484a237dcc04dbdb62dd54fe9c1f, type: 3}
-    - target: {fileID: 2049027142892940948, guid: 428bf997b958ebf4899e8c0cae129f43,
-        type: 3}
-      propertyPath: sounds.Array.data[7].volume
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049027142892940948, guid: 428bf997b958ebf4899e8c0cae129f43,
-        type: 3}
-      propertyPath: sounds.Array.data[7].pitch
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 428bf997b958ebf4899e8c0cae129f43, type: 3}
 --- !u!1 &44911366
@@ -8250,7 +8205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997403721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: 2.5, y: -1.2, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 647721428}
@@ -8773,6 +8728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65843580b232ac54a97b75adbd85dae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goBackText: {fileID: 2096456531}
+  fadeTime: 2
 --- !u!61 &1511627325
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8809,7 +8766,7 @@ PrefabInstance:
     - target: {fileID: 3669703655068707148, guid: b1ac64026bf409144a4292f4d12b3def,
         type: 3}
       propertyPath: m_Name
-      value: Floating Text Parent
+      value: Floating Text Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3669703655068707149, guid: b1ac64026bf409144a4292f4d12b3def,
         type: 3}
@@ -9075,7 +9032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569527800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalPosition: {x: -2.5, y: -1.2, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 647721428}
@@ -9471,7 +9428,7 @@ Transform:
   - {fileID: 5329178568119748065}
   - {fileID: 1667035138}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1778861541 stripped
 RectTransform:
@@ -9555,7 +9512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805224222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 647721428}
@@ -9631,12 +9588,12 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -9658,7 +9615,7 @@ RectTransform:
   - {fileID: 470626042}
   - {fileID: 2096456530}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10107,7 +10064,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b0f1dde36c022c343b70ff4da3fc8688, type: 3}
-    m_FontSize: 40
+    m_FontSize: 64
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -10118,7 +10075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: GO BACK TO THE START
+  m_Text: GO BACK TO THE START!
 --- !u!222 &2096456532
 CanvasRenderer:
   m_ObjectHideFlags: 0

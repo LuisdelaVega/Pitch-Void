@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Theme
-    clip: {fileID: 8300000, guid: 334dc30eb3e12d74fbbc32d0b2b042c9, type: 3}
+    clip: {fileID: 8300000, guid: 870a68b99617b6e438deb0510df1314c, type: 3}
     volume: 0.3
     pitch: 1
     loop: 1
@@ -77,6 +77,18 @@ MonoBehaviour:
   - name: Door Close
     clip: {fileID: 8300000, guid: 78652d660dedd724f9ea782936d72664, type: 3}
     volume: 0.9
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Evil Laugh
+    clip: {fileID: 8300000, guid: c4fe088829823b146890e1bdcd5b9e27, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Vinyl Rewind
+    clip: {fileID: 8300000, guid: 156d484a237dcc04dbdb62dd54fe9c1f, type: 3}
+    volume: 0.75
     pitch: 1
     loop: 0
     source: {fileID: 0}

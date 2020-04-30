@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
   /* UI */
   public GameObject resetText;
 
+  /* Resources */
+  string[] firstNames;
+  string[] lastNames;
+
   [SerializeField] private bool promo = false;
 
   // Start is called before the first frame update
@@ -40,7 +44,11 @@ public class GameManager : MonoBehaviour
     // Initialize Controls
     controls = new Controls();
 
-    //Call the InitGame function to initialize the first level 
+    // Get first and last names
+    firstNames = Resources.Load<TextAsset>("FirstNames").text.Split("\n"[0]);
+    lastNames = Resources.Load<TextAsset>("LastNames").text.Split("\n"[0]);
+
+    //Call the InitGame function to initialize the first level
     InitGame();
   }
 
@@ -63,9 +71,11 @@ public class GameManager : MonoBehaviour
 
   public void InstantiatePlayer()
   {
-    player = Instantiate(playerPrefab, new Vector2(0, 0), Quaternion.identity);
+    player = Instantiate(playerPrefab, new Vector2(-8, 0), Quaternion.identity);
     vcam1.LookAt = player.transform;
     vcam1.Follow = player.transform;
+    string name = $"{firstNames[Random.Range(0, firstNames.Length)]} {lastNames[Random.Range(0, lastNames.Length)]}";
+    player.GetComponent<Player>().SayName(name);
   }
 
   public void GameOver() => resetText.SetActive(true);
@@ -83,15 +93,9 @@ public class GameManager : MonoBehaviour
     if (player != null)
       Destroy(player.gameObject);
 
-    // Init game
-    DestroyGameManager();
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-  }
-
-  public void DestroyGameManager()
-  {
-    instance = null;
-    enabled = false;
     Destroy(gameObject);
+
+    // Init game
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
   }
 }
