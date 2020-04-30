@@ -27,7 +27,7 @@ public class Enemy : MovingCharacter
   public Light2D alertLight;
   public float maxIntensity = 0.8f;
   public float alertLightTime = 1f;
-  public bool alertLightOn = false;
+  private bool alertLightOn = false;
   public GameObject alertBangPrefab;
 
   /* Corpse */ // TODO: Move this to Moving Character

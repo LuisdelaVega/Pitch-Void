@@ -60,7 +60,7 @@ public abstract class Weapon : MonoBehaviour
       spriteRenderer.sortingOrder = 2;
 
     // Set the direction of the Character relative to the Weapon's angle
-    if (transform.parent != null) // TODO: Make this happen for Enemies in the future
+    if (transform.parent != null)
     {
       transform.parent.GetComponent<MovingCharacter>()?.animator.SetFloat("Angle", Angle / 180);
       transform.parent.GetComponent<MovingCharacter>().spriteRenderer.flipX = flipStrite;

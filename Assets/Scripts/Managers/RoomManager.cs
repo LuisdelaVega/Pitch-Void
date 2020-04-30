@@ -27,18 +27,13 @@ public class RoomManager : MonoBehaviour
   public GameObject[] doors;
 
   /* Minimap Texture */
-  public GameObject clearedRoomTexture;
-
-  /* Colors */
   private Color clearedRoom = new Color(0, 255, 0);
 
   private void Awake() => StartCoroutine(ActivateDoors(false, false));
 
   private void Start()
   {
-    if (clearedRoomTexture != null)
-      clearedRoomTexture.SetActive(false);
-    if (arcadeMode) SetUpRoom();
+    if (arcadeMode) SetUpRoom(true);
   }
 
   private void OnDisable() => Enemy.OnEnemyKilled -= UpdateEnemyCount;
@@ -47,13 +42,18 @@ public class RoomManager : MonoBehaviour
   {
     if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn)
     {
-      if (clearedRoomTexture != null)
-        clearedRoomTexture.SetActive(true);
-      StartCoroutine(ActivateDoors(false));
       roomIsActive = false;
+      Enemy.OnEnemyKilled -= UpdateEnemyCount;
+      Tilemap[] tilemaps = GetComponentsInChildren<Tilemap>();
+      foreach (Tilemap tilemap in tilemaps)
+        if (tilemap.CompareTag("Minimap Texture"))
+        {
+          tilemap.color = clearedRoom;
+          tilemap.GetComponent<TilemapRenderer>().sortingOrder += 1;
+        }
+      StartCoroutine(ActivateDoors(false));
       StopCoroutine(toggleDim);
       roomLightsManager.TurnOnLights(true);
-      enabled = false;
     }
   }
 
@@ -64,15 +64,17 @@ public class RoomManager : MonoBehaviour
       StartCoroutine(SpawnEnemies());
   }
 
-  public void SetUpRoom()
+  public void SetUpRoom(bool fullSetUp)
   {
-    StartCoroutine(ActivateDoors(true));
-
-    enemiesInRoom = enemiesToSpawn = GetAmountOfEnemiesToSpawn();
-    toggleDim = StartCoroutine(roomLightsManager.ToggleDim(true));
-    waitingToSpawnEnemy = false;
     roomIsActive = true;
-    if (!arcadeMode)
+    waitingToSpawnEnemy = false;
+    enemiesSpawnedInRoom = 0;
+    enemiesInRoom = enemiesToSpawn = GetAmountOfEnemiesToSpawn();
+
+    StartCoroutine(ActivateDoors(fullSetUp));
+    toggleDim = StartCoroutine(roomLightsManager.ToggleDim(fullSetUp));
+
+    if (!arcadeMode && fullSetUp)
       Enemy.OnEnemyKilled += UpdateEnemyCount;
   }
 

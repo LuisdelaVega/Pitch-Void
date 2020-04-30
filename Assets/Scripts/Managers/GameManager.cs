@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     InitGame();
   }
 
-  private void Start() => AudioManager.instance.PlayWithRandomPitch("Door Open", 0.9f, 1.1f);
+  // private void Start() => AudioManager.instance.PlayWithRandomPitch("Door Open", 0.9f, 1.1f);
 
   void OnEnable()
   {
@@ -72,6 +72,10 @@ public class GameManager : MonoBehaviour
 
   private void Restart()
   {
+    RoomTemplates.instance.seedTextSet = false;
+    RoomTemplates.instance.NewSeed();
+    RoomTemplates.instance.timer = RoomTemplates.instance.waitTime;
+    RoomTemplates.instance.spawedBoss = false;
     // Coroutines
     StopAllCoroutines();
 
