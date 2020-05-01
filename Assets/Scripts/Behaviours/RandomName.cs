@@ -8,7 +8,7 @@ public class RandomName : MonoBehaviour
   public Transform player;
 
   /* Popup Text */
-  public FloatingTextManager floatingText;
+  public FloatingTextManager floatingTextManager;
 
   /* Resources */
   private string[] firstNames;
@@ -23,7 +23,7 @@ public class RandomName : MonoBehaviour
 
     string name = $"{firstNames[Random.Range(0, firstNames.Length)]} {lastNames[Random.Range(0, lastNames.Length)]}";
 
-    floatingText = GameObject.Find("Floating Text Manager").GetComponent<FloatingTextManager>();
-    floatingText.CreateFloatingText(player, $"{name} reporting for duty!");
+    floatingTextManager = GameObject.Find("Floating Text Manager").GetComponent<FloatingTextManager>();
+    floatingTextManager.CreateFloatingText(player, $"{name} reporting for duty!");
   }
 }

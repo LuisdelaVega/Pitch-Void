@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
 {
   public static GameManager instance = null;
 
+  /* Game mode */
+  [SerializeField] private bool arcadeMode = false;
+
   /* Player */
-  public GameObject playerPrefab;
-  [HideInInspector] public GameObject player;
+  public GameObject player;
 
   /* Cinemachine */
   public CinemachineVirtualCamera vcam1;
@@ -21,8 +23,6 @@ public class GameManager : MonoBehaviour
 
   /* UI */
   public GameObject resetText;
-
-  // [SerializeField] private bool promo = false;
 
   // Start is called before the first frame update
   void Awake()
@@ -44,8 +44,6 @@ public class GameManager : MonoBehaviour
     InitGame();
   }
 
-  // private void Start() => AudioManager.instance.PlayWithRandomPitch("Door Open", 0.9f, 1.1f);
-
   void OnEnable()
   {
     controls.Enable();
@@ -56,19 +54,10 @@ public class GameManager : MonoBehaviour
 
   void InitGame()
   {
+    if (arcadeMode)
+      player.GetComponent<Player>().EnablePlayerControls();
     resetText.SetActive(false);
-    // if (!promo)
-    // InstantiatePlayer();
   }
-
-  // public void InstantiatePlayer()
-  // {
-  //   player = Instantiate(playerPrefab, new Vector2(-8, 0), Quaternion.identity);
-  //   vcam1.LookAt = player.transform;
-  //   vcam1.Follow = player.transform;
-  //   string name = $"{firstNames[Random.Range(0, firstNames.Length)]} {lastNames[Random.Range(0, lastNames.Length)]}";
-  //   player.GetComponent<Player>().SayName(name);
-  // }
 
   public void GameOver() => resetText.SetActive(true);
 

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space Skeleton
+  m_Controller: {fileID: 9100000, guid: 86205cb62b9fcf44fbeac2ea6023d8d1, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: fb7cfe1d5bdb1064196dd4f1ea433732, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f3f7f38a1dd2fcd419154b52e36e0279, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 102c5acd7ebd5494a9bbdfbff16d5909, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d68470bf83a6af04b9a090cb15519764, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 15bc109b1521a664281d498b2f5088b3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d68470bf83a6af04b9a090cb15519764, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 73e2e615a429cfa4d9e63f85a14d63ea, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bf8662af44363594f927eede8156d027, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 39ce0b4dfab38124290c140ab186389a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7aa05732cda29654fb02dbe69d554d3f, type: 2}

@@ -415,7 +415,7 @@ Animator:
   m_GameObject: {fileID: 8671040359916251570}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f31b615e668012d4bb9173bde0d5c1c4, type: 2}
+  m_Controller: {fileID: 22100000, guid: 58d58af39a1bdec49bd300b8fcd6b5ae, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -453,7 +453,6 @@ MonoBehaviour:
   alertLight: {fileID: 4494526069525643447}
   maxIntensity: 0.8
   alertLightTime: 1
-  alertLightOn: 0
   alertBangPrefab: {fileID: 4822807142718400425, guid: cd8d3ac0b5dbe3a428f93d00526fbddf,
     type: 3}
   corpse: {fileID: 731604617656964825, guid: e2dd8ccb976389d459e97934a592c83e, type: 3}

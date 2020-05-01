@@ -26,6 +26,9 @@ public class RoomManager : MonoBehaviour
   /* Door */
   public GameObject[] doors;
 
+  /* Ground */
+  public GameObject ground;
+
   /* Minimap Texture */
   private Color clearedRoom = new Color(0, 255, 0);
 
@@ -111,25 +114,32 @@ public class RoomManager : MonoBehaviour
         Mathf.CeilToInt(Mathf.Log(GameManager.instance.level + 10, 2) * 2)
     );
 
-  private IEnumerator ActivateDoors(bool isActive) => ActivateDoors(isActive, true);
-  private IEnumerator ActivateDoors(bool isActive, bool playAudio)
+  private IEnumerator ActivateDoors(bool shouldClose) => ActivateDoors(shouldClose, true);
+  private IEnumerator ActivateDoors(bool shouldClose, bool playAudio)
   {
     if (playAudio)
-      AudioManager.instance.PlayWithRandomPitch(isActive ? "Door Open" : "Door Close", 0.9f, 1.1f);
+      AudioManager.instance.PlayWithRandomPitch(shouldClose ? "Door Close" : "Door Open", 0.9f, 1.1f);
 
     foreach (GameObject door in doors)
     {
-      if (!isActive)
+      if (!shouldClose) // Should Open
       {
-        door.GetComponent<Animator>()?.SetBool("Open", !isActive);
-        yield return new WaitForSeconds(0.2f);
-        door.SetActive(isActive);
+        door.GetComponent<Animator>()?.SetBool("Open", true);
+        yield return new WaitForSeconds(0.25f);
+        door.SetActive(false);
       }
       else
       {
-        door.SetActive(isActive);
-        door.GetComponent<Animator>()?.SetBool("Open", !isActive);
+        door.SetActive(true);
+        door.GetComponent<Animator>()?.SetBool("Open", false);
       }
     }
+  }
+
+  public void RemoveGroundCollider()
+  {
+    Destroy(ground.GetComponent<TilemapCollider2D>());
+    Destroy(ground.GetComponent<CompositeCollider2D>());
+    Destroy(ground.GetComponent<Rigidbody2D>());
   }
 }

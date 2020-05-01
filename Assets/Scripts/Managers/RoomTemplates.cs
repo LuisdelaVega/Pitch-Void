@@ -90,6 +90,7 @@ public class RoomTemplates : MonoBehaviour // TODO: Make this into a Manager (?)
     allRooms.ForEach(room =>
     {
       RoomManager manager = room.GetComponent<RoomManager>();
+      manager.RemoveGroundCollider();
       manager.SetUpRoom(false);
       manager.roomLightsManager.TurnOnLights(true);
     });

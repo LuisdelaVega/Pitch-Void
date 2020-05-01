@@ -38,7 +38,7 @@ public class Player : MovingCharacter
     shadowCameraTargetGroup.player = gameObject;
   }
 
-  void OnEnable()
+  public void EnablePlayerControls()
   {
     controls.Enable();
 

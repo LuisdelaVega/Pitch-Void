@@ -2627,6 +2627,7 @@ MonoBehaviour:
   doors:
   - {fileID: 8812459289547431930}
   - {fileID: 3066231767516881187}
+  ground: {fileID: 6682207730447680909}
 --- !u!1 &6682207729860635428
 GameObject:
   m_ObjectHideFlags: 0

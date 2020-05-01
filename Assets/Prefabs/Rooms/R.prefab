@@ -5274,6 +5274,7 @@ MonoBehaviour:
   spawnEnemyCooldown: 1
   doors:
   - {fileID: 4598692723757414375}
+  ground: {fileID: 5766798177599385677}
 --- !u!1 &5766798178432583252
 GameObject:
   m_ObjectHideFlags: 0
