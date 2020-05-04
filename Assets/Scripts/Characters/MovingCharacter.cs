@@ -32,7 +32,14 @@ public abstract class MovingCharacter : MonoBehaviour
 
   void FixedUpdate()
   {
-    if (canMove) Move();
+    if (!canMove) Direction = Vector2.zero;
+    Move();
+  }
+
+  public void EnableMovement(bool enabled)
+  {
+    Debug.Log($"canMove: {canMove}");
+    canMove = enabled;
   }
 
   /* Abstract methods */

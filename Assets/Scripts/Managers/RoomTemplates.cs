@@ -46,9 +46,6 @@ public class RoomTemplates : MonoBehaviour // TODO: Make this into a Manager (?)
     NewSeed();
   }
 
-  private void OnEnable() => SkeletonBoss.OnBossKilled += ActivateAllRooms;
-  private void OnDisable() => SkeletonBoss.OnBossKilled -= ActivateAllRooms;
-
   public void NewSeed()
   {
     if (!seedTextSet) // KRIUFYEQ
@@ -84,7 +81,7 @@ public class RoomTemplates : MonoBehaviour // TODO: Make this into a Manager (?)
       timer -= Time.deltaTime;
   }
 
-  private void ActivateAllRooms()
+  public void ActivateAllRooms()
   {
     allRooms.Remove(bossRoom);
     allRooms.ForEach(room =>

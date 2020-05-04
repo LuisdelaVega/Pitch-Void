@@ -9,7 +9,7 @@ public class RoomSpawner : MonoBehaviour
   // 4 --> need right door
 
   public bool spawned = false;
-  [SerializeField] private float lifeSpan = 3f;
+  [SerializeField] private float lifeSpan = 5f;
 
   private void Start()
   {

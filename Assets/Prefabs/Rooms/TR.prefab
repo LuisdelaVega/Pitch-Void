@@ -1820,7 +1820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 1
   spawned: 0
-  lifeSpan: 1
+  lifeSpan: 5
 --- !u!61 &8487454323222601198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1915,7 +1915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 2
   spawned: 0
-  lifeSpan: 1
+  lifeSpan: 5
 --- !u!61 &8487454323488189043
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -52,7 +52,9 @@ public class Player : MovingCharacter
     controls.Player.Dash.performed += _ => Dash();
   }
 
-  void OnDisable() => controls.Disable();
+  public void DisablePlayerControls() => controls.Disable();
+  void OnDisable() => DisablePlayerControls();
+
   private void ChangeDirection(Vector2 newDirection) => Direction = newDirection.normalized;
   protected override void Move()
   {
