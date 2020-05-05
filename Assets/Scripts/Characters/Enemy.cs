@@ -52,7 +52,7 @@ public class Enemy : MovingCharacter
   /* Movement */
   protected override void Move()
   {
-    if (!movementOnCooldown && canMove)
+    if (!movementOnCooldown)
       PerformMovement();
     else if (movementOnCooldown && !movementCooldownInProcess)
       StartCoroutine(MovementCooldown());

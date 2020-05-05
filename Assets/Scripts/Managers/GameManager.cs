@@ -63,10 +63,12 @@ public class GameManager : MonoBehaviour
 
   private void Restart()
   {
+    // Handle RoomTemplates
     RoomTemplates.instance.seedTextSet = false;
     RoomTemplates.instance.NewSeed();
     RoomTemplates.instance.timer = RoomTemplates.instance.waitTime;
     RoomTemplates.instance.spawedBoss = false;
+
     // Coroutines
     StopAllCoroutines();
 

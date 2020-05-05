@@ -8,7 +8,6 @@ public abstract class MovingCharacter : MonoBehaviour
   /* Movement */
   [SerializeField] protected float moveSpeed = 5.5f;
   public Vector2 Direction { get; protected set; }
-  protected bool canMove = true;
 
   /* Components */
   protected Rigidbody2D rb;
@@ -30,17 +29,7 @@ public abstract class MovingCharacter : MonoBehaviour
     if (holdAttack) Attack();
   }
 
-  void FixedUpdate()
-  {
-    if (!canMove) Direction = Vector2.zero;
-    Move();
-  }
-
-  public void EnableMovement(bool enabled)
-  {
-    Debug.Log($"canMove: {canMove}");
-    canMove = enabled;
-  }
+  void FixedUpdate() => Move();
 
   /* Abstract methods */
   protected abstract void Move();

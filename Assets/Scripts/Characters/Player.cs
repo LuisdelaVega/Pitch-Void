@@ -52,8 +52,7 @@ public class Player : MovingCharacter
     controls.Player.Dash.performed += _ => Dash();
   }
 
-  public void DisablePlayerControls() => controls.Disable();
-  void OnDisable() => DisablePlayerControls();
+  void OnDisable() => controls.Disable();
 
   private void ChangeDirection(Vector2 newDirection) => Direction = newDirection.normalized;
   protected override void Move()
@@ -90,7 +89,12 @@ public class Player : MovingCharacter
   {
     while (isDashing)
     {
-      Destroy(Instantiate(echo, transform.position, transform.rotation), echoLifeSpan);
+      GameObject echoObj = Instantiate(echo, transform.position, transform.rotation);
+      SpriteRenderer echoObjSR = echoObj.GetComponent<SpriteRenderer>();
+      echoObjSR.sprite = spriteRenderer.sprite;
+      echoObjSR.flipX = spriteRenderer.flipX;
+
+      Destroy(echoObj, echoLifeSpan);
       yield return null;
     }
   }

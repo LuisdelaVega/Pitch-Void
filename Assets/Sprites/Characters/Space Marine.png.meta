@@ -1,0 +1,1022 @@
+fileFormatVersion: 2
+guid: 2a5153b3ac5c9a3409b69a43f225fe48
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7212508327821815719
+    second: Space Marine_0
+  - first:
+      213: 8349867889470404237
+    second: Space Marine_1
+  - first:
+      213: -3020596046185139432
+    second: Space Marine_2
+  - first:
+      213: 5359986058480254749
+    second: Space Marine_3
+  - first:
+      213: 6018615075178932927
+    second: Space Marine_4
+  - first:
+      213: 8540932712884885981
+    second: Space Marine_5
+  - first:
+      213: -3573426395906460113
+    second: Space Marine_6
+  - first:
+      213: -7863830033645505141
+    second: Space Marine_7
+  - first:
+      213: 4068234344394098208
+    second: Space Marine_8
+  - first:
+      213: -7037462893816933099
+    second: Space Marine_9
+  - first:
+      213: 6980177544114776566
+    second: Space Marine_10
+  - first:
+      213: -7735614280048683250
+    second: Space Marine_11
+  - first:
+      213: -876399546211057339
+    second: Space Marine_12
+  - first:
+      213: 6104912053433775629
+    second: Space Marine_13
+  - first:
+      213: 7821615343818414997
+    second: Space Marine_14
+  - first:
+      213: -7249984001882030687
+    second: Space Marine_15
+  - first:
+      213: 1455882083131859152
+    second: Space Marine_16
+  - first:
+      213: -447292629724158745
+    second: Space Marine_17
+  - first:
+      213: 3956122103361569067
+    second: Space Marine_18
+  - first:
+      213: -3597970291615566091
+    second: Space Marine_19
+  - first:
+      213: -5818517238981029664
+    second: Space Marine_20
+  - first:
+      213: -1044926789178302743
+    second: Space Marine_21
+  - first:
+      213: -2443939706262055301
+    second: Space Marine_22
+  - first:
+      213: 5631201872746635919
+    second: Space Marine_23
+  - first:
+      213: 3124024713144648298
+    second: Space Marine_0
+  - first:
+      213: -3994998607310851539
+    second: Space Marine_1
+  - first:
+      213: -264454061662125660
+    second: Space Marine_2
+  - first:
+      213: -868785694234614688
+    second: Space Marine_3
+  - first:
+      213: -2479940386676125280
+    second: Space Marine_4
+  - first:
+      213: -7603245790195578836
+    second: Space Marine_5
+  - first:
+      213: -6197343611217316380
+    second: Space Marine_6
+  - first:
+      213: 3623736264442257426
+    second: Space Marine_7
+  - first:
+      213: -3544617715735672197
+    second: Space Marine_8
+  - first:
+      213: 7527031748803526898
+    second: Space Marine_9
+  - first:
+      213: -8300220301952784749
+    second: Space Marine_10
+  - first:
+      213: 9157321791936785098
+    second: Space Marine_11
+  - first:
+      213: -7199884371762825018
+    second: Space Marine_12
+  - first:
+      213: -5403211911687012548
+    second: Space Marine_13
+  - first:
+      213: -4606417736375113256
+    second: Space Marine_14
+  - first:
+      213: -1906566095795059184
+    second: Space Marine_15
+  - first:
+      213: 7285261825545023728
+    second: Space Marine_16
+  - first:
+      213: 6036702421973249299
+    second: Space Marine_17
+  - first:
+      213: -9025887763169224962
+    second: Space Marine_18
+  - first:
+      213: -5090793108587835369
+    second: Space Marine_19
+  - first:
+      213: 4854285142398473265
+    second: Space Marine_20
+  - first:
+      213: -642191463848987215
+    second: Space Marine_21
+  - first:
+      213: 5567815920147703426
+    second: Space Marine_22
+  - first:
+      213: -3210653115926675314
+    second: Space Marine_23
+  - first:
+      213: 2921306331175285334
+    second: Space Marine_24
+  - first:
+      213: -6383410071418693691
+    second: Space Marine_25
+  - first:
+      213: 1927233236382902951
+    second: Space Marine_26
+  - first:
+      213: -3572887382847167811
+    second: Space Marine_27
+  - first:
+      213: 2143538047421924764
+    second: Space Marine_28
+  - first:
+      213: 1856925137028170380
+    second: Space Marine_29
+  - first:
+      213: -6166729304262159125
+    second: Space Marine_30
+  - first:
+      213: -6314114046686092271
+    second: Space Marine_31
+  - first:
+      213: -2187019039374912490
+    second: Space Marine_32
+  - first:
+      213: 6665848515785719276
+    second: Space Marine_33
+  - first:
+      213: 6393380458393222453
+    second: Space Marine_34
+  - first:
+      213: -3756044395891211206
+    second: Space Marine_35
+  - first:
+      213: -8968472734075257541
+    second: Space Marine_36
+  - first:
+      213: 5284508109688518507
+    second: Space Marine_37
+  - first:
+      213: -1915852073602205687
+    second: Space Marine_38
+  - first:
+      213: 8233957127891426051
+    second: Space Marine_39
+  - first:
+      213: 753626017202883202
+    second: Space Marine_40
+  - first:
+      213: -1051064280338678279
+    second: Space Marine_41
+  - first:
+      213: 5730951387353980007
+    second: Space Marine_42
+  - first:
+      213: -1230057427697778788
+    second: Space Marine_43
+  - first:
+      213: 7130374820361328418
+    second: Space Marine_44
+  - first:
+      213: -5901417056363360837
+    second: Space Marine_45
+  - first:
+      213: -3621898680836927319
+    second: Space Marine_46
+  - first:
+      213: -6011232811913749650
+    second: Space Marine_47
+  - first:
+      213: -3716664001586190744
+    second: Space Marine_24
+  - first:
+      213: -5553462486720352579
+    second: Space Marine_25
+  - first:
+      213: 6188901261626097369
+    second: Space Marine_26
+  - first:
+      213: -1727234875954089677
+    second: Space Marine_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Space Marine_16
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0335708037a1560800000000000000
+      internalID: 7285261825545023728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_17
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31da4747edca6c350800000000000000
+      internalID: 6036702421973249299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 106
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6d0cd86ea9db280800000000000000
+      internalID: -9025887763169224962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_19
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 106
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7109d91d3aed959b0800000000000000
+      internalID: -5090793108587835369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_20
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 106
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1341e1f2e92ed5340800000000000000
+      internalID: 4854285142398473265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_21
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 106
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b53e7f144a7617f0800000000000000
+      internalID: -642191463848987215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 53
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2862b2f641bd44d40800000000000000
+      internalID: 5567815920147703426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_23
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 53
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80803870087173d0800000000000000
+      internalID: -3210653115926675314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_24
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 53
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86629f348c1cb6cc0800000000000000
+      internalID: -3716664001586190744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_25
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 53
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe6395ba432ee2b0800000000000000
+      internalID: -5553462486720352579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a624780cce3ca5b20800000000000000
+      internalID: 3124024713144648298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d227e0ddee9ee88c0800000000000000
+      internalID: -3994998607310851539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1483b9e68745cf0800000000000000
+      internalID: -264454061662125660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_3
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064643d930471f3f0800000000000000
+      internalID: -868785694234614688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_4
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1560c8b5b759dd0800000000000000
+      internalID: -2479940386676125280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_5
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28886fcc38db7690800000000000000
+      internalID: -7603245790195578836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_6
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5fa5e02dc9ef9a0800000000000000
+      internalID: -6197343611217316380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_7
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21028c1eee81a4230800000000000000
+      internalID: 3623736264442257426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_8
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ac40db7fcfecec0800000000000000
+      internalID: -3544617715735672197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_9
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f08580ee73657860800000000000000
+      internalID: 7527031748803526898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_10
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3966e90ac91bfcc80800000000000000
+      internalID: -8300220301952784749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_11
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acae556f6a7551f70800000000000000
+      internalID: 9157321791936785098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_12
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8b03d7f4fd41c90800000000000000
+      internalID: -7199884371762825018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_13
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f7cbdc46fe305b0800000000000000
+      internalID: -5403211911687012548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_14
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d96d408977b210c0800000000000000
+      internalID: -4606417736375113256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_15
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 159
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016055fbc348a85e0800000000000000
+      internalID: -1906566095795059184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_26
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aaede5ea68eeba10800000000000000
+      internalID: 1927233236382902951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_27
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db26be2fadd8a6ec0800000000000000
+      internalID: -3572887382847167811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_28
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c954e174f706fbd10800000000000000
+      internalID: 2143538047421924764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_29
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0
+        width: 38
+        height: 52
+      alignment: 9
+      pivot: {x: 0.487, y: 0.398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82ce0fd29f15c910800000000000000
+      internalID: 1856925137028170380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
