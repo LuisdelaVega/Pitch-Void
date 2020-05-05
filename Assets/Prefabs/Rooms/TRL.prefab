@@ -7770,9 +7770,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arcadeMode: 0
   walls: {fileID: 6370285982784571648}
+  isBossRoom: 0
   roomLightsManager: {fileID: 1625641313058629411}
   enemyPrefabList:
-  - {fileID: -6906897709931417240, guid: 72dbbbb26c2493b49aa521e5f11072e0, type: 3}
+  - {fileID: 8671040359916251570, guid: 72dbbbb26c2493b49aa521e5f11072e0, type: 3}
   spawnEnemyCooldown: 1
   doors:
   - {fileID: 648526871280811796}

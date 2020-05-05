@@ -4,7 +4,7 @@ using System.Text;
 using UnityEngine;
 using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
 
-public class RoomTemplates : MonoBehaviour // TODO: Make this into a Manager (?)
+public class RoomTemplates : MonoBehaviour
 {
   public static RoomTemplates instance = null;
 
@@ -20,7 +20,7 @@ public class RoomTemplates : MonoBehaviour // TODO: Make this into a Manager (?)
   public GameObject[] leftRooms;
   public GameObject closedHorizontalWall;
   public GameObject closedVerticalWall;
-  public List<GameObject> allRooms = new List<GameObject>();
+  [HideInInspector] public List<GameObject> allRooms = new List<GameObject>();
 
   /* Boss */
   [HideInInspector] public GameObject bossRoom; // Maybe create a list of boss rooms and replace the one here with one of those
@@ -48,7 +48,7 @@ public class RoomTemplates : MonoBehaviour // TODO: Make this into a Manager (?)
 
   public void NewSeed()
   {
-    if (!seedTextSet) // KRIUFYEQ
+    if (!seedTextSet)
     {
       int length = 8;
       StringBuilder str_build = new StringBuilder();
@@ -74,7 +74,12 @@ public class RoomTemplates : MonoBehaviour // TODO: Make this into a Manager (?)
     if (timer <= 0 && !spawedBoss)
     {
       bossRoom = allRooms[allRooms.Count - 1];
-      Instantiate(boss, bossRoom.transform.position, bossRoom.transform.rotation);
+      var bossRoomManager = bossRoom.GetComponent<RoomManager>();
+      bossRoomManager.isBossRoom = true;
+      bossRoomManager.enemyPrefabList = new List<GameObject>();
+      bossRoomManager.enemyPrefabList.Add(boss);
+
+      // Instantiate(boss, bossRoom.transform.position, bossRoom.transform.rotation);
       spawedBoss = true;
     }
     else

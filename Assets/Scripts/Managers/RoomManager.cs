@@ -10,13 +10,14 @@ public class RoomManager : MonoBehaviour
   // [SerializeField] private bool roomIsActive = false;
   public CompositeCollider2D walls;
   private bool roomIsActive = false;
+  public bool isBossRoom = false;
 
   /* Lights */
   public RoomLightsManager roomLightsManager;
   private Coroutine toggleDim;
 
   /* Enemies */
-  public List<Enemy> enemyPrefabList;
+  public List<GameObject> enemyPrefabList;
   private int enemiesToSpawn = 0;
   private bool waitingToSpawnEnemy = true;
   private int enemiesSpawnedInRoom = 0;
@@ -39,14 +40,23 @@ public class RoomManager : MonoBehaviour
     if (arcadeMode) SetUpRoom(true);
   }
 
-  private void OnDisable() => Enemy.OnEnemyKilled -= UpdateEnemyCount;
+  private void OnDisable()
+  {
+    if (!arcadeMode)
+      Enemy.OnEnemyKilled -= UpdateEnemyCount;
+    else
+      SkeletonBoss.OnBossKilled -= UpdateEnemyCount;
+  }
 
   private void UpdateEnemyCount()
   {
     if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn)
     {
       roomIsActive = false;
-      Enemy.OnEnemyKilled -= UpdateEnemyCount;
+      if (!arcadeMode)
+        Enemy.OnEnemyKilled -= UpdateEnemyCount;
+      else
+        SkeletonBoss.OnBossKilled -= UpdateEnemyCount;
       Tilemap[] tilemaps = GetComponentsInChildren<Tilemap>();
       foreach (Tilemap tilemap in tilemaps)
         if (tilemap.CompareTag("Minimap Texture"))
@@ -72,13 +82,16 @@ public class RoomManager : MonoBehaviour
     roomIsActive = true;
     waitingToSpawnEnemy = false;
     enemiesSpawnedInRoom = 0;
-    enemiesInRoom = enemiesToSpawn = GetAmountOfEnemiesToSpawn();
+    enemiesInRoom = enemiesToSpawn = !isBossRoom ? GetAmountOfEnemiesToSpawn() : 1;
 
     StartCoroutine(ActivateDoors(fullSetUp));
     toggleDim = StartCoroutine(roomLightsManager.ToggleDim(fullSetUp));
 
     if (!arcadeMode && fullSetUp)
-      Enemy.OnEnemyKilled += UpdateEnemyCount;
+      if (!isBossRoom)
+        Enemy.OnEnemyKilled += UpdateEnemyCount;
+      else
+        SkeletonBoss.OnBossKilled += UpdateEnemyCount;
   }
 
   public IEnumerator SpawnEnemies()

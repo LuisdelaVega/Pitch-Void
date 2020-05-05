@@ -53,6 +53,8 @@
     "temp/": true,
     "Temp/": true,
     "Assets/Animations/": true,
+    "Assets/Brushes/": true,
+    "Assets/Renderer/": true,
     "Assets/Palettes/": true,
     "Assets/Prefabs/": true,
     "Assets/Scenes/": true,
@@ -62,6 +64,7 @@
     "Assets/Audio/": true,
     "Assets/Fonts/": true,
     "Assets/Shaders/": true,
+    "Assets/Timeline/": true,
     "**/*.inputactions": true,
     "**/*.csproj": true,
     "**/*.sln": true
