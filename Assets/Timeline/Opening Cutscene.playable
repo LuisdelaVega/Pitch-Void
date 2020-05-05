@@ -111,7 +111,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM Intro Door Shake
+    m_DisplayName: CM Shaky
   - m_Version: 1
     m_Start: 0.3666666666666666
     m_ClipIn: 0

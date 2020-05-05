@@ -1923,10 +1923,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 06a0e49304ed076418d42e359ef0aa55, type: 2}
     - {fileID: 11400000, guid: 9d1e586d4474e5c45ae62bb1c733edd3, type: 2}
     - {fileID: 11400000, guid: c0244a8af8089414a807c7ffa3c0278c, type: 2}
-    - {fileID: 11400000, guid: cf31cfaaf5395c748aef468ad180aadd, type: 2}
-    - {fileID: 11400000, guid: 37a22fa0157ba2a4ba0931dcb5015ec8, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 11400000, guid: 8c0954fda125a0743bd493f1376a8015, type: 2}
-    - {fileID: 11400000, guid: 10d1709a3cbca1346a86da215c7613d4, type: 2}
+    - {fileID: 0}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -6487,7 +6487,7 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 8c0954fda125a0743bd493f1376a8015, type: 2}
-    - {fileID: 11400000, guid: 10d1709a3cbca1346a86da215c7613d4, type: 2}
+    - {fileID: 0}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
