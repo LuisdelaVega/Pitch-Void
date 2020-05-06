@@ -39,7 +39,11 @@ public abstract class Weapon : MonoBehaviour
 
   private void Rotate()
   {
-    Vector2 direction = GetDirection();
+    Vector2 direction;
+    if (transform.parent.CompareTag("Player"))
+      direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+    else
+      direction = GetDirection();
     if (direction.sqrMagnitude == 0)
     {
       spriteRenderer.sortingOrder = 2;

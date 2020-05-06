@@ -96,7 +96,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6673291239014348172}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.006708701, w: 0.9999775}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.4
+  m_FalloffIntensity: 0.35
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.8
   m_LightVolumeOpacity: 0
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.3782673
-  m_PointLightOuterRadius: 1.5
+  m_PointLightInnerRadius: 1
+  m_PointLightOuterRadius: 1.2
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -168,7 +168,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6747575327549019493}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0042041317, w: 0.9999912}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -189,9 +189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.4
+  m_FalloffIntensity: 0.35
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 0.6
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 5542352673fc9dae0000000041f718523368d81d013ce510
   m_LightCookieSprite: {fileID: 0}
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 1.5
+  m_PointLightOuterRadius: 1.2
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -297,7 +297,7 @@ SpriteRenderer:
   m_SortingLayerID: 801933395
   m_SortingLayer: -2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 6231442321471438116, guid: 9848005b90e229d43b6d24beaeadbeb6,
+  m_Sprite: {fileID: 6231442321471438116, guid: 338c40c8f560e0f4c9ca0ba45cc203f3,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -325,8 +325,8 @@ BoxCollider2D:
   m_Offset: {x: 0.015437484, y: -0.049669504}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.487, y: 0.365}
-    oldSize: {x: 1.1875, y: 1.6875}
+    pivot: {x: 0.44840956, y: 0.35}
+    oldSize: {x: 1.28125, y: 1.71875}
     newSize: {x: 1.1875, y: 1.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0694fe706a2170b469e1facca5e5d18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 4
   animator: {fileID: 2307577401785852470}
   spriteRenderer: {fileID: 0}
   bloodParticleEffect: {fileID: 5936509768155569356, guid: f1def601c9609504cb884bc5a5da10ba,
@@ -402,14 +402,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a33fe95dcab0d44964752396e4a62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 4.6
-  viewAngle: 90
+  viewRadius: 6.5
+  viewAngle: 115
   targetMask:
     serializedVersion: 2
     m_Bits: 2048
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1536
   visibleTargets: []
   closestTarget: {fileID: 0}
 --- !u!114 &6827218778598763356

@@ -13,7 +13,9 @@ public class EndGameTrigger : MonoBehaviour
     if (other.TryGetComponent<Player>(out var player) && canEndGame)
     {
       // TODO: Start End Game Timeline animation
-      Debug.Log("End the game");
+
+      // TODO: This will be triggered by a Timeline signal and not here
+      GameManager.instance.GameEnded();
     }
   }
 }

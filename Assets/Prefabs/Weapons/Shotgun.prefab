@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 921994697273736414}
   - component: {fileID: 4949940569295352102}
   m_Layer: 0
-  m_Name: Tommy Gun
+  m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   projectileForce: 22
   firePoint: {fileID: 3444253564461638858}
   silenced: 0
-  soundDistance: 10
+  soundDistance: 25
 --- !u!114 &921994697273736414
 MonoBehaviour:
   m_ObjectHideFlags: 0
