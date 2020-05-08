@@ -40,8 +40,11 @@ public class RoomManager : MonoBehaviour
     if (arcadeMode) SetUpRoom(true);
   }
 
+  private void OnEnable() => ActivateAllRooms.OnActivateAllRooms += ActivateRoom;
+
   private void OnDisable()
   {
+    ActivateAllRooms.OnActivateAllRooms -= ActivateRoom;
     if (!arcadeMode)
       Enemy.OnEnemyKilled -= UpdateEnemyCount;
     else
@@ -110,7 +113,7 @@ public class RoomManager : MonoBehaviour
           Random.Range(walls.bounds.min.y + 5, walls.bounds.max.y - 5)
         );
         distanceToPlayer = spawnLocation - (Vector2)GameManager.instance.player.transform.position;
-      } while (distanceToPlayer.sqrMagnitude < 50);
+      } while (distanceToPlayer.sqrMagnitude < 52);
 
       int index = Random.Range(0, enemyPrefabList.Count);
       Instantiate(enemyPrefabList[index], spawnLocation, Quaternion.identity);
@@ -154,5 +157,13 @@ public class RoomManager : MonoBehaviour
     Destroy(ground.GetComponent<TilemapCollider2D>());
     Destroy(ground.GetComponent<CompositeCollider2D>());
     Destroy(ground.GetComponent<Rigidbody2D>());
+  }
+
+  private void ActivateRoom()
+  {
+    RemoveGroundCollider();
+    roomLightsManager.TurnOnLights(true);
+    if (!isBossRoom)
+      SetUpRoom(false);
   }
 }

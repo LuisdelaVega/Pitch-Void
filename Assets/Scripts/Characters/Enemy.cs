@@ -79,7 +79,6 @@ public class Enemy : MovingCharacter
   private void AvoidObstacles()
   {
     RaycastHit2D raycastHit = Physics2D.Raycast(transform.position + (Vector3)Direction, Direction, 1f);
-    Debug.DrawRay(transform.position, Direction * 1f, Color.red, 0.1f);
     if (raycastHit.collider != null)
     {
       switch (raycastHit.collider.tag)

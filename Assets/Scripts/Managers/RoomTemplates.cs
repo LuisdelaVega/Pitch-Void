@@ -23,9 +23,9 @@ public class RoomTemplates : MonoBehaviour
   [HideInInspector] public List<GameObject> allRooms = new List<GameObject>();
 
   /* Boss */
-  [HideInInspector] public GameObject bossRoom; // Maybe create a list of boss rooms and replace the one here with one of those
+  [HideInInspector] public GameObject bossRoom;
   public GameObject boss;
-  public bool spawedBoss = false;
+  public bool bossRoomChosen = false;
 
   /* Timers */
   public float waitTime = 2;
@@ -65,36 +65,21 @@ public class RoomTemplates : MonoBehaviour
       seedText = str_build.ToString();
     }
 
-    Debug.Log("SeedText: " + seedText);
     seed = seedText.GetHashCode();
   }
 
   private void Update()
   {
-    if (timer <= 0 && !spawedBoss)
+    if (timer <= 0 && !bossRoomChosen)
     {
       bossRoom = allRooms[allRooms.Count - 1];
       var bossRoomManager = bossRoom.GetComponent<RoomManager>();
       bossRoomManager.isBossRoom = true;
       bossRoomManager.enemyPrefabList = new List<GameObject>();
       bossRoomManager.enemyPrefabList.Add(boss);
-
-      // Instantiate(boss, bossRoom.transform.position, bossRoom.transform.rotation);
-      spawedBoss = true;
+      bossRoomChosen = true;
     }
-    else
+    else if (timer <= 0)
       timer -= Time.deltaTime;
-  }
-
-  public void ActivateAllRooms()
-  {
-    allRooms.Remove(bossRoom);
-    allRooms.ForEach(room =>
-    {
-      RoomManager manager = room.GetComponent<RoomManager>();
-      manager.RemoveGroundCollider();
-      manager.SetUpRoom(false);
-      manager.roomLightsManager.TurnOnLights(true);
-    });
   }
 }

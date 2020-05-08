@@ -15,7 +15,7 @@ public class EndGameTrigger : MonoBehaviour
       // TODO: Start End Game Timeline animation
 
       // TODO: This will be triggered by a Timeline signal and not here
-      GameManager.instance.GameEnded();
+      GameManager.instance.GameOver();
     }
   }
 }

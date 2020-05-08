@@ -6,7 +6,7 @@ public class RoomCloser : MonoBehaviour
 {
   private void Update()
   {
-    if (RoomTemplates.instance.spawedBoss)
+    if (RoomTemplates.instance.bossRoomChosen)
       Destroy(gameObject);
   }
 

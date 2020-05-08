@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
   public int level = 1;
 
   /* UI */
-  public GameObject resetText;
   public Texture2D cursor;
   public Text timerText;
   public GameObject endGameScreen;
@@ -61,15 +60,12 @@ public class GameManager : MonoBehaviour
   {
     if (arcadeMode)
       player.GetComponent<Player>().EnablePlayerControls();
-    resetText.SetActive(false);
     endGameScreen.SetActive(false);
 
     GetComponent<Timer>().StartTimer();
   }
 
-  public void GameOver() => resetText.SetActive(true);
-
-  public void GameEnded()
+  public void GameOver()
   {
     Time.timeScale = 0f;
     endGameScreen.SetActive(true);
@@ -80,10 +76,13 @@ public class GameManager : MonoBehaviour
   {
     Time.timeScale = 1f;
     // Handle RoomTemplates
-    RoomTemplates.instance.seedTextSet = false;
-    RoomTemplates.instance.NewSeed();
-    RoomTemplates.instance.timer = RoomTemplates.instance.waitTime;
-    RoomTemplates.instance.spawedBoss = false;
+    if (RoomTemplates.instance != null)
+    {
+      RoomTemplates.instance.seedTextSet = false;
+      RoomTemplates.instance.NewSeed();
+      RoomTemplates.instance.timer = RoomTemplates.instance.waitTime;
+      RoomTemplates.instance.bossRoomChosen = false;
+    }
 
     // Coroutines
     StopAllCoroutines();

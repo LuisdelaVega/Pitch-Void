@@ -4262,8 +4262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2852237227d6689408ab61c9fcdffbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomTemplates: {fileID: 5333883510557901366, guid: 8a192ee73e8207d45b15ea09621db3c5,
-    type: 3}
 --- !u!114 &6624298971255883292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6276,7 +6274,6 @@ MonoBehaviour:
   openingDirection: 3
   spawned: 0
   lifeSpan: 5
-  roomTemplates: {fileID: 0}
 --- !u!61 &1533067826929693785
 BoxCollider2D:
   m_ObjectHideFlags: 0

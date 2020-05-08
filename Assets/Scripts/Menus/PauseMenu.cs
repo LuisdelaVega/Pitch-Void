@@ -48,7 +48,8 @@ public class PauseMenu : MonoBehaviour
   {
     Resume();
     Destroy(GameManager.instance.gameObject);
-    Destroy(RoomTemplates.instance.gameObject);
+    if (RoomTemplates.instance != null)
+      Destroy(RoomTemplates.instance.gameObject);
     SceneManager.LoadScene("Main Menu");
   }
 }
