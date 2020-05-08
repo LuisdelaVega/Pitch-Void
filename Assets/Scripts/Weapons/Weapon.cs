@@ -17,17 +17,10 @@ public abstract class Weapon : MonoBehaviour
   private float angle = 0;
   public float Angle { get => angle; private set => angle = value; }
 
-  /* Audio */
-  protected AudioManager audioManager;
-
   /* Sprite */
   SpriteRenderer spriteRenderer;
 
-  private void Awake()
-  {
-    spriteRenderer = GetComponent<SpriteRenderer>();
-    audioManager = FindObjectOfType<AudioManager>();
-  }
+  private void Awake() => spriteRenderer = GetComponent<SpriteRenderer>();
 
   private void Update()
   {
@@ -46,7 +39,11 @@ public abstract class Weapon : MonoBehaviour
 
   private void Rotate()
   {
-    Vector2 direction = GetDirection();
+    Vector2 direction;
+    if (transform.parent.CompareTag("Player"))
+      direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+    else
+      direction = GetDirection();
     if (direction.sqrMagnitude == 0)
     {
       spriteRenderer.sortingOrder = 2;
@@ -67,7 +64,7 @@ public abstract class Weapon : MonoBehaviour
       spriteRenderer.sortingOrder = 2;
 
     // Set the direction of the Character relative to the Weapon's angle
-    if (transform.parent != null) // TODO: Make this happen for Enemies in the future
+    if (transform.parent != null)
     {
       transform.parent.GetComponent<MovingCharacter>()?.animator.SetFloat("Angle", Angle / 180);
       transform.parent.GetComponent<MovingCharacter>().spriteRenderer.flipX = flipStrite;

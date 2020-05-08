@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
+using UnityEngine.Tilemaps;
 
 public class RoomManager : MonoBehaviour
 {
@@ -10,13 +10,14 @@ public class RoomManager : MonoBehaviour
   // [SerializeField] private bool roomIsActive = false;
   public CompositeCollider2D walls;
   private bool roomIsActive = false;
+  public bool isBossRoom = false;
 
   /* Lights */
   public RoomLightsManager roomLightsManager;
   private Coroutine toggleDim;
 
   /* Enemies */
-  public List<Enemy> enemyPrefabList;
+  public List<GameObject> enemyPrefabList;
   private int enemiesToSpawn = 0;
   private bool waitingToSpawnEnemy = true;
   private int enemiesSpawnedInRoom = 0;
@@ -26,25 +27,49 @@ public class RoomManager : MonoBehaviour
   /* Door */
   public GameObject[] doors;
 
+  /* Ground */
+  public GameObject ground;
 
-  private void Awake() => ActivateDoors(false);
+  /* Minimap Texture */
+  private Color clearedRoom = new Color(0, 255, 0);
+
+  private void Awake() => StartCoroutine(ActivateDoors(false, false));
 
   private void Start()
   {
-    if (arcadeMode) SetUpRoom();
+    if (arcadeMode) SetUpRoom(true);
   }
 
-  private void OnDisable() => Enemy.OnEnemyKilled -= UpdateEnemyCount;
+  private void OnEnable() => ActivateAllRooms.OnActivateAllRooms += ActivateRoom;
+
+  private void OnDisable()
+  {
+    ActivateAllRooms.OnActivateAllRooms -= ActivateRoom;
+    if (!arcadeMode)
+      Enemy.OnEnemyKilled -= UpdateEnemyCount;
+    else
+      SkeletonBoss.OnBossKilled -= UpdateEnemyCount;
+  }
 
   private void UpdateEnemyCount()
   {
-    if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn) // TODO: Open the doors
+    if (--enemiesInRoom == 0 && enemiesSpawnedInRoom == enemiesToSpawn)
     {
-      ActivateDoors(false);
       roomIsActive = false;
+      if (!arcadeMode)
+        Enemy.OnEnemyKilled -= UpdateEnemyCount;
+      else
+        SkeletonBoss.OnBossKilled -= UpdateEnemyCount;
+      Tilemap[] tilemaps = GetComponentsInChildren<Tilemap>();
+      foreach (Tilemap tilemap in tilemaps)
+        if (tilemap.CompareTag("Minimap Texture"))
+        {
+          tilemap.color = clearedRoom;
+          tilemap.GetComponent<TilemapRenderer>().sortingOrder += 1;
+        }
+      StartCoroutine(ActivateDoors(false));
       StopCoroutine(toggleDim);
-      roomLightsManager.TurnOnLights();
-      enabled = false;
+      roomLightsManager.TurnOnLights(true);
     }
   }
 
@@ -55,16 +80,21 @@ public class RoomManager : MonoBehaviour
       StartCoroutine(SpawnEnemies());
   }
 
-  public void SetUpRoom()
+  public void SetUpRoom(bool fullSetUp)
   {
-    ActivateDoors(true);
-
-    enemiesInRoom = enemiesToSpawn = GetAmountOfEnemiesToSpawn();
-    toggleDim = StartCoroutine(roomLightsManager.ToggleDim(true));
-    waitingToSpawnEnemy = false;
     roomIsActive = true;
-    if (!arcadeMode)
-      Enemy.OnEnemyKilled += UpdateEnemyCount;
+    waitingToSpawnEnemy = false;
+    enemiesSpawnedInRoom = 0;
+    enemiesInRoom = enemiesToSpawn = !isBossRoom ? GetAmountOfEnemiesToSpawn() : 1;
+
+    StartCoroutine(ActivateDoors(fullSetUp));
+    toggleDim = StartCoroutine(roomLightsManager.ToggleDim(fullSetUp));
+
+    if (!arcadeMode && fullSetUp)
+      if (!isBossRoom)
+        Enemy.OnEnemyKilled += UpdateEnemyCount;
+      else
+        SkeletonBoss.OnBossKilled += UpdateEnemyCount;
   }
 
   public IEnumerator SpawnEnemies()
@@ -83,7 +113,7 @@ public class RoomManager : MonoBehaviour
           Random.Range(walls.bounds.min.y + 5, walls.bounds.max.y - 5)
         );
         distanceToPlayer = spawnLocation - (Vector2)GameManager.instance.player.transform.position;
-      } while (distanceToPlayer.sqrMagnitude < 50); // TODO: Revisit this number
+      } while (distanceToPlayer.sqrMagnitude < 52);
 
       int index = Random.Range(0, enemyPrefabList.Count);
       Instantiate(enemyPrefabList[index], spawnLocation, Quaternion.identity);
@@ -96,13 +126,44 @@ public class RoomManager : MonoBehaviour
   }
 
   private int GetAmountOfEnemiesToSpawn() => Random.Range(
-        Mathf.FloorToInt(Mathf.Log(GameManager.instance.level + 2, 2)),
-        Mathf.CeilToInt(Mathf.Log(GameManager.instance.level + 2, 2) * 2)
+        Mathf.FloorToInt(Mathf.Log(GameManager.instance.level + 10, 2)),
+        Mathf.CeilToInt(Mathf.Log(GameManager.instance.level + 10, 2) * 2)
     );
 
-  private void ActivateDoors(bool isActive)
+  private IEnumerator ActivateDoors(bool shouldClose) => ActivateDoors(shouldClose, true);
+  private IEnumerator ActivateDoors(bool shouldClose, bool playAudio)
   {
+    if (playAudio)
+      AudioManager.instance.PlayWithRandomPitch(shouldClose ? "Door Close" : "Door Open", 0.9f, 1.1f);
+
     foreach (GameObject door in doors)
-      door.SetActive(isActive);
+    {
+      if (!shouldClose) // Should Open
+      {
+        door.GetComponent<Animator>()?.SetBool("Open", true);
+        yield return new WaitForSeconds(0.25f);
+        door.SetActive(false);
+      }
+      else
+      {
+        door.SetActive(true);
+        door.GetComponent<Animator>()?.SetBool("Open", false);
+      }
+    }
+  }
+
+  public void RemoveGroundCollider()
+  {
+    Destroy(ground.GetComponent<TilemapCollider2D>());
+    Destroy(ground.GetComponent<CompositeCollider2D>());
+    Destroy(ground.GetComponent<Rigidbody2D>());
+  }
+
+  private void ActivateRoom()
+  {
+    RemoveGroundCollider();
+    roomLightsManager.TurnOnLights(true);
+    if (!isBossRoom)
+      SetUpRoom(false);
   }
 }

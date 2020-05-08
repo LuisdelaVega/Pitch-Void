@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Cinemachine;
 
@@ -6,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
   public static GameManager instance = null;
 
+  /* Game mode */
+  [SerializeField] private bool arcadeMode = false;
+
   /* Player */
-  public GameObject playerPrefab;
-  [HideInInspector] public GameObject player;
+  public GameObject player;
 
   /* Cinemachine */
   public CinemachineVirtualCamera vcam1;
@@ -17,12 +20,13 @@ public class GameManager : MonoBehaviour
   private Controls controls;
 
   /* Level */
-  public int level = 6;
+  public int level = 1;
 
   /* UI */
-  private GameObject resetText;
+  public Texture2D cursor;
+  public Text timerText;
+  public GameObject endGameScreen;
 
-  // Start is called before the first frame update
   void Awake()
   {
     if (instance == null)
@@ -38,11 +42,11 @@ public class GameManager : MonoBehaviour
     // Initialize Controls
     controls = new Controls();
 
-    resetText = GameObject.Find("ResetText");
-
-    //Call the InitGame function to initialize the first level 
+    //Call the InitGame function to initialize the first level
     InitGame();
   }
+
+  private void Start() => Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
 
   void OnEnable()
   {
@@ -54,21 +58,32 @@ public class GameManager : MonoBehaviour
 
   void InitGame()
   {
-    resetText.SetActive(false);
-    InstantiatePlayer();
+    if (arcadeMode)
+      player.GetComponent<Player>().EnablePlayerControls();
+    endGameScreen.SetActive(false);
+
+    GetComponent<Timer>().StartTimer();
   }
 
-  public void InstantiatePlayer()
+  public void GameOver()
   {
-    player = Instantiate(playerPrefab, new Vector2(0, 0), Quaternion.identity);
-    vcam1.LookAt = player.transform;
-    vcam1.Follow = player.transform;
+    Time.timeScale = 0f;
+    endGameScreen.SetActive(true);
+    timerText.text = GetComponent<Timer>().GetElapsedTime();
   }
 
-  public void GameOver() => resetText.SetActive(true);
-
-  private void Restart()
+  public void Restart()
   {
+    Time.timeScale = 1f;
+    // Handle RoomTemplates
+    if (RoomTemplates.instance != null)
+    {
+      RoomTemplates.instance.seedTextSet = false;
+      RoomTemplates.instance.NewSeed();
+      RoomTemplates.instance.timer = RoomTemplates.instance.waitTime;
+      RoomTemplates.instance.bossRoomChosen = false;
+    }
+
     // Coroutines
     StopAllCoroutines();
 
@@ -76,15 +91,9 @@ public class GameManager : MonoBehaviour
     if (player != null)
       Destroy(player.gameObject);
 
-    // Init game
-    DestroyGameManager();
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-  }
-
-  public void DestroyGameManager()
-  {
-    instance = null;
-    enabled = false;
     Destroy(gameObject);
+
+    // Init game
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
   }
 }

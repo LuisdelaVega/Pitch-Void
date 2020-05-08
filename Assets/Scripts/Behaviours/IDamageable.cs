@@ -1,4 +1,5 @@
-﻿public interface IDamageable
+﻿using UnityEngine;
+public interface IDamageable
 {
-  void DealDamage(float damage);
+  void DealDamage(float damage, Quaternion rotation);
 }

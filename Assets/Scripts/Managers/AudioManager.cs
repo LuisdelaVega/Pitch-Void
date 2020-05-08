@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using UnityEngine.Audio;
-using System;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
 
 public class AudioManager : MonoBehaviour
@@ -63,10 +63,7 @@ public class AudioManager : MonoBehaviour
     sound.source.Play();
   }
 
-  public void PlayWithRandomPitch(string name, float minPitch, float maxPitch)
-  {
-    PlayWithRandomPitch(name, -1, minPitch, maxPitch);
-  }
+  public void PlayWithRandomPitch(string name, float minPitch, float maxPitch) => PlayWithRandomPitch(name, -1, minPitch, maxPitch);
   public void PlayWithRandomPitch(string name, float volume, float minPitch, float maxPitch)
   {
     Sound sound = FindSound(name);

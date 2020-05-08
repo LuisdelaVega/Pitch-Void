@@ -5,26 +5,26 @@ public class PauseMenu : MonoBehaviour
 {
   /* Player controls */
   private Controls controls;
-  public static bool GameIsPaused = false;
-  public GameObject pauseMenuUI;
+  public static bool gameIsPaused = false;
+  public GameObject pauseMenu;
 
   private void Awake()
   {
     controls = new Controls();
-    pauseMenuUI.SetActive(false);
+    pauseMenu.SetActive(false);
   }
 
   private void OnEnable()
   {
     controls.Enable();
-    controls.PauseMenu.PauseGame.performed += _ => StartPressed();
+    controls.PauseMenu.PauseGame.performed += _ => PauseButtonPressed();
   }
 
   private void OnDisable() => controls.Disable();
 
-  private void StartPressed()
+  private void PauseButtonPressed()
   {
-    if (GameIsPaused)
+    if (gameIsPaused)
       Resume();
     else
       Pause();
@@ -32,22 +32,24 @@ public class PauseMenu : MonoBehaviour
 
   public void Resume()
   {
-    pauseMenuUI.SetActive(false);
+    pauseMenu.SetActive(false);
     Time.timeScale = 1f;
-    GameIsPaused = false;
+    gameIsPaused = false;
   }
 
   private void Pause()
   {
-    pauseMenuUI.SetActive(true);
+    pauseMenu.SetActive(true);
     Time.timeScale = 0f;
-    GameIsPaused = true;
+    gameIsPaused = true;
   }
 
   public void QuitGame()
   {
     Resume();
-    GameManager.instance.DestroyGameManager();
+    Destroy(GameManager.instance.gameObject);
+    if (RoomTemplates.instance != null)
+      Destroy(RoomTemplates.instance.gameObject);
     SceneManager.LoadScene("Main Menu");
   }
 }

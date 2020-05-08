@@ -8,12 +8,15 @@ public abstract class MovingCharacter : MonoBehaviour
   /* Movement */
   [SerializeField] protected float moveSpeed = 5.5f;
   public Vector2 Direction { get; protected set; }
-  protected bool canMove = true;
 
   /* Components */
   protected Rigidbody2D rb;
   public Animator animator;
   [HideInInspector] public SpriteRenderer spriteRenderer;
+
+  /* Blood Effects */
+  public GameObject bloodParticleEffect;
+  public GameObject bloodStain;
 
   void Start()
   {
@@ -26,13 +29,10 @@ public abstract class MovingCharacter : MonoBehaviour
     if (holdAttack) Attack();
   }
 
-  void FixedUpdate()
-  {
-    if (canMove) Move();
-  }
+  void FixedUpdate() => Move();
 
   /* Abstract methods */
   protected abstract void Move();
   protected abstract void Attack();
-  public abstract void Die();
+  public abstract void Die(Quaternion rotation);
 }

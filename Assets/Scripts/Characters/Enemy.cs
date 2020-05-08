@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using Random = UnityEngine.Random; //Tells Random to use the Unity Engine random number generator.
 
 public class Enemy : MovingCharacter
@@ -22,12 +23,27 @@ public class Enemy : MovingCharacter
   /* Event */
   public static event Action OnEnemyKilled;
 
+  /* Alert */
+  public Light2D alertLight;
+  public float maxIntensity = 0.8f;
+  public float alertLightTime = 1f;
+  private bool alertLightOn = false;
+  public GameObject alertBangPrefab;
+
+  /* Corpse */ // TODO: Move this to Moving Character
+  public GameObject corpse;
+
+  /* Popup Text */
+  public FloatingTextManager floatingText;
+
   // Start is called before the first frame update
   void Awake()
   {
     holdAttack = true;
     FindNewDirection();
+    alertLight.intensity = 0;
     movementTimer = GetRandomInRange(movementTimes);
+    floatingText = GameObject.Find("Floating Text Manager").GetComponent<FloatingTextManager>();
   }
 
   private void OnEnable() => RangedWeapon.OnShotFired += Alert;
@@ -36,7 +52,7 @@ public class Enemy : MovingCharacter
   /* Movement */
   protected override void Move()
   {
-    if (!movementOnCooldown && canMove)
+    if (!movementOnCooldown)
       PerformMovement();
     else if (movementOnCooldown && !movementCooldownInProcess)
       StartCoroutine(MovementCooldown());
@@ -63,7 +79,6 @@ public class Enemy : MovingCharacter
   private void AvoidObstacles()
   {
     RaycastHit2D raycastHit = Physics2D.Raycast(transform.position + (Vector3)Direction, Direction, 1f);
-    Debug.DrawRay(transform.position, Direction * 1f, Color.red, 0.1f);
     if (raycastHit.collider != null)
     {
       switch (raycastHit.collider.tag)
@@ -135,6 +150,10 @@ public class Enemy : MovingCharacter
 
     if (distanceToTarget > distance) return;
 
+    Destroy(Instantiate(alertBangPrefab, new Vector2(transform.position.x, transform.position.y + 1.2f), Quaternion.identity, transform), alertLightTime);
+    alertLight.intensity = maxIntensity;
+    if (!alertLightOn)
+      StartCoroutine(AlertLightTimer());
     FindNewDirection(playerPosition);
     movementOnCooldown = movementCooldownInProcess = false;
     movementTimer = GetRandomInRange(movementTimes);
@@ -149,7 +168,21 @@ public class Enemy : MovingCharacter
     movementTimer = GetRandomInRange(movementTimes);
   }
 
-  public override void Die() => OnEnemyKilled?.Invoke();
+  private IEnumerator AlertLightTimer()
+  {
+    alertLightOn = true;
+    yield return new WaitForSeconds(alertLightTime);
+    alertLight.intensity = 0;
+    alertLightOn = false;
+  }
+
+  public override void Die(Quaternion rotation)
+  {
+    Instantiate(bloodParticleEffect, transform.position, rotation);
+    Instantiate(bloodStain, transform.position, rotation);
+    floatingText.CreateFloatingText(Instantiate(corpse, transform.position, rotation).transform);
+    OnEnemyKilled?.Invoke();
+  }
 
   /* Helper Methods */
   private int GetRandomInRange(Count range) => Random.Range(range.minimum, range.maximum + 1);

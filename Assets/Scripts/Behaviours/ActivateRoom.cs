@@ -17,5 +17,5 @@ public class ActivateRoom : MonoBehaviour
     }
   }
 
-  private void SetUp() => roomManager?.SetUpRoom();
+  private void SetUp() => roomManager?.SetUpRoom(true);
 }

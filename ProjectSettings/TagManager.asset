@@ -15,6 +15,8 @@ TagManager:
   - Point Light
   - SpawnPoint
   - Rooms
+  - Minimap Texture
+  - Minimap
   layers:
   - Default
   - TransparentFX
@@ -52,14 +54,17 @@ TagManager:
   - name: Ground
     uniqueID: 641024597
     locked: 0
-  - name: Border
+  - name: Wall
     uniqueID: 2929589363
-    locked: 0
-  - name: Enemy
-    uniqueID: 801933395
     locked: 0
   - name: Blocking Objects
     uniqueID: 1377367873
+    locked: 0
+  - name: Blood
+    uniqueID: 283458561
+    locked: 0
+  - name: Enemy
+    uniqueID: 801933395
     locked: 0
   - name: Projectile
     uniqueID: 3452103993

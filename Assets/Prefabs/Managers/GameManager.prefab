@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1740829301840275895}
   - component: {fileID: 8831576070855812757}
-  - component: {fileID: 5989379373969268043}
+  - component: {fileID: 8670905380525841123}
+  - component: {fileID: 1210782423}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,12 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c785d1229e51a4645877e403c8dd77fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelStartDelay: 2
-  innsmouthEnemies:
-  - {fileID: -6906897709931417240, guid: 72dbbbb26c2493b49aa521e5f11072e0, type: 3}
-  - {fileID: -3741415777897454203, guid: cef7c8b0fdcb24345bf61ec4b4a93238, type: 3}
-  borders: {fileID: 0}
---- !u!114 &5989379373969268043
+  arcadeMode: 0
+  player: {fileID: 0}
+  vcam1: {fileID: 0}
+  level: 1
+  cursor: {fileID: 2800000, guid: dc8c588998f19814ea1a0df81f607534, type: 3}
+  timerText: {fileID: 0}
+  endGameScreen: {fileID: 0}
+--- !u!114 &8670905380525841123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +61,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2522560380792551747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56ec569152913164881a7ff9a12a5057, type: 3}
+  m_Script: {fileID: 11500000, guid: 52fb42d938a70804aab4eed9e6328b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTiles: []
+--- !u!114 &1210782423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2522560380792551747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19edf7220889b448b46a73f90f2d609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}

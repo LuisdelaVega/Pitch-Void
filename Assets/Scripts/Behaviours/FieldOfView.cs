@@ -57,25 +57,6 @@ public class FieldOfView : MonoBehaviour
       else if (Vector2.Distance(transform.position, visibleTarget.position) < Vector2.Distance(transform.position, closestTarget.position))
         closestTarget = visibleTarget;
     });
-
-    AdjustCamera();
-  }
-
-  private void AdjustCamera()
-  {
-    if (TryGetComponent<Player>(out var player))
-    {
-      if (closestTarget != null)
-      {
-        player.shadowCameraTargetGroup.closestTarget = closestTarget.gameObject;
-        GameManager.instance.vcam1.Follow = player.shadowCameraTargetGroup.transform;
-      }
-      else if (GameManager.instance != null && GameManager.instance.vcam1.m_Follow != player.transform)
-      {
-        player.shadowCameraTargetGroup.closestTarget = null;
-        GameManager.instance.vcam1.Follow = player.transform;
-      }
-    }
   }
 
   // Used only by the FieldOfViewEditor to draw the FOV
