@@ -46,8 +46,15 @@ public class RoomTemplates : MonoBehaviour
     NewSeed();
   }
 
-  public void NewSeed()
+  public void NewSeed() => NewSeed("");
+  public void NewSeed(string newSeed)
   {
+    if (newSeed.Length == 8)
+    {
+      seedTextSet = true;
+      seedText = newSeed;
+    }
+
     if (!seedTextSet)
     {
       int length = 8;
