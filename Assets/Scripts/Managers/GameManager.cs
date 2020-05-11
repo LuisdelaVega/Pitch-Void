@@ -64,7 +64,8 @@ public class GameManager : MonoBehaviour
     endGameScreen.SetActive(false);
 
     GetComponent<Timer>().StartTimer();
-    RoomTemplates.instance.GameStarted(true);
+    if (RoomTemplates.instance != null)
+      RoomTemplates.instance.GameStarted(true);
   }
 
   public void GameOver()

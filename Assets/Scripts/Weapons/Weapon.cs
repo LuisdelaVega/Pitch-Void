@@ -24,7 +24,8 @@ public abstract class Weapon : MonoBehaviour
 
   private void Update()
   {
-    Rotate();
+    if (Time.timeScale != 0)
+      Rotate();
 
     if (onCooldown && !cooldownCoroutineInProcess)
       StartCoroutine(WaitForCooldown());
@@ -40,14 +41,16 @@ public abstract class Weapon : MonoBehaviour
   private void Rotate()
   {
     Vector2 direction;
+    float speed;
     if (transform.parent.CompareTag("Player"))
-      direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-    else
-      direction = GetDirection();
-    if (direction.sqrMagnitude == 0)
     {
-      spriteRenderer.sortingOrder = 2;
-      return;
+      speed = transform.parent.GetComponent<Player>().Direction.sqrMagnitude;
+      direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+    }
+    else
+    {
+      direction = GetDirection();
+      speed = direction.sqrMagnitude;
     }
 
     Angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -58,9 +61,9 @@ public abstract class Weapon : MonoBehaviour
     spriteRenderer.flipY = flipStrite;
 
     // Hide the Weapon behind the Character
-    if (Angle > 67.5 && Angle < 112.5 && spriteRenderer.sortingOrder != 0)
+    if (speed > 0 && Angle > 67.5 && Angle < 112.5 && spriteRenderer.sortingOrder != 0)
       spriteRenderer.sortingOrder = 0;
-    else if ((Angle <= 67.5 || Angle >= 112.5) && spriteRenderer.sortingOrder != 2)
+    else if (speed == 0 || (Angle <= 67.5 || Angle >= 112.5) && spriteRenderer.sortingOrder != 2)
       spriteRenderer.sortingOrder = 2;
 
     // Set the direction of the Character relative to the Weapon's angle
@@ -74,6 +77,7 @@ public abstract class Weapon : MonoBehaviour
     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(Angle, Vector3.forward), rotationSpeed * Time.deltaTime);
   }
 
+  // Only for Enemies
   private Vector2 GetDirection()
   {
     Vector2 distanceVector = Vector2.zero;

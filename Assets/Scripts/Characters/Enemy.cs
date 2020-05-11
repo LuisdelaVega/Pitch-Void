@@ -176,10 +176,14 @@ public class Enemy : MovingCharacter
     alertLightOn = false;
   }
 
+  public override void Bleed(Quaternion rotation)
+  {
+    Instantiate(bloodStain, transform.position, rotation);
+    Instantiate(bloodParticleEffect, transform.position, rotation);
+  }
+
   public override void Die(Quaternion rotation)
   {
-    Instantiate(bloodParticleEffect, transform.position, rotation);
-    Instantiate(bloodStain, transform.position, rotation);
     floatingText.CreateFloatingText(Instantiate(corpse, transform.position, rotation).transform);
     OnEnemyKilled?.Invoke();
   }
