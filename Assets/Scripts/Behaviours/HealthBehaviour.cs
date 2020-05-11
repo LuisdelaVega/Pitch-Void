@@ -5,7 +5,7 @@ public class HealthBehaviour : MonoBehaviour, IDamageable
   [SerializeField] private float maxHealth = 100;
   //   public event EventHandler<HealthChangedEventArgs> OnHealthChanged;
   public float MaxHealth => maxHealth;
-  private float health;
+  [SerializeField] private float health;
   public float Health
   {
     get => health;

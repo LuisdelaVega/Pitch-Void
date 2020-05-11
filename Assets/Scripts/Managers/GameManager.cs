@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
   /* Game mode */
   [SerializeField] private bool arcadeMode = false;
+  [SerializeField] private bool repeatSeed = false;
 
   /* Player */
   public GameObject player;
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
     endGameScreen.SetActive(false);
 
     GetComponent<Timer>().StartTimer();
+    RoomTemplates.instance.GameStarted(true);
   }
 
   public void GameOver()
@@ -72,16 +74,24 @@ public class GameManager : MonoBehaviour
     timerText.text = GetComponent<Timer>().GetElapsedTime();
   }
 
+  public void RepeatSeed(bool value) => repeatSeed = value;
+
   public void Restart()
   {
     Time.timeScale = 1f;
     // Handle RoomTemplates
     if (RoomTemplates.instance != null)
     {
-      RoomTemplates.instance.seedTextSet = false;
-      RoomTemplates.instance.NewSeed();
+      RoomTemplates.instance.GameStarted(false);
       RoomTemplates.instance.timer = RoomTemplates.instance.waitTime;
       RoomTemplates.instance.bossRoomChosen = false;
+      if (repeatSeed)
+        RoomTemplates.instance.seedTextSet = true;
+      else
+      {
+        RoomTemplates.instance.seedTextSet = false;
+        RoomTemplates.instance.NewSeed();
+      }
     }
 
     // Coroutines

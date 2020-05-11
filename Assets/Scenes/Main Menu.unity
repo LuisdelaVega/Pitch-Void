@@ -2089,7 +2089,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2005968762}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2108210147}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90acc238d837a964498a39802b770676, type: 3}
@@ -2289,6 +2289,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Story
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2108210147}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1993227680
@@ -2547,3 +2558,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105865423}
   m_CullTransparentMesh: 0
+--- !u!1 &2108210147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2569495848744854229, guid: ec7d78fe36a3b444cb51bccd11a4579f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2005968762}
+  m_PrefabAsset: {fileID: 0}
