@@ -12,10 +12,11 @@ public class EndGameTrigger : MonoBehaviour
   {
     if (other.TryGetComponent<Player>(out var player) && canEndGame)
     {
+      player.controls.Disable();
       // TODO: Start End Game Timeline animation
 
       // TODO: This will be triggered by a Timeline signal and not here
-      GameManager.instance.GameOver();
+      GameManager.instance.GameOver(false);
     }
   }
 }

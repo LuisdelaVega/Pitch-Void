@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 
   /* Game mode */
   [SerializeField] private bool arcadeMode = false;
-  [SerializeField] private bool repeatSeed = false;
 
   /* Player */
   public GameObject player;
@@ -27,6 +26,7 @@ public class GameManager : MonoBehaviour
   public Texture2D cursor;
   public Text timerText;
   public GameObject endGameScreen;
+  public Text gameOverText;
 
   void Awake()
   {
@@ -68,16 +68,27 @@ public class GameManager : MonoBehaviour
       RoomTemplates.instance.GameStarted(true);
   }
 
-  public void GameOver()
+  public void GameOver() => GameOver(true);
+  public void GameOver(bool youDied)
   {
     Time.timeScale = 0f;
     endGameScreen.SetActive(true);
     timerText.text = GetComponent<Timer>().GetElapsedTime();
+
+    if (youDied)
+    {
+      gameOverText.text = "YOU DIED";
+      gameOverText.color = Color.red;
+    }
+    else
+    {
+      gameOverText.text = "YOU LIVED";
+      gameOverText.color = Color.green;
+    }
   }
 
-  public void RepeatSeed(bool value) => repeatSeed = value;
-
-  public void Restart()
+  public void Restart() => Restart(false);
+  public void Restart(bool repeatSeed)
   {
     Time.timeScale = 1f;
     // Handle RoomTemplates
