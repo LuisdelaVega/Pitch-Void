@@ -113,8 +113,6 @@ public class Player : MovingCharacter
     }
   }
 
-  // public void SayName(string name) => floatingText.CreateFloatingText(transform, $"{name} reporting for duty!");
-
   protected override void Attack() => activeWeapon.Attack();
 
   public override void Bleed(Quaternion rotation)

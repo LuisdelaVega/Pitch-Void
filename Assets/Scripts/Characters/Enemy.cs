@@ -146,7 +146,7 @@ public class Enemy : MovingCharacter
   public void Alert(Vector2 position, float distance)
   {
     Vector2 playerPosition = position;
-    float distanceToTarget = Vector2.Distance(transform.position, playerPosition);
+    float distanceToTarget = ((Vector2)transform.position - playerPosition).sqrMagnitude;
 
     if (distanceToTarget > distance) return;
 

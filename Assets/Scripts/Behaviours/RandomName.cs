@@ -24,6 +24,6 @@ public class RandomName : MonoBehaviour
     string name = $"{firstNames[Random.Range(0, firstNames.Length)]} {lastNames[Random.Range(0, lastNames.Length)]}";
 
     floatingTextManager = GameObject.Find("Floating Text Manager").GetComponent<FloatingTextManager>();
-    floatingTextManager.CreateFloatingText(player, $"{name}\nreporting for duty!");
+    floatingTextManager.CreateFloatingText(player, $"{name}, reporting in!");
   }
 }

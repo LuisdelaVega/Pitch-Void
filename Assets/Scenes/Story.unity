@@ -8524,6 +8524,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1830062332}
     m_Modifications:
+    - target: {fileID: 1360642100485191004, guid: 4e4107ca1e9537949931b63c982718bb,
+        type: 3}
+      propertyPath: intensity
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360642100485191004, guid: 4e4107ca1e9537949931b63c982718bb,
+        type: 3}
+      propertyPath: waitBetweenWobbles
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8725013930534762112, guid: 4e4107ca1e9537949931b63c982718bb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10873,7 +10883,7 @@ PrefabInstance:
     - target: {fileID: 2569495848744854230, guid: ec7d78fe36a3b444cb51bccd11a4579f,
         type: 3}
       propertyPath: seedTextSet
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2569495848744854231, guid: ec7d78fe36a3b444cb51bccd11a4579f,
         type: 3}
