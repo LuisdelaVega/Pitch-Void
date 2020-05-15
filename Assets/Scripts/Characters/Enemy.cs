@@ -46,8 +46,16 @@ public class Enemy : MovingCharacter
     floatingText = GameObject.Find("Floating Text Manager").GetComponent<FloatingTextManager>();
   }
 
-  private void OnEnable() => RangedWeapon.OnShotFired += Alert;
-  private void OnDisable() => RangedWeapon.OnShotFired -= Alert;
+  private void OnEnable()
+  {
+    RangedWeapon.OnShotFired += Alert;
+    EndGameTrigger.OnEndGameTrigger += WaveGoodbye;
+  }
+  private void OnDisable()
+  {
+    RangedWeapon.OnShotFired -= Alert;
+    EndGameTrigger.OnEndGameTrigger -= WaveGoodbye;
+  }
 
   /* Movement */
   protected override void Move()
@@ -186,6 +194,14 @@ public class Enemy : MovingCharacter
   {
     floatingText.CreateFloatingText(Instantiate(corpse, transform.position, rotation).transform);
     OnEnemyKilled?.Invoke();
+  }
+
+  public void WaveGoodbye()
+  {
+    movementOnCooldown = true;
+    Destroy(GetComponent<FieldOfView>());
+    Destroy(GetComponentInChildren<RangedWeapon>().gameObject);
+    // TODO: Add this animation
   }
 
   /* Helper Methods */

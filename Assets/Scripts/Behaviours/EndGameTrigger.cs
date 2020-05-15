@@ -14,9 +14,6 @@ public class EndGameTrigger : MonoBehaviour
     {
       player.controls.Disable();
       OnEndGameTrigger?.Invoke();
-
-      // TODO: This will be triggered by a Timeline signal and not here
-      // GameManager.instance.GameOver(false);
     }
   }
 }
