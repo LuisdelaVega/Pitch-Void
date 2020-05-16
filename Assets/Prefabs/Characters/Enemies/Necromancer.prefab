@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 2307577401785852470}
   - component: {fileID: 3738274842991400438}
   m_Layer: 12
-  m_Name: Skeleton Boss
+  m_Name: Necromancer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -249,7 +249,7 @@ Transform:
   m_GameObject: {fileID: 8671040359916251570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 2768061099849257855}
   - {fileID: 8309509585734906880}
@@ -296,9 +296,9 @@ SpriteRenderer:
   m_SortingLayerID: 801933395
   m_SortingLayer: -2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 6231442321471438116, guid: 338c40c8f560e0f4c9ca0ba45cc203f3,
+  m_Sprite: {fileID: -6201857198974045655, guid: 74769d76a6606c44cb23c490055d7e10,
     type: 3}
-  m_Color: {r: 1, g: 0.1273585, b: 0.1273585, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -321,18 +321,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016473472, y: 0.3935914}
+  m_Offset: {x: 0.0034373999, y: -0.15858722}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.485, y: 0.361}
-    oldSize: {x: 1.1875, y: 1.6875}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.03125, y: 1.625}
     newSize: {x: 1.1875, y: 1.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1875, y: 1.48}
+  m_Size: {x: 0.70990145, y: 1.199341}
   m_EdgeRadius: 0
 --- !u!50 &-5602813530348549102
 Rigidbody2D:
@@ -416,7 +416,7 @@ Animator:
   m_GameObject: {fileID: 8671040359916251570}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 58d58af39a1bdec49bd300b8fcd6b5ae, type: 2}
+  m_Controller: {fileID: 22100000, guid: 7147021e73fb5db49a2cd4ae5828aa04, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -475,6 +475,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501246300566999006, guid: ad2af2190b197e24e98d3c559da79166,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501246300566999006, guid: ad2af2190b197e24e98d3c559da79166,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501246300566999006, guid: ad2af2190b197e24e98d3c559da79166,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501246300566999006, guid: ad2af2190b197e24e98d3c559da79166,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4206024002109007232, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}

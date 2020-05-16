@@ -264,7 +264,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1875, y: 1.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -283,18 +283,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015437484, y: -0.08267689}
+  m_Offset: {x: 0.015437484, y: -0.24766195}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.487, y: 0.398}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.1875, y: 1.625}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1.1875, y: 1.625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1875, y: 1.1246463}
+  m_Size: {x: 1.1875, y: 1.1276938}
   m_EdgeRadius: 0
 --- !u!50 &8094088734949012531
 Rigidbody2D:
@@ -365,6 +365,7 @@ MonoBehaviour:
   dashCooldownTimer: 0.5
   echo: {fileID: 5943743110085063298, guid: a6f79e8664211d74b9885fcf91de3163, type: 3}
   echoLifeSpan: 0.3
+  AFKTime: 15
 --- !u!114 &8094088734949012530
 MonoBehaviour:
   m_ObjectHideFlags: 0

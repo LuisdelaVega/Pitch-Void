@@ -128,6 +128,72 @@ TextureImporter:
   - first:
       213: 545553612044951735
     second: Space Skeleton_22
+  - first:
+      213: 5993830950148837262
+    second: Space Skeleton_23
+  - first:
+      213: -6687397485745585250
+    second: Space Skeleton_24
+  - first:
+      213: -3132985749279138266
+    second: Space Skeleton_25
+  - first:
+      213: -2017593525590610915
+    second: Space Skeleton_26
+  - first:
+      213: -5218724270432590692
+    second: Space Skeleton_27
+  - first:
+      213: 4608704800058955858
+    second: Space Skeleton_28
+  - first:
+      213: 6044995313966805618
+    second: Space Skeleton_29
+  - first:
+      213: -1849687468315337879
+    second: Space Skeleton_30
+  - first:
+      213: 826653888198692282
+    second: Space Skeleton_31
+  - first:
+      213: 1524638944630347190
+    second: Space Skeleton_32
+  - first:
+      213: -6735776766804078619
+    second: Space Skeleton_33
+  - first:
+      213: -5506990395697368374
+    second: Space Skeleton_34
+  - first:
+      213: -7288747654580684676
+    second: Space Skeleton_35
+  - first:
+      213: -4598405772744190238
+    second: Space Skeleton_36
+  - first:
+      213: 4766198003439165510
+    second: Space Skeleton_37
+  - first:
+      213: -6508002344845641667
+    second: Space Skeleton_38
+  - first:
+      213: 6927178584286227767
+    second: Space Skeleton_39
+  - first:
+      213: -1483443515422357259
+    second: Space Skeleton_40
+  - first:
+      213: 1257666197708992844
+    second: Space Skeleton_41
+  - first:
+      213: 8436270605925115668
+    second: Space Skeleton_42
+  - first:
+      213: 2464604015224090768
+    second: Space Skeleton_43
+  - first:
+      213: 856248127730581193
+    second: Space Skeleton_44
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -277,7 +343,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 292
+        y: 438
         width: 38
         height: 54
       alignment: 9
@@ -298,7 +364,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 219
+        y: 365
         width: 38
         height: 54
       alignment: 9
@@ -319,7 +385,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 57
-        y: 219
+        y: 365
         width: 38
         height: 54
       alignment: 9
@@ -340,7 +406,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 113
-        y: 219
+        y: 365
         width: 38
         height: 54
       alignment: 9
@@ -361,7 +427,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 169
-        y: 219
+        y: 365
         width: 38
         height: 54
       alignment: 9
@@ -382,7 +448,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 146
+        y: 292
         width: 38
         height: 54
       alignment: 9
@@ -403,7 +469,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 57
-        y: 146
+        y: 292
         width: 38
         height: 54
       alignment: 9
@@ -424,7 +490,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 113
-        y: 146
+        y: 292
         width: 38
         height: 54
       alignment: 9
@@ -445,7 +511,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 169
-        y: 146
+        y: 292
         width: 38
         height: 54
       alignment: 9
@@ -465,12 +531,12 @@ TextureImporter:
       name: Space Skeleton_12
       rect:
         serializedVersion: 2
-        x: 1
-        y: 73
+        x: 0
+        y: 219
         width: 38
         height: 54
       alignment: 9
-      pivot: {x: 0.485, y: 0.361}
+      pivot: {x: 0.515, y: 0.361}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -486,12 +552,12 @@ TextureImporter:
       name: Space Skeleton_13
       rect:
         serializedVersion: 2
-        x: 57
-        y: 73
+        x: 56
+        y: 219
         width: 38
         height: 54
       alignment: 9
-      pivot: {x: 0.485, y: 0.361}
+      pivot: {x: 0.515, y: 0.361}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -507,12 +573,12 @@ TextureImporter:
       name: Space Skeleton_14
       rect:
         serializedVersion: 2
-        x: 113
-        y: 73
+        x: 112
+        y: 219
         width: 38
         height: 54
       alignment: 9
-      pivot: {x: 0.485, y: 0.361}
+      pivot: {x: 0.515, y: 0.361}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -528,12 +594,12 @@ TextureImporter:
       name: Space Skeleton_15
       rect:
         serializedVersion: 2
-        x: 169
-        y: 73
+        x: 168
+        y: 219
         width: 38
         height: 54
       alignment: 9
-      pivot: {x: 0.485, y: 0.361}
+      pivot: {x: 0.515, y: 0.361}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -550,11 +616,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 10
+        y: 156
         width: 54
         height: 31
       alignment: 9
-      pivot: {x: 0.38552853, y: 0.48373476}
+      pivot: {x: 0.3725027, y: 0.49494883}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -571,11 +637,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 73
-        y: 350
+        y: 496
         width: 5
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -583,6 +649,174 @@ TextureImporter:
       bones: []
       spriteID: 2caa29553fd14fa30800000000000000
       internalID: 4248053279467154114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Skeleton_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 73
+        width: 38
+        height: 54
+      alignment: 9
+      pivot: {x: 0.57, y: 0.349}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38299def1fb88ceb0800000000000000
+      internalID: -4699352339682061693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Skeleton_18
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 73
+        width: 38
+        height: 54
+      alignment: 9
+      pivot: {x: 0.57, y: 0.349}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72eb2d01ebf534f70800000000000000
+      internalID: 9170278536187133479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Skeleton_19
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 73
+        width: 38
+        height: 54
+      alignment: 9
+      pivot: {x: 0.57, y: 0.349}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e6206c024a48750800000000000000
+      internalID: 6306345838893493788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Skeleton_20
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 73
+        width: 38
+        height: 54
+      alignment: 9
+      pivot: {x: 0.57, y: 0.349}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1134c945f390580800000000000000
+      internalID: -8860481159243296316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Skeleton_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 43
+        height: 54
+      alignment: 9
+      pivot: {x: 0.485, y: 0.361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aba6490bde1001a0800000000000000
+      internalID: -6845437507500856408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Skeleton_22
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 0
+        width: 43
+        height: 54
+      alignment: 9
+      pivot: {x: 0.485, y: 0.361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0eed3ae12329700800000000000000
+      internalID: 545553612044951735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Skeleton_23
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 43
+        height: 54
+      alignment: 9
+      pivot: {x: 0.485, y: 0.361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f0d531e7d5e2350800000000000000
+      internalID: 5993830950148837262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Skeleton_24
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 43
+        height: 54
+      alignment: 9
+      pivot: {x: 0.485, y: 0.361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e934b460b679133a0800000000000000
+      internalID: -6687397485745585250
       vertices: []
       indices: 
       edges: []

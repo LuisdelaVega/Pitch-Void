@@ -230,6 +230,30 @@ TextureImporter:
   - first:
       213: -1727234875954089677
     second: Space Marine_27
+  - first:
+      213: 7065214420803514474
+    second: Space Marine_28
+  - first:
+      213: -5120045190175094612
+    second: Space Marine_29
+  - first:
+      213: 8619823142092368397
+    second: Space Marine_30
+  - first:
+      213: -7085896407938534983
+    second: Space Marine_31
+  - first:
+      213: -4917488222420095520
+    second: Space Marine_48
+  - first:
+      213: 5022383492801243279
+    second: Space Marine_49
+  - first:
+      213: 7381933342507311923
+    second: Space Marine_32
+  - first:
+      213: 9090712161104568482
+    second: Space Marine_33
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -375,57 +399,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Space Marine_16
-      rect:
-        serializedVersion: 2
-        x: 688
-        y: 159
-        width: 38
-        height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f0335708037a1560800000000000000
-      internalID: 7285261825545023728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Space Marine_17
-      rect:
-        serializedVersion: 2
-        x: 731
-        y: 159
-        width: 38
-        height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31da4747edca6c350800000000000000
-      internalID: 6036702421973249299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Space Marine_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 106
+        x: 1
+        y: 166
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -441,12 +423,12 @@ TextureImporter:
       name: Space Marine_19
       rect:
         serializedVersion: 2
-        x: 43
-        y: 106
+        x: 87
+        y: 166
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -462,12 +444,12 @@ TextureImporter:
       name: Space Marine_20
       rect:
         serializedVersion: 2
-        x: 86
-        y: 106
+        x: 173
+        y: 166
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -483,12 +465,12 @@ TextureImporter:
       name: Space Marine_21
       rect:
         serializedVersion: 2
-        x: 129
-        y: 106
+        x: 259
+        y: 166
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -504,12 +486,12 @@ TextureImporter:
       name: Space Marine_22
       rect:
         serializedVersion: 2
-        x: 0
-        y: 53
+        x: 1
+        y: 111
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -525,12 +507,12 @@ TextureImporter:
       name: Space Marine_23
       rect:
         serializedVersion: 2
-        x: 43
-        y: 53
+        x: 87
+        y: 111
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -546,12 +528,12 @@ TextureImporter:
       name: Space Marine_24
       rect:
         serializedVersion: 2
-        x: 86
-        y: 53
+        x: 173
+        y: 111
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -567,12 +549,12 @@ TextureImporter:
       name: Space Marine_25
       rect:
         serializedVersion: 2
-        x: 129
-        y: 53
+        x: 259
+        y: 111
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -585,15 +567,141 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Space Marine_26
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 56
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9deb03148e463e550800000000000000
+      internalID: 6188901261626097369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_27
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 56
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33137171801a708e0800000000000000
+      internalID: -1727234875954089677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_28
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 56
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60f5f5251fac0260800000000000000
+      internalID: 7065214420803514474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_29
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 56
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca88aa5d602f1f8b0800000000000000
+      internalID: -5120045190175094612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_16
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 221
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0335708037a1560800000000000000
+      internalID: 7285261825545023728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine_17
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 221
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31da4747edca6c350800000000000000
+      internalID: 6036702421973249299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Space Marine_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 159
+        x: 1
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -609,12 +717,12 @@ TextureImporter:
       name: Space Marine_1
       rect:
         serializedVersion: 2
-        x: 43
-        y: 159
+        x: 87
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -630,12 +738,12 @@ TextureImporter:
       name: Space Marine_2
       rect:
         serializedVersion: 2
-        x: 86
-        y: 159
+        x: 173
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -651,12 +759,12 @@ TextureImporter:
       name: Space Marine_3
       rect:
         serializedVersion: 2
-        x: 129
-        y: 159
+        x: 259
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -672,12 +780,12 @@ TextureImporter:
       name: Space Marine_4
       rect:
         serializedVersion: 2
-        x: 172
-        y: 159
+        x: 345
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -693,12 +801,12 @@ TextureImporter:
       name: Space Marine_5
       rect:
         serializedVersion: 2
-        x: 215
-        y: 159
+        x: 431
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -714,12 +822,12 @@ TextureImporter:
       name: Space Marine_6
       rect:
         serializedVersion: 2
-        x: 258
-        y: 159
+        x: 517
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -735,12 +843,12 @@ TextureImporter:
       name: Space Marine_7
       rect:
         serializedVersion: 2
-        x: 301
-        y: 159
+        x: 603
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -756,12 +864,12 @@ TextureImporter:
       name: Space Marine_8
       rect:
         serializedVersion: 2
-        x: 344
-        y: 159
+        x: 689
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -777,12 +885,12 @@ TextureImporter:
       name: Space Marine_9
       rect:
         serializedVersion: 2
-        x: 387
-        y: 159
+        x: 775
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -798,12 +906,12 @@ TextureImporter:
       name: Space Marine_10
       rect:
         serializedVersion: 2
-        x: 430
-        y: 159
+        x: 861
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -819,12 +927,12 @@ TextureImporter:
       name: Space Marine_11
       rect:
         serializedVersion: 2
-        x: 473
-        y: 159
+        x: 947
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -840,12 +948,12 @@ TextureImporter:
       name: Space Marine_12
       rect:
         serializedVersion: 2
-        x: 516
-        y: 159
+        x: 1033
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -861,12 +969,12 @@ TextureImporter:
       name: Space Marine_13
       rect:
         serializedVersion: 2
-        x: 559
-        y: 159
+        x: 1119
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -882,12 +990,12 @@ TextureImporter:
       name: Space Marine_14
       rect:
         serializedVersion: 2
-        x: 602
-        y: 159
+        x: 1205
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -903,12 +1011,12 @@ TextureImporter:
       name: Space Marine_15
       rect:
         serializedVersion: 2
-        x: 645
-        y: 159
+        x: 1291
+        y: 221
         width: 38
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -921,85 +1029,85 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Space Marine_26
+      name: Space Marine_30
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 38
+        x: 53
+        y: 1
+        width: 31
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aaede5ea68eeba10800000000000000
-      internalID: 1927233236382902951
+      spriteID: be45679de506b6aa0800000000000000
+      internalID: -6166729304262159125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Space Marine_27
+      name: Space Marine_31
       rect:
         serializedVersion: 2
-        x: 47
-        y: 0
-        width: 38
+        x: 139
+        y: 1
+        width: 31
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db26be2fadd8a6ec0800000000000000
-      internalID: -3572887382847167811
+      spriteID: 114a8f76ab2cf58a0800000000000000
+      internalID: -6314114046686092271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Space Marine_28
+      name: Space Marine_32
       rect:
         serializedVersion: 2
-        x: 90
-        y: 0
-        width: 38
+        x: 225
+        y: 1
+        width: 31
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c954e174f706fbd10800000000000000
-      internalID: 2143538047421924764
+      spriteID: 614da0165c526a1e0800000000000000
+      internalID: -2187019039374912490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Space Marine_29
+      name: Space Marine_33
       rect:
         serializedVersion: 2
-        x: 133
-        y: 0
-        width: 38
+        x: 311
+        y: 1
+        width: 31
         height: 52
-      alignment: 9
-      pivot: {x: 0.487, y: 0.398}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c82ce0fd29f15c910800000000000000
-      internalID: 1856925137028170380
+      spriteID: cedf8fd68e9d18c50800000000000000
+      internalID: 6665848515785719276
       vertices: []
       indices: 
       edges: []
