@@ -63,12 +63,6 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Lights
-    clip: {fileID: 8300000, guid: 9980bfcc531c68b469570e4a9b1b0067, type: 3}
-    volume: 0.9
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
   - name: Door Open
     clip: {fileID: 8300000, guid: 6280062c01ceff547aa7ae93d2a94938, type: 3}
     volume: 0.9

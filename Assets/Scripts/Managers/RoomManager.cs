@@ -69,7 +69,7 @@ public class RoomManager : MonoBehaviour
         }
       StartCoroutine(ActivateDoors(false));
       StopCoroutine(toggleDim);
-      roomLightsManager.TurnOnLights(true);
+      roomLightsManager.TurnOnLights();
     }
   }
 
@@ -162,7 +162,7 @@ public class RoomManager : MonoBehaviour
   private void ActivateRoom()
   {
     RemoveGroundCollider();
-    roomLightsManager.TurnOnLights(true);
+    roomLightsManager.TurnOnLights();
     if (!isBossRoom)
       SetUpRoom(false);
   }
