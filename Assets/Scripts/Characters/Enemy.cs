@@ -86,8 +86,8 @@ public class Enemy : MovingCharacter
 
   private void AvoidObstacles()
   {
-    RaycastHit2D raycastHit = Physics2D.Raycast(transform.position + (Vector3)Direction * 2, Direction, 1f);
-    if (raycastHit.collider != null)
+    RaycastHit2D raycastHit = Physics2D.Raycast(transform.position + (Vector3)Direction, Direction, 2f);
+    if (raycastHit.collider != null && !raycastHit.collider.gameObject.Equals(gameObject))
     {
       switch (raycastHit.collider.tag)
       {
@@ -158,7 +158,9 @@ public class Enemy : MovingCharacter
 
     if (distanceToTarget > distance) return;
 
-    Destroy(Instantiate(alertBangPrefab, new Vector2(transform.position.x, transform.position.y + 1.2f), Quaternion.identity, transform), alertLightTime);
+    if (alertBangPrefab != null)
+      Destroy(Instantiate(alertBangPrefab, new Vector2(transform.position.x, transform.position.y + 2f), Quaternion.identity, transform), alertLightTime);
+
     alertLight.intensity = maxIntensity;
     if (!alertLightOn)
       StartCoroutine(AlertLightTimer());

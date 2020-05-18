@@ -97,7 +97,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6673291239014348172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5290927916988005377}
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 1.2
+  m_PointLightInnerRadius: 1.35
+  m_PointLightOuterRadius: 1.65
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -169,7 +169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6747575327549019493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5290927916988005377}
@@ -202,8 +202,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 1.2
+  m_PointLightInnerRadius: 1.35
+  m_PointLightOuterRadius: 1.65
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -321,18 +321,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0034373999, y: -0.15858722}
+  m_Offset: {x: 0.0034373999, y: 0.04609193}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.03125, y: 1.625}
+    pivot: {x: 0.5, y: 0.366}
+    oldSize: {x: 2.15625, y: 1.625}
     newSize: {x: 1.1875, y: 1.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.70990145, y: 1.199341}
+  m_Size: {x: 0.70990145, y: 0.7899829}
   m_EdgeRadius: 0
 --- !u!50 &-5602813530348549102
 Rigidbody2D:
@@ -416,7 +416,7 @@ Animator:
   m_GameObject: {fileID: 8671040359916251570}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 7147021e73fb5db49a2cd4ae5828aa04, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7fe51b244cc34014ebc3402fcb15b450, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -454,8 +454,7 @@ MonoBehaviour:
   alertLight: {fileID: 4494526069525643447}
   maxIntensity: 0.8
   alertLightTime: 1
-  alertBangPrefab: {fileID: 4822807142718400425, guid: cd8d3ac0b5dbe3a428f93d00526fbddf,
-    type: 3}
+  alertBangPrefab: {fileID: 0}
   corpse: {fileID: 731604617656964825, guid: e2dd8ccb976389d459e97934a592c83e, type: 3}
   floatingText: {fileID: 8195445797050908327, guid: b1ac64026bf409144a4292f4d12b3def,
     type: 3}
