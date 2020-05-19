@@ -126,5 +126,6 @@ public class Player : MovingCharacter
     AudioManager.instance.Play("Death");
     enabled = false;
     GameManager.instance.GameOver();
+    Destroy(gameObject);
   }
 }

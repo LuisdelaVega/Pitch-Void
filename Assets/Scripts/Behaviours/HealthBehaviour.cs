@@ -34,7 +34,8 @@ public class HealthBehaviour : MonoBehaviour, IDamageable
       GetComponent<ScreenShake>()?.Shake();
       if (character != null)
         character.Die(rotation);
-      Destroy(gameObject);
+      else
+        Destroy(gameObject);
     }
   }
 

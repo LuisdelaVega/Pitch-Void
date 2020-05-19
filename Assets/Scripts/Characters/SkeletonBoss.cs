@@ -10,8 +10,18 @@ public class SkeletonBoss : Enemy
     Instantiate(bloodParticleEffect, transform.position, rotation);
     Instantiate(bloodStain, transform.position, rotation);
     // TODO: Create a disappear animation (?)
+    animator.SetTrigger("Dead");
+    GameManager.instance.vcam1.Follow = transform;
+    Invoke("DestroyBoss", 1f);
     // Instantiate(corpse, transform.position, rotation);
+    enabled = false;
+  }
+
+  private void DestroyBoss()
+  {
     OnBossKilled?.Invoke();
+    Destroy(gameObject);
+    GameManager.instance.vcam1.Follow = FindObjectOfType<ShadowCameraTargetGroup>().transform;
   }
 
   public override void Bleed(Quaternion rotation)

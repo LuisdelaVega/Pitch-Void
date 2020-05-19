@@ -159,7 +159,7 @@ public class Enemy : MovingCharacter
     if (distanceToTarget > distance) return;
 
     if (alertBangPrefab != null)
-      Destroy(Instantiate(alertBangPrefab, new Vector2(transform.position.x, transform.position.y + 2f), Quaternion.identity, transform), alertLightTime);
+      Destroy(Instantiate(alertBangPrefab, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.identity, transform), alertLightTime);
 
     alertLight.intensity = maxIntensity;
     if (!alertLightOn)
@@ -196,6 +196,7 @@ public class Enemy : MovingCharacter
   {
     floatingText.CreateFloatingText(Instantiate(corpse, transform.position, rotation).transform);
     OnEnemyKilled?.Invoke();
+    Destroy(gameObject);
   }
 
   public void WaveGoodbye()
