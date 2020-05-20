@@ -13,8 +13,8 @@ public class Enemy : MovingCharacter
   private Vector2 lastDirection;
   private bool foundDirectioThisTurn = false;
   [SerializeField] private Count movementCooldownTimes = new Count(1, 2);
-  private bool movementOnCooldown = false;
-  private bool movementCooldownInProcess = false;
+  protected bool movementOnCooldown = false;
+  protected bool movementCooldownInProcess = false;
 
   /* Attacking */
   private bool attacking = false;

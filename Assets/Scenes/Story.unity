@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7841,6 +7841,24 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: -1, y: -11, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 22
+      m_TileMatrixIndex: 3
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 0, y: -11, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 22
+      m_TileMatrixIndex: 3
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: -11, z: 0}
     second:
       serializedVersion: 2
@@ -8012,6 +8030,24 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: -1, y: 11, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 22
+      m_TileMatrixIndex: 3
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 11, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 22
+      m_TileMatrixIndex: 3
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 11, z: 0}
     second:
       serializedVersion: 2
@@ -8138,7 +8174,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 38
+  - m_RefCount: 42
     m_Data: {fileID: 11400000, guid: 709164447fff4854a81b9ab723874775, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -8195,7 +8231,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 38
+  - m_RefCount: 42
     m_Data: {fileID: 7415762736510170053, guid: edfc031f32d64d44f8533cb6b633e8d4,
       type: 3}
   m_TileMatrixArray:
@@ -8237,23 +8273,23 @@ Tilemap:
       e33: 5.97e-43
   - m_RefCount: 0
     m_Data:
-      e00: 4.4618644e+18
+      e00: 206.67346
       e01: NaN
       e02: 0
-      e03: 4.46186e+18
-      e10: 5.2e-44
+      e03: 206.67322
+      e10: 3.4e-44
       e11: NaN
       e12: 7.34684e-40
-      e13: 5.2e-44
+      e13: 3.4e-44
       e20: 0
       e21: NaN
-      e22: -1.2469405e-16
+      e22: 3.2965112e-31
       e23: 0
       e30: 0
-      e31: 1.5e-44
+      e31: NaN
       e32: 4.5905e-41
       e33: 0
-  - m_RefCount: 38
+  - m_RefCount: 42
     m_Data:
       e00: 0
       e01: -1
@@ -8272,7 +8308,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 38
+  - m_RefCount: 42
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 7.235306, g: 7.235306, b: 7.235306, a: 7.235306}
@@ -8780,6 +8816,7 @@ PlayableDirector:
     value: {fileID: 25829155}
   m_ExposedReferences:
     m_References:
+    - 5074587a3aafd154d91d3194f40d43d7: {fileID: 84414323}
     - 3f883f0acf55b2f49a548c93e9b81683: {fileID: 84414323}
     - cdd60420a7c8fa744859c4668c95cc2a: {fileID: 84414323}
     - 3f93a272b8316744696137571b0fc9d0: {fileID: 2071447919}
@@ -10855,6 +10892,7 @@ PlayableDirector:
     - baf3e36d3ff5a0a4fad8be911b5ad769: {fileID: 84414323}
     - 3f883f0acf55b2f49a548c93e9b81683: {fileID: 84414323}
     - cdd60420a7c8fa744859c4668c95cc2a: {fileID: 84414323}
+    - d551b18469e0e2a468db07671234c761: {fileID: 84414323}
     - 3f93a272b8316744696137571b0fc9d0: {fileID: 2071447919}
 --- !u!114 &1278785115739236362
 MonoBehaviour:
@@ -10936,7 +10974,7 @@ PrefabInstance:
     - target: {fileID: 2569495848744854230, guid: ec7d78fe36a3b444cb51bccd11a4579f,
         type: 3}
       propertyPath: seedTextSet
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2569495848744854231, guid: ec7d78fe36a3b444cb51bccd11a4579f,
         type: 3}

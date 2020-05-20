@@ -7,21 +7,22 @@ public class SkeletonBoss : Enemy
   public static event Action OnBossKilled;
   public override void Die(Quaternion rotation)
   {
+    GameManager.instance.vcam1.Follow = transform;
     Instantiate(bloodParticleEffect, transform.position, rotation);
     Instantiate(bloodStain, transform.position, rotation);
-    // TODO: Create a disappear animation (?)
+    AudioManager.instance.Play("Evil Laugh");
+    movementOnCooldown = movementCooldownInProcess = true;
     animator.SetTrigger("Dead");
-    GameManager.instance.vcam1.Follow = transform;
-    Invoke("DestroyBoss", 1f);
-    // Instantiate(corpse, transform.position, rotation);
-    enabled = false;
+    Invoke("BossKilled", 1f);
+    Invoke("ReturnCamera", 2f);
   }
 
-  private void DestroyBoss()
+  private void BossKilled() => OnBossKilled?.Invoke();
+
+  private void ReturnCamera()
   {
-    OnBossKilled?.Invoke();
-    Destroy(gameObject);
     GameManager.instance.vcam1.Follow = FindObjectOfType<ShadowCameraTargetGroup>().transform;
+    Destroy(gameObject);
   }
 
   public override void Bleed(Quaternion rotation)
