@@ -3,9 +3,8 @@
 public class HealthBehaviour : MonoBehaviour, IDamageable
 {
   [SerializeField] private float maxHealth = 100;
-  //   public event EventHandler<HealthChangedEventArgs> OnHealthChanged;
   public float MaxHealth => maxHealth;
-  private float health;
+  [SerializeField] private float health;
   public float Health
   {
     get => health;
@@ -25,14 +24,18 @@ public class HealthBehaviour : MonoBehaviour, IDamageable
     value = Mathf.Max(value, 0f);
     Health -= value;
 
+    MovingCharacter character = GetComponent<MovingCharacter>();
+
+    if (character != null)
+      character.Bleed(rotation);
+
     if (Health == 0)
     {
       GetComponent<ScreenShake>()?.Shake();
-      if (TryGetComponent<MovingCharacter>(out MovingCharacter character))
-      {
+      if (character != null)
         character.Die(rotation);
-      }
-      Destroy(gameObject);
+      else
+        Destroy(gameObject);
     }
   }
 

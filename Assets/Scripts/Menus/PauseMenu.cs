@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour
   public static bool gameIsPaused = false;
   public GameObject pauseMenu;
 
+  /* Player Character */
+  public GameObject player;
+
   private void Awake()
   {
     controls = new Controls();
@@ -35,6 +38,8 @@ public class PauseMenu : MonoBehaviour
     pauseMenu.SetActive(false);
     Time.timeScale = 1f;
     gameIsPaused = false;
+    if (player != null && player.TryGetComponent<Player>(out var playerCharacter))
+      playerCharacter.controls.Enable();
   }
 
   private void Pause()
@@ -42,12 +47,15 @@ public class PauseMenu : MonoBehaviour
     pauseMenu.SetActive(true);
     Time.timeScale = 0f;
     gameIsPaused = true;
+    if (player != null && player.TryGetComponent<Player>(out var playerCharacter))
+      playerCharacter.controls.Disable();
   }
 
   public void QuitGame()
   {
     Resume();
-    Destroy(GameManager.instance.gameObject);
+    if (GameManager.instance != null)
+      Destroy(GameManager.instance.gameObject);
     if (RoomTemplates.instance != null)
       Destroy(RoomTemplates.instance.gameObject);
     SceneManager.LoadScene("Main Menu");

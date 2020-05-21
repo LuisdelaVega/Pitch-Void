@@ -54,7 +54,7 @@ public class FieldOfView : MonoBehaviour
     {
       if (closestTarget == null)
         closestTarget = visibleTarget;
-      else if (Vector2.Distance(transform.position, visibleTarget.position) < Vector2.Distance(transform.position, closestTarget.position))
+      else if ((transform.position - visibleTarget.position).sqrMagnitude < (transform.position - closestTarget.position).sqrMagnitude)
         closestTarget = visibleTarget;
     });
   }

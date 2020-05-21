@@ -23,15 +23,10 @@ public class RoomLightsManager : MonoBehaviour
     if (!dimToggle)
       roomLight.intensity = 0;
     else
-      TurnOnLights(false);
+      TurnOnLights();
   }
 
-  public void TurnOnLights(bool sound)
-  {
-    if (sound)
-      AudioManager.instance.Play("Lights");
-    roomLight.intensity = maxDimIntensity;
-  }
+  public void TurnOnLights() => roomLight.intensity = maxDimIntensity;
 
   public IEnumerator ToggleDim(bool toggle)
   {

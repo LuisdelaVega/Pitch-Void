@@ -1,10 +1,10 @@
-﻿using System.Collections;
+﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EndGameTrigger : MonoBehaviour
 {
   private bool canEndGame = false;
+  public static event Action OnEndGameTrigger;
 
   public void OpenDoor() => GetComponent<Animator>()?.SetBool("Open", canEndGame = true);
 
@@ -12,10 +12,8 @@ public class EndGameTrigger : MonoBehaviour
   {
     if (other.TryGetComponent<Player>(out var player) && canEndGame)
     {
-      // TODO: Start End Game Timeline animation
-
-      // TODO: This will be triggered by a Timeline signal and not here
-      GameManager.instance.GameOver();
+      player.controls.Disable();
+      OnEndGameTrigger?.Invoke();
     }
   }
 }

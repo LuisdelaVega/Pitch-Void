@@ -28,7 +28,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2768061099849257855}
+  m_Father: {fileID: 9008205079215335024}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &7990650818309965578
@@ -96,8 +96,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6673291239014348172}
-  m_LocalRotation: {x: -0, y: -0, z: -0.006708701, w: 0.9999775}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5290927916988005377}
@@ -168,8 +168,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6747575327549019493}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0042041317, w: 0.9999912}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5290927916988005377}
@@ -233,7 +233,6 @@ GameObject:
   - component: {fileID: 6827218778598763356}
   - component: {fileID: 3704513491835802638}
   - component: {fileID: 2307577401785852470}
-  - component: {fileID: 2814448563732419307}
   m_Layer: 12
   m_Name: Space Skeleton
   m_TagString: Enemy
@@ -252,7 +251,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2768061099849257855}
+  - {fileID: 9008205079215335024}
   - {fileID: 8309509585734906880}
   - {fileID: 8912123270969781452}
   m_Father: {fileID: 0}
@@ -325,8 +324,8 @@ BoxCollider2D:
   m_Offset: {x: 0.015437484, y: -0.049669504}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.44840956, y: 0.35}
-    oldSize: {x: 1.28125, y: 1.71875}
+    pivot: {x: 0.485, y: 0.361}
+    oldSize: {x: 1.1875, y: 1.6875}
     newSize: {x: 1.1875, y: 1.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -352,7 +351,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -425,6 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  health: 0
 --- !u!114 &3704513491835802638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,49 +459,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2814448563732419307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8671040359916251570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 0}
-    - {fileID: 0}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -6906897709931417240}
-          m_MethodName: EnableMovement
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -6906897709931417240}
-          m_MethodName: EnableMovement
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1001 &9008205079215335018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -524,6 +481,12 @@ PrefabInstance:
       propertyPath: cooldown
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4206024002109007232, guid: ad2af2190b197e24e98d3c559da79166,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 2739718080901117103, guid: 695c52db19d117848a3ab7c9880be834,
+        type: 3}
     - target: {fileID: 4817231642374507868, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
       propertyPath: m_Name
@@ -586,7 +549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2af2190b197e24e98d3c559da79166, type: 3}
---- !u!4 &2768061099849257855 stripped
+--- !u!4 &9008205079215335024 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6586991837681579285, guid: ad2af2190b197e24e98d3c559da79166,
     type: 3}

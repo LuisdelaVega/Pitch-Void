@@ -34,5 +34,6 @@ public abstract class MovingCharacter : MonoBehaviour
   /* Abstract methods */
   protected abstract void Move();
   protected abstract void Attack();
+  public abstract void Bleed(Quaternion rotation);
   public abstract void Die(Quaternion rotation);
 }

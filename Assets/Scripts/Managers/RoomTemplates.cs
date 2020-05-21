@@ -31,6 +31,8 @@ public class RoomTemplates : MonoBehaviour
   public float waitTime = 2;
   public float timer = 2;
 
+  private bool gameStarted = false;
+
   private void Awake()
   {
     if (instance == null)
@@ -46,8 +48,15 @@ public class RoomTemplates : MonoBehaviour
     NewSeed();
   }
 
-  public void NewSeed()
+  public void NewSeed() => NewSeed("");
+  public void NewSeed(string newSeed)
   {
+    if (newSeed.Length == 8)
+    {
+      seedTextSet = true;
+      seedText = newSeed;
+    }
+
     if (!seedTextSet)
     {
       int length = 8;
@@ -68,8 +77,16 @@ public class RoomTemplates : MonoBehaviour
     seed = seedText.GetHashCode();
   }
 
+  public void GameStarted(bool value)
+  {
+    gameStarted = value;
+    seed = seedText.GetHashCode();
+  }
+
   private void Update()
   {
+    if (!gameStarted) return;
+
     if (timer <= 0 && !bossRoomChosen)
     {
       bossRoom = allRooms[allRooms.Count - 1];
@@ -79,7 +96,7 @@ public class RoomTemplates : MonoBehaviour
       bossRoomManager.enemyPrefabList.Add(boss);
       bossRoomChosen = true;
     }
-    else if (timer <= 0)
-      timer -= Time.deltaTime;
+
+    timer -= Time.deltaTime;
   }
 }

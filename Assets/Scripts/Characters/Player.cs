@@ -22,12 +22,14 @@ public class Player : MovingCharacter
   [SerializeField] private float dashCooldownTimer = 1f;
   public GameObject echo;
   [SerializeField] private float echoLifeSpan = 0.3f;
+  public static event Action<float> OnDash;
 
   /* Player controls */
-  private Controls controls;
+  public Controls controls;
 
-  /* Dash */
-  public static event Action<float> OnDash;
+  /* AFK */
+  private float AFKTimer = 0;
+  [SerializeField] private float AFKTime = 15f;
 
   void Awake()
   {
@@ -48,6 +50,7 @@ public class Player : MovingCharacter
       holdAttack = ctx.ReadValue<float>() >= 0.9f;
     };
     controls.Player.Movement.performed += ctx => ChangeDirection(ctx.ReadValue<Vector2>());
+    controls.Player.Movement.canceled += _ => ChangeDirection(Vector2.zero);
 
     controls.Player.Dash.performed += _ => Dash();
   }
@@ -57,6 +60,17 @@ public class Player : MovingCharacter
   private void ChangeDirection(Vector2 newDirection) => Direction = newDirection.normalized;
   protected override void Move()
   {
+    if (Direction.sqrMagnitude == 0)
+      AFKTimer += Time.fixedDeltaTime;
+    else
+      AFKTimer = 0;
+
+    if (AFKTimer >= AFKTime)
+    {
+      animator.SetTrigger("AFK");
+      AFKTimer = 0;
+    }
+
     animator.SetFloat("Speed", Direction.sqrMagnitude);
     rb.velocity = Direction * (!isDashing ? moveSpeed : dashSpeed);
   }
@@ -99,15 +113,19 @@ public class Player : MovingCharacter
     }
   }
 
-  // public void SayName(string name) => floatingText.CreateFloatingText(transform, $"{name} reporting for duty!");
-
   protected override void Attack() => activeWeapon.Attack();
-  public override void Die(Quaternion rotation)
+
+  public override void Bleed(Quaternion rotation)
   {
     Instantiate(bloodParticleEffect, transform.position, rotation);
     Instantiate(bloodStain, transform.position, rotation);
+  }
+
+  public override void Die(Quaternion rotation)
+  {
     AudioManager.instance.Play("Death");
     enabled = false;
     GameManager.instance.GameOver();
+    Destroy(gameObject);
   }
 }

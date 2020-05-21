@@ -13,8 +13,8 @@ public class Enemy : MovingCharacter
   private Vector2 lastDirection;
   private bool foundDirectioThisTurn = false;
   [SerializeField] private Count movementCooldownTimes = new Count(1, 2);
-  private bool movementOnCooldown = false;
-  private bool movementCooldownInProcess = false;
+  protected bool movementOnCooldown = false;
+  protected bool movementCooldownInProcess = false;
 
   /* Attacking */
   private bool attacking = false;
@@ -46,8 +46,16 @@ public class Enemy : MovingCharacter
     floatingText = GameObject.Find("Floating Text Manager").GetComponent<FloatingTextManager>();
   }
 
-  private void OnEnable() => RangedWeapon.OnShotFired += Alert;
-  private void OnDisable() => RangedWeapon.OnShotFired -= Alert;
+  private void OnEnable()
+  {
+    RangedWeapon.OnShotFired += Alert;
+    EndGameTrigger.OnEndGameTrigger += WaveGoodbye;
+  }
+  private void OnDisable()
+  {
+    RangedWeapon.OnShotFired -= Alert;
+    EndGameTrigger.OnEndGameTrigger -= WaveGoodbye;
+  }
 
   /* Movement */
   protected override void Move()
@@ -78,8 +86,8 @@ public class Enemy : MovingCharacter
 
   private void AvoidObstacles()
   {
-    RaycastHit2D raycastHit = Physics2D.Raycast(transform.position + (Vector3)Direction, Direction, 1f);
-    if (raycastHit.collider != null)
+    RaycastHit2D raycastHit = Physics2D.Raycast(transform.position + (Vector3)Direction, Direction, 2f);
+    if (raycastHit.collider != null && !raycastHit.collider.gameObject.Equals(gameObject))
     {
       switch (raycastHit.collider.tag)
       {
@@ -146,11 +154,13 @@ public class Enemy : MovingCharacter
   public void Alert(Vector2 position, float distance)
   {
     Vector2 playerPosition = position;
-    float distanceToTarget = Vector2.Distance(transform.position, playerPosition);
+    float distanceToTarget = ((Vector2)transform.position - playerPosition).sqrMagnitude;
 
     if (distanceToTarget > distance) return;
 
-    Destroy(Instantiate(alertBangPrefab, new Vector2(transform.position.x, transform.position.y + 1.2f), Quaternion.identity, transform), alertLightTime);
+    if (alertBangPrefab != null)
+      Destroy(Instantiate(alertBangPrefab, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.identity, transform), alertLightTime);
+
     alertLight.intensity = maxIntensity;
     if (!alertLightOn)
       StartCoroutine(AlertLightTimer());
@@ -176,12 +186,24 @@ public class Enemy : MovingCharacter
     alertLightOn = false;
   }
 
+  public override void Bleed(Quaternion rotation)
+  {
+    Instantiate(bloodStain, transform.position, rotation);
+    Instantiate(bloodParticleEffect, transform.position, rotation);
+  }
+
   public override void Die(Quaternion rotation)
   {
-    Instantiate(bloodParticleEffect, transform.position, rotation);
-    Instantiate(bloodStain, transform.position, rotation);
     floatingText.CreateFloatingText(Instantiate(corpse, transform.position, rotation).transform);
     OnEnemyKilled?.Invoke();
+    Destroy(gameObject);
+  }
+
+  public void WaveGoodbye()
+  {
+    animator.SetTrigger("Wave");
+    Destroy(GetComponentInChildren<RangedWeapon>().gameObject);
+    enabled = false;
   }
 
   /* Helper Methods */

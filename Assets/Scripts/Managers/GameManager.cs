@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
   public Texture2D cursor;
   public Text timerText;
   public GameObject endGameScreen;
+  public Text gameOverText;
 
   void Awake()
   {
@@ -63,25 +64,46 @@ public class GameManager : MonoBehaviour
     endGameScreen.SetActive(false);
 
     GetComponent<Timer>().StartTimer();
+    if (RoomTemplates.instance != null)
+      RoomTemplates.instance.GameStarted(true);
   }
 
-  public void GameOver()
+  public void GameOver() => GameOver(true);
+  public void GameOver(bool youDied)
   {
     Time.timeScale = 0f;
     endGameScreen.SetActive(true);
     timerText.text = GetComponent<Timer>().GetElapsedTime();
+
+    if (youDied)
+    {
+      gameOverText.text = "YOU DIED";
+      gameOverText.color = Color.red;
+    }
+    else
+    {
+      gameOverText.text = "YOU LIVED";
+      gameOverText.color = Color.green;
+    }
   }
 
-  public void Restart()
+  public void Restart() => Restart(false);
+  public void Restart(bool repeatSeed)
   {
     Time.timeScale = 1f;
     // Handle RoomTemplates
     if (RoomTemplates.instance != null)
     {
-      RoomTemplates.instance.seedTextSet = false;
-      RoomTemplates.instance.NewSeed();
+      RoomTemplates.instance.GameStarted(false);
       RoomTemplates.instance.timer = RoomTemplates.instance.waitTime;
       RoomTemplates.instance.bossRoomChosen = false;
+      if (repeatSeed)
+        RoomTemplates.instance.seedTextSet = true;
+      else
+      {
+        RoomTemplates.instance.seedTextSet = false;
+        RoomTemplates.instance.NewSeed();
+      }
     }
 
     // Coroutines

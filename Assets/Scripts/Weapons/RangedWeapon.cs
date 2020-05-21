@@ -12,8 +12,7 @@ public class RangedWeapon : Weapon
   public Transform firePoint;
 
   /* Sound */
-  [SerializeField] private bool silenced = false;
-  [SerializeField] private float soundDistance = 10;
+  [SerializeField] private float soundDistance = 20;
 
   /* Event */
   public static event Action<Vector2, float> OnShotFired;
@@ -35,7 +34,7 @@ public class RangedWeapon : Weapon
 
   private void ShotFired()
   {
-    if (!silenced && transform.parent.TryGetComponent<Player>(out var player))
+    if (transform.parent.TryGetComponent<Player>(out var player))
       OnShotFired?.Invoke(player.transform.position, soundDistance);
   }
 }
