@@ -17,6 +17,7 @@ TagManager:
   - Rooms
   - Minimap Texture
   - Minimap
+  - Closed Wall
   layers:
   - Default
   - TransparentFX
