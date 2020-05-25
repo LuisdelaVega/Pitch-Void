@@ -85,7 +85,7 @@ public class RoomTemplates : MonoBehaviour
 
   private void Update()
   {
-    if (!gameStarted) return;
+    if (!gameStarted || GameManager.instance.arcadeMode) return;
 
     if (timer <= 0 && !bossRoomChosen)
     {

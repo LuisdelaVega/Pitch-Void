@@ -1,43 +1,28 @@
 fileFormatVersion: 2
-guid: 74769d76a6606c44cb23c490055d7e10
+guid: a28cf652c56f42b478cf55905339038b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6201857198974045655
-    second: Necromancer_0
+      213: -219413305308306393
+    second: Explosions_0
   - first:
-      213: 8203306007564158787
-    second: Necromancer_1
+      213: 2086932433408658518
+    second: Explosions_1
   - first:
-      213: -1458926146673368906
-    second: Necromancer_2
+      213: -1496003835769365672
+    second: Explosions_2
   - first:
-      213: -5480027559528464256
-    second: Necromancer_3
+      213: 8155359584847542395
+    second: Explosions_3
   - first:
-      213: -8512003891971931835
-    second: Necromancer_4
+      213: -2748982251013895145
+    second: Explosions_4
   - first:
-      213: 6053324142526253356
-    second: Necromancer_5
+      213: -4000024841062830767
+    second: Explosions_5
   - first:
-      213: 8133336381066271776
-    second: Necromancer_6
-  - first:
-      213: -5851337026911529050
-    second: Necromancer_7
-  - first:
-      213: -1658755941509593707
-    second: Necromancer_8
-  - first:
-      213: 4810695893843743997
-    second: Necromancer_9
-  - first:
-      213: 2384673759654364439
-    second: Necromancer_10
-  - first:
-      213: -6560564648821208427
-    second: Necromancer_11
+      213: 2440391306043018828
+    second: Explosions_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -83,7 +68,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -171,97 +156,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Necromancer_0
+      name: Explosions_0
       rect:
         serializedVersion: 2
         x: 1
-        y: 111
-        width: 69
-        height: 52
-      alignment: 9
-      pivot: {x: 0.5, y: 0.366}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 922f3738cb39ee9a0800000000000000
-      internalID: -6201857198974045655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Necromancer_1
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 111
-        width: 69
-        height: 52
-      alignment: 9
-      pivot: {x: 0.5, y: 0.366}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34780b4d95ff7d170800000000000000
-      internalID: 8203306007564158787
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Necromancer_2
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 111
-        width: 69
-        height: 52
-      alignment: 9
-      pivot: {x: 0.5, y: 0.366}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b0210a366ad0cbe0800000000000000
-      internalID: -1458926146673368906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Necromancer_3
-      rect:
-        serializedVersion: 2
-        x: 217
-        y: 111
-        width: 69
-        height: 52
-      alignment: 9
-      pivot: {x: 0.5, y: 0.366}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08084f218f703f3b0800000000000000
-      internalID: -5480027559528464256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Necromancer_4
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 56
-        width: 69
-        height: 52
+        y: 1
+        width: 73
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 541454c0f894fd980800000000000000
-      internalID: -8512003891971931835
+      spriteID: 724aa16e2cc74fcf0800000000000000
+      internalID: -219413305308306393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Necromancer_5
+      name: Explosions_1
       rect:
         serializedVersion: 2
-        x: 73
-        y: 56
-        width: 69
-        height: 52
+        x: 126
+        y: 1
+        width: 73
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,8 +191,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c29c2995c3ab10450800000000000000
-      internalID: 6053324142526253356
+      spriteID: 65c809bbdf546fc10800000000000000
+      internalID: 2086932433408658518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosions_2
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 1
+        width: 73
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b585200702d3be0800000000000000
+      internalID: -1496003835769365672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosions_3
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1
+        width: 73
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b783a6e5558ad2170800000000000000
+      internalID: 8155359584847542395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosions_4
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 1
+        width: 73
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c867a1537a9d9d0800000000000000
+      internalID: -2748982251013895145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosions_5
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1
+        width: 73
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d26bf999e0d78c0800000000000000
+      internalID: -4000024841062830767
       vertices: []
       indices: 
       edges: []

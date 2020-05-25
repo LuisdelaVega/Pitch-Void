@@ -36,6 +36,7 @@ Cox
 Davis
 Decker
 Deleon
+de la Vega
 Doherty
 Duke
 Duncan
@@ -51,7 +52,6 @@ George
 Gibson
 Gill
 Glover
-Gonzales
 Gonzalez
 Grant
 Graves
@@ -102,6 +102,7 @@ Lowe
 Lozano
 Luna
 Martin
+Marrero
 Matthews
 Mccarty
 Mcclure
@@ -152,6 +153,7 @@ Rowe
 Ryan
 Salas
 Sanford
+Sanchez
 Schmidt
 Shaw
 Simmons
@@ -169,6 +171,7 @@ Terry
 Thorne
 Vang
 Vazquez
+Vega
 Walker
 Wang
 Weaver

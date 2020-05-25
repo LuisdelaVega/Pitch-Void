@@ -28,7 +28,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 9008205079215335024}
+  m_Father: {fileID: 2768061099849257855}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &7990650818309965578
@@ -97,7 +97,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6673291239014348172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5290927916988005377}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.8
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 5388cc2f2d7108ae5542352673fc9dae41f71852013ce510000000003368d81d
+  m_ApplyToSortingLayers: 2d7108ae5542352673fc9dae41f71852013ce510000000003368d81d
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.35
-  m_PointLightOuterRadius: 1.65
+  m_PointLightInnerRadius: 1.7409129
+  m_PointLightOuterRadius: 1.9146973
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 0.6
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 5542352673fc9dae0000000041f718523368d81d013ce510
+  m_ApplyToSortingLayers: 5542352673fc9dae41f718523368d81d013ce510
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -248,10 +248,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8671040359916251570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0041405, y: 0.018244, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
-  - {fileID: 9008205079215335024}
+  - {fileID: 2768061099849257855}
   - {fileID: 8309509585734906880}
   - {fileID: 8912123270969781452}
   m_Father: {fileID: 0}
@@ -293,8 +293,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 801933395
-  m_SortingLayer: -2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -6201857198974045655, guid: 74769d76a6606c44cb23c490055d7e10,
     type: 3}
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1690ad2c99e7624c8c70f0e7d3263bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 50
   health: 0
 --- !u!114 &3704513491835802638
 MonoBehaviour:
@@ -457,6 +457,8 @@ MonoBehaviour:
   alertBangPrefab: {fileID: 0}
   corpse: {fileID: 731604617656964825, guid: e2dd8ccb976389d459e97934a592c83e, type: 3}
   floatingText: {fileID: 8195445797050908327, guid: b1ac64026bf409144a4292f4d12b3def,
+    type: 3}
+  explosionsPrefab: {fileID: 7838779896620784834, guid: d7ffeefbeb590134f861d68e2b57ef6f,
     type: 3}
 --- !u!1001 &9008205079215335018
 PrefabInstance:
@@ -568,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2af2190b197e24e98d3c559da79166, type: 3}
---- !u!4 &9008205079215335024 stripped
+--- !u!4 &2768061099849257855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6586991837681579285, guid: ad2af2190b197e24e98d3c559da79166,
     type: 3}

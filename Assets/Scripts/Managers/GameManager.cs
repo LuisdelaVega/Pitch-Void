@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
   public static GameManager instance = null;
 
   /* Game mode */
-  [SerializeField] private bool arcadeMode = false;
+  [SerializeField] public bool arcadeMode = false;
 
   /* Player */
   public GameObject player;
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
   public Text timerText;
   public GameObject endGameScreen;
   public Text gameOverText;
+  public GameObject LevelLoader;
 
   void Awake()
   {
@@ -116,6 +117,8 @@ public class GameManager : MonoBehaviour
     Destroy(gameObject);
 
     // Init game
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    // LevelLoader.SetActive(true);
+    LevelLoader.GetComponent<LevelLoader>().Load(SceneManager.GetActiveScene().name);
   }
 }
