@@ -2606,17 +2606,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: https://freesound.org/people/chevy1976/sounds/338299/
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 671080681}
-        m_MethodName: GoToLink
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
           m_StringArgument: https://freesound.org/people/JustInvoke/sounds/446108/
           m_BoolArgument: 0
         m_CallState: 2
@@ -2674,8 +2663,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Other sounds and art by: LukeSharples, Revon, chevy1976, JustInvoke and
-    https://www.fesliyanstudios.com'
+  m_Text: 'Other sounds and art by: LukeSharples, Revon JustInvoke and https://www.fesliyanstudios.com'
 --- !u!222 &1698327690
 CanvasRenderer:
   m_ObjectHideFlags: 0

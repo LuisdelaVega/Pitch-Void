@@ -76,5 +76,9 @@ MonoBehaviour:
   - YOU'RE CRAZY!
   - THANK YOU!
   - LMAO!
+  - '*DEAD SKELETON SOUNDS*'
+  - THANKS FOR PLAYING!
+  - TIRED OF READING THESE YET?
+  - WELL DON'T MIND ME
   floatingTextPrefab: {fileID: 8725013930534762113, guid: 4e4107ca1e9537949931b63c982718bb,
     type: 3}

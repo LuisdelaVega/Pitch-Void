@@ -28,7 +28,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 9008205079215335024}
+  m_Father: {fileID: 2768061099849257855}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &7990650818309965578
@@ -96,7 +96,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6673291239014348172}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.8
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 5388cc2f2d7108ae5542352673fc9dae41f71852013ce510000000003368d81d
+  m_ApplyToSortingLayers: 2d7108ae5542352673fc9dae41f71852013ce510000000003368d81d
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 1.2
+  m_PointLightInnerRadius: 1.1302394
+  m_PointLightOuterRadius: 1.2685417
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 0.6
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 5542352673fc9dae0000000041f718523368d81d013ce510
+  m_ApplyToSortingLayers: 5542352673fc9dae41f718523368d81d013ce510
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -251,7 +251,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 9008205079215335024}
+  - {fileID: 2768061099849257855}
   - {fileID: 8309509585734906880}
   - {fileID: 8912123270969781452}
   m_Father: {fileID: 0}
@@ -293,8 +293,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 801933395
-  m_SortingLayer: -2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 6231442321471438116, guid: 338c40c8f560e0f4c9ca0ba45cc203f3,
     type: 3}
@@ -469,12 +469,27 @@ PrefabInstance:
     - target: {fileID: 3501246300566999006, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: 801933395
+      value: -1375178451
       objectReference: {fileID: 0}
     - target: {fileID: 3501246300566999006, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
       propertyPath: m_SortingLayer
-      value: -2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501246300566999006, guid: ad2af2190b197e24e98d3c559da79166,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501246300566999006, guid: ad2af2190b197e24e98d3c559da79166,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501246300566999006, guid: ad2af2190b197e24e98d3c559da79166,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4206024002109007232, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
@@ -500,7 +515,7 @@ PrefabInstance:
     - target: {fileID: 6586991837681579285, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.127
       objectReference: {fileID: 0}
     - target: {fileID: 6586991837681579285, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
@@ -549,7 +564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2af2190b197e24e98d3c559da79166, type: 3}
---- !u!4 &9008205079215335024 stripped
+--- !u!4 &2768061099849257855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6586991837681579285, guid: ad2af2190b197e24e98d3c559da79166,
     type: 3}

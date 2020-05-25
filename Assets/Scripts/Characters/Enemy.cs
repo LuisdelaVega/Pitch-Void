@@ -27,10 +27,10 @@ public class Enemy : MovingCharacter
   public Light2D alertLight;
   public float maxIntensity = 0.8f;
   public float alertLightTime = 1f;
-  private bool alertLightOn = false;
+  protected bool alertLightOn = false;
   public GameObject alertBangPrefab;
 
-  /* Corpse */ // TODO: Move this to Moving Character
+  /* Corpse */
   public GameObject corpse;
 
   /* Popup Text */
@@ -182,7 +182,8 @@ public class Enemy : MovingCharacter
   {
     alertLightOn = true;
     yield return new WaitForSeconds(alertLightTime);
-    alertLight.intensity = 0;
+    if (alertLightOn)
+      alertLight.intensity = 0;
     alertLightOn = false;
   }
 
