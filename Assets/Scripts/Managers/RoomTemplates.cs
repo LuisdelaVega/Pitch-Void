@@ -80,6 +80,9 @@ public class RoomTemplates : MonoBehaviour
   public void GameStarted(bool value)
   {
     gameStarted = value;
+    bossRoom = null;
+    bossRoomChosen = false;
+    allRooms.Clear();
     seed = seedText.GetHashCode();
   }
 

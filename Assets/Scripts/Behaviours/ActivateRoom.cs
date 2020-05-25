@@ -9,10 +9,7 @@ public class ActivateRoom : MonoBehaviour
   {
     if (other.CompareTag("Player"))
     {
-      Destroy(GetComponent<TilemapCollider2D>());
-      Destroy(GetComponent<CompositeCollider2D>());
-      Destroy(GetComponent<Rigidbody2D>());
-
+      roomManager.RemoveGroundCollider();
       Invoke("SetUp", 0.1f);
     }
   }
