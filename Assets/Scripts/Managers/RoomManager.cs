@@ -45,10 +45,10 @@ public class RoomManager : MonoBehaviour
   private void OnDisable()
   {
     ActivateAllRooms.OnActivateAllRooms -= ActivateRoom;
-    if (!arcadeMode)
-      Enemy.OnEnemyKilled -= UpdateEnemyCount;
-    else
+    if (!arcadeMode && isBossRoom)
       SkeletonBoss.OnBossKilled -= UpdateEnemyCount;
+    else
+      Enemy.OnEnemyKilled -= UpdateEnemyCount;
   }
 
   private void UpdateEnemyCount()
@@ -161,9 +161,11 @@ public class RoomManager : MonoBehaviour
 
   private void ActivateRoom()
   {
-    RemoveGroundCollider();
-    roomLightsManager.TurnOnLights();
     if (!isBossRoom)
+    {
+      RemoveGroundCollider();
+      roomLightsManager.TurnOnLights();
       SetUpRoom(false);
+    }
   }
 }
