@@ -191,7 +191,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.35
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.65
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 5542352673fc9dae41f718523368d81d013ce510
   m_LightCookieSprite: {fileID: 0}
@@ -351,9 +351,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &-5620080775616942381
 MonoBehaviour:
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a33fe95dcab0d44964752396e4a62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 6.5
+  viewRadius: 6.6
   viewAngle: 180
   targetMask:
     serializedVersion: 2
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1690ad2c99e7624c8c70f0e7d3263bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 60
   health: 0
 --- !u!114 &3704513491835802638
 MonoBehaviour:
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e08e1b119927746992e73bf06f874e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 5.1
   animator: {fileID: 2307577401785852470}
   spriteRenderer: {fileID: 0}
   bloodParticleEffect: {fileID: 5936509768155569356, guid: f1def601c9609504cb884bc5a5da10ba,
