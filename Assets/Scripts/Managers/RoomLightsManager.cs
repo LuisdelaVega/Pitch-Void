@@ -27,6 +27,7 @@ public class RoomLightsManager : MonoBehaviour
   }
 
   public void TurnOnLights() => roomLight.intensity = maxDimIntensity;
+  public void TurnOffLights() => roomLight.intensity = 0;
 
   public IEnumerator ToggleDim(bool toggle)
   {

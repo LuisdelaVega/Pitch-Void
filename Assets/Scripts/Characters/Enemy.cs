@@ -41,7 +41,7 @@ public class Enemy : MovingCharacter
   {
     holdAttack = true;
     FindNewDirection();
-    alertLight.intensity = 0;
+    // alertLight.intensity = 0;
     movementTimer = GetRandomInRange(movementTimes);
     floatingText = GameObject.Find("Floating Text Manager").GetComponent<FloatingTextManager>();
   }
@@ -161,9 +161,9 @@ public class Enemy : MovingCharacter
     if (alertBangPrefab != null)
       Destroy(Instantiate(alertBangPrefab, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.identity, transform), alertLightTime);
 
-    alertLight.intensity = maxIntensity;
-    if (!alertLightOn)
-      StartCoroutine(AlertLightTimer());
+    // alertLight.intensity = maxIntensity;
+    // if (!alertLightOn)
+    //   StartCoroutine(AlertLightTimer());
     FindNewDirection(playerPosition);
     movementOnCooldown = movementCooldownInProcess = false;
     movementTimer = GetRandomInRange(movementTimes);
@@ -178,14 +178,14 @@ public class Enemy : MovingCharacter
     movementTimer = GetRandomInRange(movementTimes);
   }
 
-  private IEnumerator AlertLightTimer()
-  {
-    alertLightOn = true;
-    yield return new WaitForSeconds(alertLightTime);
-    if (alertLightOn)
-      alertLight.intensity = 0;
-    alertLightOn = false;
-  }
+  // private IEnumerator AlertLightTimer()
+  // {
+  //   alertLightOn = true;
+  //   yield return new WaitForSeconds(alertLightTime);
+  //   if (alertLightOn)
+  //     alertLight.intensity = 0;
+  //   alertLightOn = false;
+  // }
 
   public override void Bleed(Quaternion rotation)
   {
