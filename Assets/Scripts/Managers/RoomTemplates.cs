@@ -94,7 +94,7 @@ public class RoomTemplates : MonoBehaviour
     {
       bossRoom = allRooms[allRooms.Count - 1];
       var bossRoomManager = bossRoom.GetComponent<RoomManager>();
-      bossRoomManager.isBossRoom = true;
+      bossRoomManager.MakeIntoBossRoom();
       bossRoomManager.enemyPrefabList = new List<GameObject>();
       bossRoomManager.enemyPrefabList.Add(boss);
       bossRoomChosen = true;

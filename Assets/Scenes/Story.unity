@@ -415,7 +415,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -502861689
   m_SortingLayer: 3
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1170,7 +1170,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.59083086, g: 0.21173501, b: 0.90099996, a: 1}
   m_Origin: {x: -12, y: -12, z: 0}
   m_Size: {x: 29, y: 24, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -6108,6 +6108,7 @@ MonoBehaviour:
   openingDirection: 2
   spawned: 0
   lifeSpan: 1
+  min: 1
 --- !u!1 &922462803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8094088734949012541, guid: b845661d8330de441aa905c151717b65,
@@ -8636,6 +8637,7 @@ MonoBehaviour:
   openingDirection: 3
   spawned: 0
   lifeSpan: 1
+  min: 1
 --- !u!1 &1134694991
 GameObject:
   m_ObjectHideFlags: 0
@@ -9813,6 +9815,7 @@ MonoBehaviour:
   openingDirection: 4
   spawned: 0
   lifeSpan: 1
+  min: 0
 --- !u!1 &1666138538
 GameObject:
   m_ObjectHideFlags: 0
@@ -9908,6 +9911,7 @@ MonoBehaviour:
   openingDirection: 1
   spawned: 0
   lifeSpan: 1
+  min: 1
 --- !u!1001 &1667035137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10876,6 +10880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: seedTextSet
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569495848744854230, guid: ec7d78fe36a3b444cb51bccd11a4579f,
+        type: 3}
+      propertyPath: seedText
+      value: UQBJFMWU
       objectReference: {fileID: 0}
     - target: {fileID: 2569495848744854231, guid: ec7d78fe36a3b444cb51bccd11a4579f,
         type: 3}
