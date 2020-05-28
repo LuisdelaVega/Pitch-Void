@@ -30,9 +30,6 @@ public class RoomManager : MonoBehaviour
   /* Ground */
   public GameObject ground;
 
-  /* Minimap Texture */
-  private Color clearedRoom = new Color(0, 255, 0);
-
   private void Awake() => StartCoroutine(ActivateDoors(false, false));
 
   private void Start()
@@ -60,13 +57,16 @@ public class RoomManager : MonoBehaviour
         Enemy.OnEnemyKilled -= UpdateEnemyCount;
       else
         SkeletonBoss.OnBossKilled -= UpdateEnemyCount;
-      Tilemap[] tilemaps = GetComponentsInChildren<Tilemap>();
-      foreach (Tilemap tilemap in tilemaps)
-        if (tilemap.CompareTag("Minimap Texture"))
-        {
-          tilemap.color = clearedRoom;
-          tilemap.GetComponent<TilemapRenderer>().sortingOrder += 1;
-        }
+      if (!isBossRoom)
+      {
+        Tilemap[] tilemaps = GetComponentsInChildren<Tilemap>();
+        foreach (Tilemap tilemap in tilemaps)
+          if (tilemap.CompareTag("Minimap Texture"))
+          {
+            tilemap.color = Color.green;
+            tilemap.GetComponent<TilemapRenderer>().sortingOrder += 1;
+          }
+      }
       StartCoroutine(ActivateDoors(false));
       StopCoroutine(toggleDim);
       roomLightsManager.TurnOnLights();
@@ -109,11 +109,11 @@ public class RoomManager : MonoBehaviour
       do
       {
         spawnLocation = new Vector2(
-          Random.Range(walls.bounds.min.x + 4, walls.bounds.max.x - 4),
-          Random.Range(walls.bounds.min.y + 4, walls.bounds.max.y - 4)
+          Random.Range(walls.bounds.min.x + 3, walls.bounds.max.x - 3),
+          Random.Range(walls.bounds.min.y + 3, walls.bounds.max.y - 3)
         );
         distanceToPlayer = spawnLocation - (Vector2)GameManager.instance.player.transform.position;
-      } while (distanceToPlayer.sqrMagnitude < 62);
+      } while (distanceToPlayer.sqrMagnitude < 70);
 
       int index = Random.Range(0, enemyPrefabList.Count);
       Instantiate(enemyPrefabList[index], spawnLocation, Quaternion.identity);
@@ -167,5 +167,17 @@ public class RoomManager : MonoBehaviour
       roomLightsManager.TurnOnLights();
       SetUpRoom(false);
     }
+  }
+
+  public void MakeIntoBossRoom()
+  {
+    isBossRoom = true;
+    Tilemap[] tilemaps = GetComponentsInChildren<Tilemap>();
+    foreach (Tilemap tilemap in tilemaps)
+      if (tilemap.CompareTag("Minimap Texture"))
+      {
+        tilemap.color = Color.red;
+        tilemap.GetComponent<TilemapRenderer>().sortingOrder += 2;
+      }
   }
 }

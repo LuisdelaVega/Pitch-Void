@@ -10,6 +10,7 @@ public class RoomSpawner : MonoBehaviour
 
   public bool spawned = false;
   [SerializeField] private float lifeSpan = 5f;
+  [SerializeField] private int min = 0;
 
   private void Start()
   {
@@ -26,19 +27,19 @@ public class RoomSpawner : MonoBehaviour
     {
       case 1:
         // Need to spawn a room with a BOTTOM door
-        Instantiate(RoomTemplates.instance.bottomRooms[Random.Range(0, RoomTemplates.instance.bottomRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();
+        Instantiate(RoomTemplates.instance.bottomRooms[Random.Range(min, RoomTemplates.instance.bottomRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();
         break;
       case 2:
         // Need to spawn a room with a LEFT door
-        Instantiate(RoomTemplates.instance.leftRooms[Random.Range(0, RoomTemplates.instance.leftRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();
+        Instantiate(RoomTemplates.instance.leftRooms[Random.Range(min, RoomTemplates.instance.leftRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();
         break;
       case 3:
         // Need to spawn a room with a TOP door
-        Instantiate(RoomTemplates.instance.topRooms[Random.Range(0, RoomTemplates.instance.topRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();
+        Instantiate(RoomTemplates.instance.topRooms[Random.Range(min, RoomTemplates.instance.topRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();
         break;
       default:
         // Need to spawn a room with a RIGHT door
-        Instantiate(RoomTemplates.instance.rightRooms[Random.Range(0, RoomTemplates.instance.rightRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();
+        Instantiate(RoomTemplates.instance.rightRooms[Random.Range(min, RoomTemplates.instance.rightRooms.Length)], transform.position, transform.rotation).GetComponent<RoomManager>();
         break;
     }
 
@@ -55,9 +56,9 @@ public class RoomSpawner : MonoBehaviour
         CloseRoom(this);
         if (otherRoomSpawner.isActiveAndEnabled)
           CloseRoom(otherRoomSpawner);
-        Destroy(gameObject);
       }
     }
+
     spawned = true;
   }
 
@@ -83,5 +84,7 @@ public class RoomSpawner : MonoBehaviour
     }
 
     Instantiate(wall, wallPosition, spawner.transform.rotation, spawner.transform.parent.transform);
+
+    Destroy(spawner.gameObject);
   }
 }

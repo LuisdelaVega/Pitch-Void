@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 6.6
-  viewAngle: 180
+  viewAngle: 185
   targetMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1690ad2c99e7624c8c70f0e7d3263bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 60
+  maxHealth: 80
   health: 0
 --- !u!114 &3704513491835802638
 MonoBehaviour:
