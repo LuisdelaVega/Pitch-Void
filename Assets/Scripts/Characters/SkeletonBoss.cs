@@ -43,5 +43,8 @@ public class SkeletonBoss : Enemy
       otherColors,
       otherColors
     );
+
+    moveSpeed += 0.15f;
+    transform.localScale += new Vector3(0.03f, 0.03f, 0);
   }
 }

@@ -6115,11 +6115,11 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1691422831}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &922462804
+--- !u!114 &922462804 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 922462804, guid: b845661d8330de441aa905c151717b65,
+    type: 3}
+  m_PrefabInstance: {fileID: 1691422831}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922462803}
   m_Enabled: 1
@@ -6127,37 +6127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8c0954fda125a0743bd493f1376a8015, type: 2}
-    - {fileID: 0}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 922462805}
-          m_MethodName: EnablePlayerControls
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 922462805}
-          m_MethodName: DisablePlayerControls
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &922462805 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5534301065370956156, guid: b845661d8330de441aa905c151717b65,
@@ -10065,26 +10034,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4772985831027489955, guid: b845661d8330de441aa905c151717b65,
-        type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5534301065370956156, guid: b845661d8330de441aa905c151717b65,
-        type: 3}
-      propertyPath: afkTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5534301065370956156, guid: b845661d8330de441aa905c151717b65,
-        type: 3}
-      propertyPath: AFKTime
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8094088734949012529, guid: b845661d8330de441aa905c151717b65,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8094088734949012541, guid: b845661d8330de441aa905c151717b65,
         type: 3}
       propertyPath: m_Name
@@ -10884,7 +10833,17 @@ PrefabInstance:
     - target: {fileID: 2569495848744854230, guid: ec7d78fe36a3b444cb51bccd11a4579f,
         type: 3}
       propertyPath: seedText
-      value: UQBJFMWU
+      value: GGLWYJED
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569495848744854230, guid: ec7d78fe36a3b444cb51bccd11a4579f,
+        type: 3}
+      propertyPath: waitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569495848744854230, guid: ec7d78fe36a3b444cb51bccd11a4579f,
+        type: 3}
+      propertyPath: timer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2569495848744854231, guid: ec7d78fe36a3b444cb51bccd11a4579f,
         type: 3}

@@ -7,7 +7,6 @@ public class RoomManager : MonoBehaviour
 {
   [SerializeField] private bool arcadeMode = false;
   /* Room */
-  // [SerializeField] private bool roomIsActive = false;
   public CompositeCollider2D walls;
   private bool roomIsActive = false;
   public bool isBossRoom = false;
@@ -68,7 +67,6 @@ public class RoomManager : MonoBehaviour
           }
       }
       StartCoroutine(ActivateDoors(false));
-      StopCoroutine(toggleDim);
       roomLightsManager.TurnOnLights();
     }
   }
@@ -88,7 +86,6 @@ public class RoomManager : MonoBehaviour
     enemiesInRoom = enemiesToSpawn = !isBossRoom ? GetAmountOfEnemiesToSpawn() : 1;
 
     StartCoroutine(ActivateDoors(fullSetUp));
-    toggleDim = StartCoroutine(roomLightsManager.ToggleDim(fullSetUp));
 
     if (!arcadeMode && fullSetUp)
       if (!isBossRoom)
@@ -113,7 +110,7 @@ public class RoomManager : MonoBehaviour
           Random.Range(walls.bounds.min.y + 3, walls.bounds.max.y - 3)
         );
         distanceToPlayer = spawnLocation - (Vector2)GameManager.instance.player.transform.position;
-      } while (distanceToPlayer.sqrMagnitude < 70);
+      } while (distanceToPlayer.sqrMagnitude < 90);
 
       int index = Random.Range(0, enemyPrefabList.Count);
       Instantiate(enemyPrefabList[index], spawnLocation, Quaternion.identity);
@@ -164,7 +161,7 @@ public class RoomManager : MonoBehaviour
     if (!isBossRoom)
     {
       RemoveGroundCollider();
-      roomLightsManager.TurnOnLights();
+      roomLightsManager.TurnOffLights();
       SetUpRoom(false);
     }
   }

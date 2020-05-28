@@ -11,8 +11,7 @@ public class Player : MovingCharacter
   [HideInInspector] public ShadowCameraTargetGroup shadowCameraTargetGroup;
 
   /* Weapons */
-  public List<Weapon> weapons;
-  private Weapon activeWeapon;
+  public Weapon activeWeapon;
 
   /* Dash */
   [SerializeField] private float dashSpeed = 50f;
@@ -34,8 +33,6 @@ public class Player : MovingCharacter
   void Awake()
   {
     controls = new Controls();
-    Vector3 weaponPosition = new Vector3(transform.position.x, transform.position.y + 0.03125f, transform.position.z);
-    activeWeapon = Instantiate(weapons[0], weaponPosition, Quaternion.identity, transform);
     shadowCameraTargetGroup = Instantiate(shadowCameraTargetGroupPrefab, transform.position, Quaternion.identity);
     shadowCameraTargetGroup.player = gameObject;
   }
