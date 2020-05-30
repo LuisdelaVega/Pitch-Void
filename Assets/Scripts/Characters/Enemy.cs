@@ -29,6 +29,7 @@ public class Enemy : MovingCharacter
   public float alertLightTime = 1f;
   protected bool alertLightOn = false;
   public GameObject alertBangPrefab;
+  [SerializeField] private float alertViewRadius = 10f;
 
   /* Corpse */
   public GameObject corpse;
@@ -161,12 +162,18 @@ public class Enemy : MovingCharacter
     if (alertBangPrefab != null)
       Destroy(Instantiate(alertBangPrefab, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.identity, transform), alertLightTime);
 
-    // alertLight.intensity = maxIntensity;
-    // if (!alertLightOn)
-    //   StartCoroutine(AlertLightTimer());
+    StartCoroutine(AlertFOV(GetComponent<FieldOfView>().viewRadius));
+
     FindNewDirection(playerPosition);
     movementOnCooldown = movementCooldownInProcess = false;
     movementTimer = GetRandomInRange(movementTimes);
+  }
+
+  private IEnumerator AlertFOV(float originalViewRadius)
+  {
+    GetComponent<FieldOfView>().viewRadius = alertViewRadius;
+    yield return new WaitForSeconds(alertLightTime);
+    GetComponent<FieldOfView>().viewRadius = originalViewRadius;
   }
 
   /* Cooldowns */
@@ -177,15 +184,6 @@ public class Enemy : MovingCharacter
     movementOnCooldown = foundDirectioThisTurn = movementCooldownInProcess = false;
     movementTimer = GetRandomInRange(movementTimes);
   }
-
-  // private IEnumerator AlertLightTimer()
-  // {
-  //   alertLightOn = true;
-  //   yield return new WaitForSeconds(alertLightTime);
-  //   if (alertLightOn)
-  //     alertLight.intensity = 0;
-  //   alertLightOn = false;
-  // }
 
   public override void Bleed(Quaternion rotation)
   {
@@ -203,8 +201,8 @@ public class Enemy : MovingCharacter
   public void WaveGoodbye()
   {
     animator.SetTrigger("Wave");
-    Destroy(GetComponentInChildren<RangedWeapon>().gameObject);
-    enabled = false;
+    // Destroy(GetComponentInChildren<RangedWeapon>().gameObject);
+    this.enabled = false;
   }
 
   /* Helper Methods */

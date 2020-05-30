@@ -176,7 +176,7 @@ MonoBehaviour:
     type: 3}
   projectileForce: 22
   firePoint: {fileID: 3444253564461638858}
-  soundDistance: 265
+  soundDistance: 195
 --- !u!114 &921994697273736414
 MonoBehaviour:
   m_ObjectHideFlags: 0

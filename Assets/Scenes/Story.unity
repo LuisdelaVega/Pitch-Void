@@ -10825,26 +10825,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room Templates
       objectReference: {fileID: 0}
-    - target: {fileID: 2569495848744854230, guid: ec7d78fe36a3b444cb51bccd11a4579f,
-        type: 3}
-      propertyPath: seedTextSet
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2569495848744854230, guid: ec7d78fe36a3b444cb51bccd11a4579f,
-        type: 3}
-      propertyPath: seedText
-      value: GGLWYJED
-      objectReference: {fileID: 0}
-    - target: {fileID: 2569495848744854230, guid: ec7d78fe36a3b444cb51bccd11a4579f,
-        type: 3}
-      propertyPath: waitTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2569495848744854230, guid: ec7d78fe36a3b444cb51bccd11a4579f,
-        type: 3}
-      propertyPath: timer
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2569495848744854231, guid: ec7d78fe36a3b444cb51bccd11a4579f,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -21,7 +21,7 @@ public class RangedWeapon : Weapon
   {
     if (onCooldown) return;
 
-    Instantiate(projectilePrefab, firePoint.position, firePoint.rotation, transform.parent).GetComponent<Rigidbody2D>()?.AddForce(firePoint.right * projectileForce, ForceMode2D.Impulse);
+    Instantiate(projectilePrefab, firePoint.position, firePoint.rotation).GetComponent<Rigidbody2D>()?.AddForce(firePoint.right * projectileForce, ForceMode2D.Impulse);
 
     AudioManager.instance.PlayWithRandomPitch("Gunshot", 0.8f, 1.2f);
     GetComponent<Recoil>()?.AddRecoil();
