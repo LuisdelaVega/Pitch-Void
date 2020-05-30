@@ -43,24 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90acc238d837a964498a39802b770676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seedText: WYOVCIYX
+  seedText: GGLWYJED
   seed: 0
   seedTextSet: 0
   topRooms:
   - {fileID: 85904682379511372, guid: faff70421a9f8cd4b9053952d6706424, type: 3}
-  - {fileID: 8487454324426854863, guid: 5a640ec0504b2cd49a9ea5bce0aa3926, type: 3}
   - {fileID: 5290491101736950798, guid: 3faddd60129ade34eb4ef1b487597e36, type: 3}
   rightRooms:
   - {fileID: 5766798178432538853, guid: 3e5ff0c7408044b41924b48fd4cdea6d, type: 3}
-  - {fileID: 9043647750094846262, guid: 6ecc94b99e7f04a4fb199a54f3836921, type: 3}
   - {fileID: 1038802423308635942, guid: 4bfc4f74c039cdf4dbca45e808278a97, type: 3}
   bottomRooms:
   - {fileID: 1533067825899641304, guid: 70cdbc2bed3b9be468144bb1843d2d7b, type: 3}
-  - {fileID: 2598283912655807545, guid: 62d43f75ae58d2d4bb1ef8b2cf9cfb94, type: 3}
   - {fileID: 8034009469829802250, guid: 58a31bc6f27c5f246b9b73444e691864, type: 3}
   leftRooms:
   - {fileID: 2484771657381727574, guid: 79c9debf730d4584a9a61579793ac263, type: 3}
-  - {fileID: 1225867891562384929, guid: b36654c0e9d20a949a62bcdf883d1ad9, type: 3}
   - {fileID: 8034009469829802250, guid: 58a31bc6f27c5f246b9b73444e691864, type: 3}
   closedHorizontalWall: {fileID: 846872491230701309, guid: aaff8079a1049d94391c0592324d509e,
     type: 3}
@@ -70,5 +66,5 @@ MonoBehaviour:
   bossRoom: {fileID: 0}
   boss: {fileID: 8671040359916251570, guid: 4db82192e58d0e948949eab9811071f0, type: 3}
   bossRoomChosen: 0
-  waitTime: 8
-  timer: 8
+  waitTime: 1
+  timer: 1

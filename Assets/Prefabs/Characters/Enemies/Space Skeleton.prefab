@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6673291239014348172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.254, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5290927916988005377}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 103
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.689113
-  m_PointLightOuterRadius: 0.90073574
+  m_PointLightOuterRadius: 0.7766205
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0694fe706a2170b469e1facca5e5d18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4.2
+  moveSpeed: 4.1
   animator: {fileID: 2307577401785852470}
   spriteRenderer: {fileID: 0}
   bloodParticleEffect: {fileID: 5936509768155569356, guid: f1def601c9609504cb884bc5a5da10ba,
@@ -235,12 +235,13 @@ MonoBehaviour:
   movementCooldownTimes:
     minimum: 1
     maximum: 4
-  attackDelay: 0.3
+  attackDelay: 0.41
   alertLight: {fileID: 4494526069525643447}
   maxIntensity: 0.8
   alertLightTime: 1
   alertBangPrefab: {fileID: 4822807142718400425, guid: cd8d3ac0b5dbe3a428f93d00526fbddf,
     type: 3}
+  alertViewRadius: 6.5
   corpse: {fileID: 731604617656964825, guid: e2dd8ccb976389d459e97934a592c83e, type: 3}
   floatingText: {fileID: 8195445797050908327, guid: b1ac64026bf409144a4292f4d12b3def,
     type: 3}
@@ -377,6 +378,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2739718080901117103, guid: 695c52db19d117848a3ab7c9880be834,
         type: 3}
+    - target: {fileID: 4206024002109007232, guid: ad2af2190b197e24e98d3c559da79166,
+        type: 3}
+      propertyPath: projectileForce
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4817231642374507868, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}
       propertyPath: m_Name
@@ -386,11 +392,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AlphaBlendOnOverlap
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744094716833916228, guid: ad2af2190b197e24e98d3c559da79166,
-        type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6586991837681579285, guid: ad2af2190b197e24e98d3c559da79166,
         type: 3}

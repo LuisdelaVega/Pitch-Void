@@ -110,7 +110,7 @@ public class RoomManager : MonoBehaviour
           Random.Range(walls.bounds.min.y + 3, walls.bounds.max.y - 3)
         );
         distanceToPlayer = spawnLocation - (Vector2)GameManager.instance.player.transform.position;
-      } while (distanceToPlayer.sqrMagnitude < 90);
+      } while (distanceToPlayer.sqrMagnitude < 95);
 
       int index = Random.Range(0, enemyPrefabList.Count);
       Instantiate(enemyPrefabList[index], spawnLocation, Quaternion.identity);
